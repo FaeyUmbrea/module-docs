@@ -4,7 +4,7 @@
 
 <instance-profile id="ou"
                   name="OBS Utils"
-                  start-page="Getting-Started-obsu.md" is-library="true">
+                  start-page="Getting-Started-obsu.md">
 
     <snippet id="obs-utils">
     <toc-element topic="Getting-Started-obsu.md"/>

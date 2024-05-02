@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE instance-profile
+        SYSTEM "https://resources.jetbrains.com/writerside/1.0/product-profile.dtd">
+
+<instance-profile id="fm"
+                 name="Foundry Modules"
+                 start-page="foundry-modules.md">
+
+    <toc-element topic="foundry-modules.md"/>
+    <toc-element toc-title="OBS Utils">
+        <include from="ou" element-id="obs-utils" />
+    </toc-element>
+    <toc-element toc-title="Ethereal Plane">
+        <include from="ep" element-id="ethereal-plane" />
+    </toc-element>
+</instance-profile>

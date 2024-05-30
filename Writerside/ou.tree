@@ -11,5 +11,6 @@
     <toc-element topic="OBS-Remote.md" />
     <toc-element topic="Stream-Overlay-CSS.md"/>
     <toc-element topic="API.md"/>
+        <toc-element topic="Manual-Mode.md"/>
     </snippet>
 </instance-profile>

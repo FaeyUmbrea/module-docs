@@ -10,7 +10,7 @@ The topmost element also has the class "obs-utils" in case multiple overlay plug
 
 * .overlay 
 * * .actor #actor[actor id]
-    > Actor ID is the Foundry Actor ID (i.e. "abcde231231cas")
+    > Actor ID is the Foundry Actor ID (i.e. "abc123456789")
 * * * .[overlay-type] #overlay[overlay id]
       > Overlay ID is the Array Index
       >

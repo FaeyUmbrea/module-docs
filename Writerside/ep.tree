@@ -3,9 +3,9 @@
         SYSTEM "https://resources.jetbrains.com/writerside/1.0/product-profile.dtd">
 
 <instance-profile id="ep"
-                  name="Ethereal Plane" start-page="Home.md" is-library="true">
+                  name="Ethereal Plane" start-page="Getting-Started-ep.md" is-library="true">
     <snippet id="ethereal-plane">
-    <toc-element topic="Home.md"/>
+    <toc-element topic="Getting-Started-ep.md"/>
     <toc-element topic="Quick-Start.md"/>
     <toc-element topic="Polls.md"/>
     <toc-element topic="MidiQoL-Support.md"/>

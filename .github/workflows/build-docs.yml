@@ -5,10 +5,6 @@ on:
     branches: ["master"]
   workflow_dispatch:
 
-permissions:
-  id-token: write
-  pages: write
-
 env:
   INSTANCE: 'Writerside/fm'
   ARTIFACT: 'webHelpFM2-all.zip'
@@ -51,6 +47,9 @@ jobs:
         with:
           instance: ${{ env.INSTANCE }}
   deploy:
+    permissions:
+      contents: read
+      deployments: write
     needs: [build, test]
     runs-on: ubuntu-latest
     steps:

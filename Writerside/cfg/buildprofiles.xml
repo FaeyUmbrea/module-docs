@@ -9,6 +9,8 @@
     </build-profile>
     <build-profile instance="ep">
         <variables>
+            <product-web-url>https://docs.void.monster</product-web-url>
+            <custom-favicons>favicon.svg,favicon.png</custom-favicons>
             <noindex-content>true</noindex-content>
             <versions-switcher>https://my.company.resources.com/help-versions.json</versions-switcher>
         </variables>

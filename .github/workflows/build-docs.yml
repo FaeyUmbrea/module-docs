@@ -62,14 +62,11 @@ jobs:
       - name: Unzip artifact
         run: unzip -O UTF-8 -qq '${{ env.ARTIFACT }}' -d dir
 
-      - name: Setup NPM
-        uses: actions/setup-node@v4
-
       - name: Publish
         uses: cloudflare/pages-action@v1
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          projectName: ${{ env.PROJECTNAME }} # e.g. 'my-project'
+          projectName: $PROJECTNAME # e.g. 'my-project'
           directory: dir # e.g. 'dist'
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}

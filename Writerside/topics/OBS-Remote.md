@@ -7,17 +7,18 @@ This goes over the Features of the new OBS Remote Functionality.
 First a few Caveats for this Feature.
 
 OBS Utils is capable of using the OBS-Browser-Source API that is automatically provided. 
-However this API can only switch scenes and start or stop recordings and streams.
+However, this API can only switch scenes and start or stop recordings and streams.
 
-For the full Featureset you need to enable OBS-Websocket.
+For the full feature set, you need to enable OBS-Websocket.
 
 This is also only supported for the /game view.
 
 ## OBS Websocket
 
-!! THIS REQUIRES Websocket V5 !!
+> THIS REQUIRES OBS Websocket V5 to be installed in OBS
+{style="warning"}
 
-To Enable Websocket Support you have two choices:
+To Enable Websocket Support, you have two choices:
 * Globally store your Websocket credentials in foundry for all connected accounts to see
 * Inject the Credentials only into your browser source
 
@@ -30,36 +31,39 @@ First enable using Websocket in the Module Settings.
 
 The Websocket is executed inside the OBS Browser Source. So you can use localhost as the url.
 
-Then either enter your Wbesocket Settings directly in Module Settings and reload.
+Then either enter your Websocket Settings directly in Module Settings and sync them to your stream user.
 
-Alternatively, add this block to your Browser Source' Custom CSS: 
+
+
+Alternatively, add this block to your Browser Source's Custom CSS: 
 
 `:root { --local-obs-host:[host]; --local-obs-port:[port]; --local-obs-password:[password]; }`
 
-Replace [host] with your host name, i.e. localhost. Do not add quotationmarks or spaces and make sure to keep the trailing semicolon.
-`--local-obs-host:localhost;` or `--local-obs-host:your.host.com;` or `--local-obs-host:127.0.0.1;` all work.
+Replace [host] with your host name, i.e., localhost.
+Do not add quotation marks or spaces and make sure to keep the trailing semicolon.
+`--Local-obs-host:localhost;` or `--local-obs-host:your.host.com;` or `--local-obs-host:127.0.0.1;` all work.
 
 Then replace [port] with the port of your Websocket. This is usually 4455.
-`--local-obs-port:4455;`
+`--Local-obs-port:4455;`
 
 Finally, replace [password] with your websocket password.
-`--local-obs-password:P4ssw0rd!;`
+`--Local-obs-password:P4ssw0rd!;`
 
-This will override what ever you put into OBS Websocket Settings aswell.
+This will override whatever you put into OBS Websocket Settings as well.
 You can also define only some of these settings for partial overriding.
 
 ## Foundry
 
 ### Events
 
-The Tab in OBS Remote Settings dicates what event the changes are fired on.
+The Tab in OBS Remote Settings dictates what event the changes are fired on.
 
 Currently available are:
 * Load > When Foundry First Loads
 * Combat Start > When ever any combat starts
 * Combat End > When ever any combat ends
 * Pause > When the game is Paused
-* Unpause > When the game is Unpaused
+* Unpause > When the game is Unparsed
 * Close Obs > Only with Websocket enabled, will fire when OBS is about to close.
 
 ### Actions

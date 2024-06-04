@@ -17,5 +17,4 @@ The "OBS Mode User" setting is stored in the World and will be shared.
 
 ## Caveats
 
-In this mode, you will be forced to use OBS Websocket. You will also have to configure it using the Config UI. 
-Which means saving your OBS Websocket password to the world file. Any player can extract it from there.
+In this mode, you will be forced to use OBS Websocket. You will also have to configure it using the Config UI.

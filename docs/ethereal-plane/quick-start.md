@@ -18,7 +18,7 @@ After you have installed the Module, the first thing you need to do to make it w
 
 Once there, you will be greeted with this screen:
 
-![Settings Screen](../../static/img/ep-settings.png)
+[Settings Screen]
 
 Before any of the Features can work, you need to go through Setup.
 
@@ -34,7 +34,7 @@ If you are a YouTube User, I do recommend considering subscribing to my Patreon 
 
 If you select "Patreon Mode," your next step is to log into your Patreon account.
 
-![Patreon Setup](../../static/img/ep-patreon-setup.png)
+[Patreon Setup]
 
 Once you are logged in, your UI will change based on your patreon tier.
 From here, log into the streaming service of your choosing!
@@ -45,7 +45,7 @@ If you are a Twitch user, after logging in you are all set!
 
 Depending on your Tier, a button saying "Log in" with a Bot-Icon will be available:
 
-![Twitch Setup](../../static/img/ep-twitch-setup.png)
+[Twitch Setup]
 
 You can use this to log into either your main twitch account, or any other twitch account of your choosing. The bot will then use that account instead of the "EtherealPlane" user to interact with your chat.
 
@@ -56,7 +56,7 @@ After logging in, everything should be working automatically.
 However, if the backend fails to correctly connect to your live-stream.
 Copy the URL to your livestream into the Text-Box and press the Save Icon.
 
-![YouTube Setup](../../static/img/ep-youtube-setup.png)
+[YouTube Setup]
 
 
 It does not matter if it is a YouTube Studio, "youtu.be" or youtube.com/watch URL. All three will work!
@@ -65,7 +65,7 @@ It does not matter if it is a YouTube Studio, "youtu.be" or youtube.com/watch UR
 If you are running the Module in local mode, all the configuration is done in the companion Server.
 All you need to do here is provide the URL your Server is running under. This is typically already set correctly.
 
-![Local Setup](../../static/img/ep-local.png)
+[Local Setup]
 
 
 ## Send Rolls to Chat
@@ -77,7 +77,7 @@ This will grab any roll that is not private or whispered and broadcast it to you
 
 To enable or disable it, check or uncheck the respective box.
 
-![Rolls Setup](../../static/img/ep-rolls.png)
+[Rolls Setup]
 
 You can also edit the Chat Message Template. You can put anything here!
 
@@ -89,11 +89,11 @@ is replaced by the roll formula (i.e. `1d20+4+2`) and `%\RESULT%` is replaced by
 In the configuration section for the Local Server or the Patreon Server, you can enable or disable Polls. 
 
 If Polls are enabled,
-a new icon ![Poll Icon](../../static/img/ep-poll-icon.png) will appear in the Token Sidebar on the left. 
+a new icon [Poll Icon] will appear in the Token Sidebar on the left.
 
 Clicking on it will bring up the Poll Menu.
 
-![Polls Screen](../../static/img/ep-polls.png)
+[Polls Screen]
 
 In here, you can set up a Poll with options and a title, define the duration and drag and drop macros into the little boxes next to the option name.
 
@@ -103,10 +103,10 @@ More on Polls can be found in the in-depth tutorial.
 
 The Chat Tab can be enabled or disabled in the module settings.
 
-![Chat Tab Setting](../../static/img/ep-chat-tab-setting.png) 
+[Chat Tab Setting]
 
 If enabled, a new Tab 
-![Chat Tab Icon](../../static/img/ep-chat-tab-icon.png)
+[Chat Tab Icon]
  showing all messages from your chat will appear in the sidebar on the right. 
 
 ## Chat Commands
@@ -116,12 +116,12 @@ The final feature you want to consider is the Chat Commands.
 A more indepth guide on chat commands can be found on their own wiki page.
 For now, consider if you want to enable them or not. 
 
-![Chat Command Settings](../../static/img/ep-chat-command-settings.png)
+[Chat Command Settings]
 
 ## Wrapping up
 
 Now that you have made all your choices and set up your module, the last step is to enable it.
 
-![Enable Module](../../static/img/ep-enable.png)
+[Enable Module]
 
 This will reload your page and start the Module once the reload is complete!

@@ -9,14 +9,14 @@ sidebar_label: Polls
 The Poll feature is one of the ways you can allow your chat to interact with your Foundry game directly!
 
 Polls are accessed via the sidebar button in the "Tokens" 
-![Poll Icon](../../static/img/ep-poll-icon.png)
+[Poll Icon]
  section of the UI.
 
 ## Setting up Polls
 
 You can set up the Poll in this UI:
 
-![Polls Screen](../../static/img/ep-polls.png)
+[Polls Screen]
 
 You can give the Poll any Title, this is recommended if you use Twitch via the Patreon Mode.
 
@@ -29,7 +29,7 @@ You can also set the duration of the Poll in seconds. If using Twitch in Patreon
 Finally, you are able to attach Macros to the poll options.
 To do so, drag and drop the Macro onto the little box next to the poll option.
 
-![Poll Macro Demo](../../static/img/poll-macro.gif)
+[Poll Macro Demo]
 
 If a poll concludes successfully, the macro attached to the winning option will be executed.
 
@@ -54,7 +54,7 @@ The poll will automatically end after the set time limit.
 
 While the poll is running, you can at any time cancel it by hitting the red "Abort" button.
 
-![Abort Poll](../../static/img/ep-polls-abort.png)
+[Abort Poll]
 
 This will end the poll, including the twitch poll if one is running, display the final results but NOT execute any macros.
 

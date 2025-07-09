@@ -1,3 +1,9 @@
+---
+id: chat-commands
+title: Chat Commands
+sidebar_label: Chat Commands
+---
+
 # Chat Commands
 
 Chat commands are one of the ways that users can interact directly with foundry from your chat.
@@ -15,7 +21,7 @@ Chat commands can be created and configured in the chat command config UI.
 
 ![image](./assets/ep-chat-command-config.png)
 
-To create a new command, click on the ![image](./assets/ep-add.png){style="inline"} button.
+To create a new command, click on the ![image](./assets/ep-add.png) button.
 
 This will create a new command with no content in the list above.
 

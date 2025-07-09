@@ -1,3 +1,9 @@
+---
+id: midi-qol
+title: Midi QoL Support
+sidebar_label: Midi QoL Support
+---
+
 # MidiQoL Support
 
 This module has full MidiQoL Support;

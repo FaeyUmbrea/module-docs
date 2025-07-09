@@ -37,6 +37,7 @@ const sidebars = {
         'ethereal-plane/quick-start',
         'ethereal-plane/chat-commands',
         'ethereal-plane/polls',
+        'ethereal-plane/midi-qol',
         'ethereal-plane/api'
       ],
     },

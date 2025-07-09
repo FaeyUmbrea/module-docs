@@ -15,7 +15,7 @@ or you can configure a named user to always load in OBS Mode regardless of brows
 
 You can enable both modes in the settings.
 
-[Manual Mode Settings]
+![Manual Mode Settings](./assets/manual_mode_settings.png)
 
 The "OBS Mode" setting has to be set in the Browser as it is not shared between logins on different browsers.
 

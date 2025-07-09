@@ -1,0 +1,6 @@
+[submodule "submodules/ethereal-plane"]
+	path = submodules/ethereal-plane
+	url = https://github.com/FaeyUmbrea/ethereal-plane.git
+[submodule "submodules/obs-utils"]
+	path = submodules/obs-utils
+	url = https://github.com/FaeyUmbrea/obs-utils.git

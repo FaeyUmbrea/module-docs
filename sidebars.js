@@ -35,7 +35,24 @@ const sidebars = {
       items: [
         'ethereal-plane/getting-started',
         'ethereal-plane/quick-start',
-        'ethereal-plane/polls'
+        'ethereal-plane/polls',
+        'ethereal-plane/api'
+      ],
+    },
+    {
+      type: 'category',
+      label: 'API Reference',
+      items: [
+        {
+          type: 'link',
+          label: 'OBS Utils API',
+          href: '/api-reference/modules/obs_utils_src_utils_api',
+        },
+        {
+          type: 'link',
+          label: 'Ethereal Plane API',
+          href: '/api-reference/modules/ethereal_plane_src_utils_api',
+        }
       ],
     },
   ],

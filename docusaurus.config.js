@@ -2,6 +2,8 @@
 // `@type` JSDoc annotations allow editor autocompletion and type checking
 // (when paired with the TypeScript language service).
 
+const typedocPlugin = require('docusaurus-plugin-typedoc');
+
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Void Monster Foundry Modules',
@@ -44,6 +46,31 @@ const config = {
         },
       }),
     ],
+  ],
+
+  plugins: [
+    [
+      'docusaurus-plugin-typedoc',
+      {
+        entryPoints: [
+          './submodules/ethereal-plane/src/utils/api.ts',
+          './submodules/obs-utils/src/utils/api.ts'
+        ],
+        out: 'api-reference',
+        sidebar: {
+          categoryLabel: 'API Reference',
+          position: 3,
+          fullNames: true
+        },
+        tsconfig: './tsconfig.json',
+        skipErrorChecking: true,
+        disableSources: true,
+        excludeExternals: true,
+        excludeInternal: true,
+        excludePrivate: true,
+        excludeProtected: true,
+      }
+    ]
   ],
 
   themeConfig:

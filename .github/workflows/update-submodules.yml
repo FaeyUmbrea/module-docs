@@ -4,6 +4,9 @@ on:
   repository_dispatch:
     types: [submodule-update]
 
+permissions:
+  contents: write
+
 jobs:
   update:
     runs-on: ubuntu-latest
@@ -11,7 +14,8 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
         with:
-          submodules: true
+          submodules: recursive
+          fetch-depth: 0
 
       - name: Git config
         run: |

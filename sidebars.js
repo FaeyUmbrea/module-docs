@@ -35,6 +35,7 @@ const sidebars = {
       items: [
         'ethereal-plane/getting-started',
         'ethereal-plane/quick-start',
+        'ethereal-plane/triggers',
         'ethereal-plane/chat-commands',
         'ethereal-plane/polls',
         'ethereal-plane/midi-qol',

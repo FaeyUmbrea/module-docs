@@ -1,10 +1,18 @@
 ---
 id: chat-commands
-title: Chat Commands
-sidebar_label: Chat Commands
+title: Chat Commands (Deprecated)
+sidebar_label: Chat Commands (Deprecated)
 ---
 
-# Chat Commands
+# Chat Commands (Deprecated)
+
+::::warning
+
+**This feature is deprecated and has been replaced by [Triggers](triggers).**
+
+Chat commands functionality is still available but the backend will require an active subscription in the future. We recommend migrating to the new Triggers system to keep using this functionality for free.
+
+::::
 
 Chat commands are one of the ways that users can interact directly with foundry from your chat.
 
@@ -101,3 +109,14 @@ To do so, specify the cooldown amount as you usually do and then specify just th
 This can also be left empty, which would result in a universal cooldown on the entire macro, regardless of who last executed it and who it was executed on.
 
 The system will also treat different capitalization of the same target as different targets.
+
+## Migrating to Triggers
+
+We recommend migrating your chat commands to the new [Triggers](triggers) system. The functionality is similar, but the configuration is different:
+
+1. Create a new Trigger for each of your existing chat commands
+2. Set up a Chat Command event for each Trigger
+3. Enter all your command aliases in the "command list"
+4. Assign the same macro that was used for your chat command
+
+The context data provided to the macro is compatible with the previous chat commands system, so your existing macros should continue to work without modification.

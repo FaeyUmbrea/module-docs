@@ -142,7 +142,7 @@ const config = {
         appId: 'UN09JIJK4M',
         apiKey: 'de18b51c0168d67679c4fdfc2cd1ced3',
         indexName: 'Module Docs',
-        contextualSearch: true,
+        contextualSearch: false,
       },
       // Color mode configuration
       colorMode: {

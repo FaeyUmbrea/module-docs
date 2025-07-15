@@ -1,8 +1,0 @@
-<component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="Web Archive (ep)" type="StardustRunConfiguration" factoryName="save-as-zip">
-    <option name="folderPath" value="$PROJECT_DIR$" />
-    <option name="instanceId" value="ep" />
-    <option name="instanceName" value="Ethereal Plane" />
-    <method v="2" />
-  </configuration>
-</component>

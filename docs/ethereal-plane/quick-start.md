@@ -63,11 +63,11 @@ It does not matter if it is a YouTube Studio, "youtu.be" or youtube.com/watch UR
 
 ### Local Server 
 
-:::warning
+::::warning
 
-This is a legacy feature that will be discontinued in Ethereal Plane 3.0
+This is a deprecated feature that has been discontinued in Ethereal Plane 3.0
 
-:::
+::::
 
 If you are running the Module in local mode, all the configuration is done in the companion Server.
 All you need to do here is provide the URL your Server is running under. This is typically already set correctly.
@@ -108,11 +108,11 @@ More on Polls can be found in the in-depth tutorial.
 
 ## Chat Tab
 
-:::warning
+::::warning
 
-This is a legacy feature that will be discontinued in Ethereal Plane 3.0
+This is a deprecated feature that has been discontinued in Ethereal Plane 3.0
 
-:::
+::::
 
 The Chat Tab can be enabled or disabled in the module settings.
 
@@ -124,12 +124,30 @@ If enabled, a new Tab
 
 ## Chat Commands
 
+::::warning
+
+This is a deprecated feature that has been discontinued in Ethereal Plane 3.0. Please use [Triggers](triggers) instead.
+
+::::
+
 The final feature you want to consider is the Chat Commands.
 
 A more indepth guide on chat commands can be found on their own wiki page.
 For now, consider if you want to enable them or not. 
 
 ![Chat Command Settings](./assets/ep-chat-command-settings.png)
+
+## Triggers
+
+Triggers are a powerful new feature that replaces Chat Commands. They allow you to create interactive elements for your stream that can execute macros in Foundry VTT.
+
+There is an in-module menu to assign macros to channel points, with import and export buttons in the window frame.
+
+![Macro Configuration](./assets/triggers/macro-config.png)
+
+Triggers can also be configured through the web interface at [https://etherealplane.app](https://etherealplane.app).
+
+For more detailed information, check out the [Triggers](triggers) documentation.
 
 ## Wrapping up
 

@@ -7,7 +7,8 @@
 	"name": "foundry-module-docs",
 	"compatibility_date": "2025-07-09",
 	"assets": {
-		"directory": "./build"
+		"directory": "./build",
+		"not_found_handling": "single-page-application",
 	},
 	"observability": {
 		"enabled": true

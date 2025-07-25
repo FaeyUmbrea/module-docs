@@ -6,7 +6,11 @@ sidebar_label: Getting Started
 
 # Getting Started
 
+Check out our [official tutorial videos playlist](https://www.youtube.com/watch?v=XdpdAU-raUU&list=PLCnj_GvvIWGIrMXWKbcmAgfCvbqDtUZER) for OBS Utils for Beginners.
+
 ## Setup
+
+Watch our [Basic Setup tutorial video](https://www.youtube.com/watch?v=JbWA9kARx0U) for a visual guide.
 
 Installing this module is as easy as any other!
 Just use the Module Installer in Foundry!
@@ -39,6 +43,8 @@ Go to Settings and set Minimum Scale and Maximum Scale to your liking. They are 
 Finally, configure the Popout Zoom Delay and decide if you want the Combat Tracker to show up in /game view during combat.
 
 #### The Director
+
+Watch our [Director tutorial video](https://www.youtube.com/watch?v=6QNDJy2rv6c) for a visual guide.
 
 The Director Window contains the main set of Controls for this Module.
 Hover over each button to get a brief description of what it does.

@@ -8,6 +8,8 @@ sidebar_label: OBS Remote
 
 This goes over the Features of the new OBS Remote Functionality.
 
+Watch our [OBS Remote tutorial video](https://www.youtube.com/watch?v=wnCPbJ1eHRs) for a visual guide.
+
 ## Caveats
 
 First a few Caveats for this Feature.

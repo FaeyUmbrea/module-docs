@@ -12,22 +12,38 @@
 /** @type {import('@docusaurus/plugin-content-docs').SidebarsConfig} */
 const sidebars = {
   // By default, Docusaurus generates a sidebar from the docs folder structure
-  foundryModulesSidebar: [
+  obsUtilsSidebar: [
     {
       type: 'doc',
       id: 'index',
       label: 'Welcome'
     },
     {
-      type: 'link',
-      label: 'OBS Utils',
-      href: '/obs-utils',
+      type: 'doc',
+      id: 'getting-started',
+      label: 'Getting Started',
     },
     {
-      type: 'link',
-      label: 'Ethereal Plane',
-      href: '/ethereal-plane',
-    }
+      type: 'category',
+      label: 'Features',
+      items: [
+        'obs-remote',
+        'stream-overlay-css',
+        'api',
+        'manual-mode'
+      ],
+    },
+    {
+      type: 'category',
+      label: 'API Reference',
+      items: [
+        {
+          type: 'link',
+          label: 'OBS Utils API',
+          href: '/api-reference/modules/obs_utils_src_utils_api',
+        }
+      ],
+    },
   ],
 };
 

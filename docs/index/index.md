@@ -1,9 +1,3 @@
----
-id: index
-title: Welcome
-slug: /
----
-
 # Welcome
 
 Welcome to the Documentation of my Foundry Modules!

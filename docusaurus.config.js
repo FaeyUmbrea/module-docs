@@ -33,17 +33,15 @@ const config = {
 
   presets: [
     [
-      'classic',
+      '@docusaurus/preset-classic',
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
           sidebarPath: './sidebars.js',
-          routeBasePath: '/', // Serve the docs at the site's root
+          path: 'docs/index',
+          routeBasePath: '/'
         },
         blog: false, // Disable the blog plugin
-        theme: {
-          customCss: './src/css/custom.css',
-        },
       }),
     ],
   ],
@@ -70,7 +68,27 @@ const config = {
         excludePrivate: true,
         excludeProtected: true,
       }
-    ]
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'ethereal-plane',
+        path: 'docs/ethereal-plane',
+        routeBasePath: 'ethereal-plane',
+        sidebarPath: './sidebars_ep.js',
+        // ... other options
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'obs-utils',
+        sidebarPath: './sidebars_obsu.js',
+        path: 'docs/obs-utils',
+        routeBasePath: 'obs-utils', // Serve the docs at the site's root
+        // ... other options
+      },
+    ],
   ],
 
   themeConfig:
@@ -89,7 +107,21 @@ const config = {
             type: 'docSidebar',
             sidebarId: 'foundryModulesSidebar',
             position: 'left',
-            label: 'Documentation',
+            label: 'Home',
+          },
+          {
+            type: 'docSidebar',
+            sidebarId: 'obsUtilsSidebar',
+            position: 'left',
+            label: 'OBS Utils',
+            docsPluginId: 'obs-utils',
+          },
+          {
+            type: 'docSidebar',
+            sidebarId: 'epSidebar',
+            position: 'left',
+            label: 'Ethereal Plane',
+            docsPluginId: 'ethereal-plane',
           },
           {
             href: 'https://discord.com/invite/WfMaKPPdeM',

@@ -13,8 +13,7 @@
     "write-translations": "docusaurus write-translations",
     "write-heading-ids": "docusaurus write-heading-ids",
     "typecheck": "tsc",
-    "preview": "yarn run build && wrangler dev",
-    "generate-api-docs": "typedoc --options typedoc.json"
+    "preview": "yarn run build && wrangler dev"
   },
   "dependencies": {
     "@docusaurus/core": "3.8.1",

@@ -32,18 +32,7 @@ const sidebars = {
         'api',
         'manual-mode'
       ],
-    },
-    {
-      type: 'category',
-      label: 'API Reference',
-      items: [
-        {
-          type: 'link',
-          label: 'OBS Utils API',
-          href: '/api-reference/modules/obs_utils_src_utils_api',
-        }
-      ],
-    },
+    }
   ],
 };
 

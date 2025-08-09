@@ -92,12 +92,6 @@ Checks if the current context is OBS.
 
 **Returns:** boolean
 
-## API Class Definition
-
-For a complete, auto-generated reference of the OBS Utils API, please see the [API Reference](/api-reference/modules/obs_utils_src_utils_api) section.
-
-Below is a summary of the main API classes:
-
 ### ObsUtilsApi
 
 The main API class that provides methods for registering overlay types and components.

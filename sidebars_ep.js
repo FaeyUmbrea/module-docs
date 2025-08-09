@@ -33,18 +33,7 @@ const sidebars = {
         'midi-qol',
         'api'
       ],
-    },
-    {
-      type: 'category',
-      label: 'API Reference',
-      items: [
-        {
-          type: 'link',
-          label: 'Ethereal Plane API',
-          href: '/api-reference/modules/ethereal_plane_src_utils_api',
-        }
-      ],
-    },
+    }
   ],
 };
 

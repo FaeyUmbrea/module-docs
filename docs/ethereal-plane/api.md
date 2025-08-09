@@ -35,12 +35,6 @@ game.modules.get('ethereal-plane').api.sendMessageToChat("Hello from Foundry VTT
 
 **Note:** This method will only work if the "Allow API" setting is enabled in the module settings.
 
-## API Class Definition
-
-For a complete, auto-generated reference of the Ethereal Plane API, please see the [API Reference](/api-reference/modules/ethereal_plane_src_utils_api) section.
-
-Below is a summary of the main API class:
-
 ### EtherealPlaneAPI
 
 The main API class that provides methods for interacting with the Ethereal Plane module.

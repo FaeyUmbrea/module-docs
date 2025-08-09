@@ -48,28 +48,6 @@ const config = {
 
   plugins: [
     [
-      'docusaurus-plugin-typedoc',
-      {
-        entryPoints: [
-          './submodules/ethereal-plane/src/utils/api.ts',
-          './submodules/obs-utils/src/utils/api.ts'
-        ],
-        out: 'api-reference',
-        sidebar: {
-          categoryLabel: 'API Reference',
-          position: 3,
-          fullNames: true
-        },
-        tsconfig: './tsconfig.json',
-        skipErrorChecking: true,
-        disableSources: true,
-        excludeExternals: true,
-        excludeInternal: true,
-        excludePrivate: true,
-        excludeProtected: true,
-      }
-    ],
-    [
       '@docusaurus/plugin-content-docs',
       {
         id: 'ethereal-plane',

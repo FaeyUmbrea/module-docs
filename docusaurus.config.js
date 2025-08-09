@@ -67,6 +67,34 @@ const config = {
         // ... other options
       },
     ],
+    [
+      'docusaurus-plugin-typedoc',
+      {
+        id: 'typedoc-obs-utils',
+        entryPoints: ['submodules/obs-utils/src/utils/api.ts'],
+        tsconfig: 'submodules/obs-utils/tsconfig.json',
+        out: 'docs/obs-utils/api-reference',
+        readme: 'none',
+        plugin: ['typedoc-plugin-markdown'],
+        excludePrivate: true,
+        categorizeByGroup: true,
+        skipErrorChecking: true
+      },
+    ],
+    [
+      'docusaurus-plugin-typedoc',
+      {
+        id: 'typedoc-ethereal-plane',
+        entryPoints: ['submodules/ethereal-plane/src/utils/api.ts'],
+        tsconfig: 'submodules/ethereal-plane/tsconfig.json',
+        out: 'docs/ethereal-plane/api-reference',
+        readme: 'none',
+        plugin: ['typedoc-plugin-markdown'],
+        excludePrivate: true,
+        categorizeByGroup: true,
+        skipErrorChecking: true
+      },
+    ],
   ],
 
   themeConfig:

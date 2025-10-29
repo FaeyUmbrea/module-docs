@@ -28,7 +28,6 @@ const sidebars = {
       label: 'Features',
       items: [
         'triggers',
-        'chat-commands',
         'polls',
         'midi-qol',
         'api'

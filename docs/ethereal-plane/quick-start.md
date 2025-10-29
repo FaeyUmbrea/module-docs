@@ -20,60 +20,63 @@ Once there, you will be greeted with this screen:
 
 ![Settings Screen](./assets/ep-settings.png)
 
-Before any of the Features can work, you need to go through Setup.
+Here, you can open the Setup Menu and the Trigger Setup. You can also enable the Module and separately, select if triggers should be processed.
 
-In the Setup Menu, you will be asked to select the Mode that Ethereal Plane should run in. 
+Before the Module can work properly, you need to open Setup.
 
-If you are a Twitch user, I recommend switching the module to Patreon mode. This will immediately give you access to all Module features through the "EtherealPlane" Twitch bot user. You don't need to be subscribed to my Patreon for this to work, all Twitch features are completely free!
+### Setup
 
-If you are a YouTube User, I do recommend considering subscribing to my Patreon at the 5€ Tier. Otherwise, you want to set the mode to "Local Bridge only" and install the [Server](https://github.com/FaeyUmbrea/ethereal-plane-server).
+#### Connection
 
-"Local Bridge + Patreon" is a hybrid mode not recommended for new users.
+![Connection](./assets/ep-connection.png)
 
-### Patreon Setup
+To begin using Ethereal Plane, you have to connect your foundry installation to the Ethereal Plane server.
 
-If you select "Patreon Mode," your next step is to log into your Patreon account.
+To do so, you first need to create an account on the Etheral Plane website. You can quickly open it by clicking "Account Setup".
 
-![Patreon Setup](./assets/ep-patreon-setup.png)
+Then, once your account is created, you can connect to the server by clicking "Connect".
 
-Once you are logged in, your UI will change based on your patreon tier.
-From here, log into the streaming service of your choosing!
+This will ask you to confirm that you want to add your foundry installation as a Client to your account. You only need to do this step once for each Foundry Installation, even if other people want to log into Ethereal Plane on your Foundry Instance.
 
-#### Twitch Setup
+::::info
+Connecting write a small text file to the module's data folder. It contains a long string of characters that is used to identify your foundry to the ethereal plane server. Please do not remove this file or you will have to connect again.
+::::
 
-If you are a Twitch user, after logging in you are all set!
+#### Logging in
 
-Depending on your Tier, a button saying "Log in" with a Bot-Icon will be available:
+![Logging in](./assets/ep-login.png)
 
-![Twitch Setup](./assets/ep-twitch-setup.png)
+Once your installation is connected, you can log in to Ethereal Plane by clicking "Login".
 
-You can use this to log into either your main twitch account, or any other twitch account of your choosing. The bot will then use that account instead of the "EtherealPlane" user to interact with your chat.
+That will open this window.
 
-#### YouTube Setup
+![Login Screen](./assets/ep-login-window.png)
 
-The YouTube Setup is straightforward.
-After logging in, everything should be working automatically.
-However, if the backend fails to correctly connect to your live-stream.
-Copy the URL to your livestream into the Text-Box and press the Save Icon.
+You need to enter this code on the Ethereal Plane website to log into your Ethereal Plane account.
 
-![YouTube Setup](./assets/ep-youtube-setup.png)
+You can do so by either scanning the QR code, Copying the URL and pasting it manually, or clicking "Open" to directly open the URL in a new window.
 
+Please make sure that the code entered on the website matches the code displayed in the window. If it doesn't, you can manually enter the code from the window into the website.
 
-It does not matter if it is a YouTube Studio, "youtu.be" or youtube.com/watch URL. All three will work!
+From there, confirm the code and log into your account if required. Once you are done, the login window in foundry will automatically close and you are ready to use Ethereal Plane.
 
-### Local Server 
+::::info
 
-::::warning
-
-This is a deprecated feature that has been discontinued in Ethereal Plane 3.0
+The login code is only valid for a limited time. If you take too long you might have to close the window and try logging in again.
 
 ::::
 
-If you are running the Module in local mode, all the configuration is done in the companion Server.
-All you need to do here is provide the URL your Server is running under. This is typically already set correctly.
+#### Status Monitors
 
-![Local Setup](./assets/ep-local.png)
+![Status Monitors](./assets/ep-status.png)
 
+The top of the Setup Menu has a set of 3 status monitors that show if your module is connected to either of the three real time data endpoints that Ethereal Plane provides.
+
+Polls will only be active and connected if a Poll is running.
+
+Chat will only be active and connected if a direct chat read connection is used. Please note that even if you use Chat Command triggers or are sending messages to chat, this will remain disconnected.
+
+Triggers will only be active and connected if you are using the Triggers feature.
 
 ## Send Rolls to Chat
 
@@ -105,37 +108,6 @@ Clicking on it will bring up the Poll Menu.
 In here, you can set up a Poll with options and a title, define the duration and drag and drop macros into the little boxes next to the option name.
 
 More on Polls can be found in the in-depth tutorial.
-
-## Chat Tab
-
-::::warning
-
-This is a deprecated feature that has been discontinued in Ethereal Plane 3.0
-
-::::
-
-The Chat Tab can be enabled or disabled in the module settings.
-
-![Chat Tab Setting](./assets/ep-chat-tab-setting.png)
-
-If enabled, a new Tab 
-![Chat Tab Icon](./assets/ep-chat-tab-icon.png)
- showing all messages from your chat will appear in the sidebar on the right. 
-
-## Chat Commands
-
-::::warning
-
-This is a deprecated feature that has been discontinued in Ethereal Plane 3.0. Please use [Triggers](triggers) instead.
-
-::::
-
-The final feature you want to consider is the Chat Commands.
-
-A more indepth guide on chat commands can be found on their own wiki page.
-For now, consider if you want to enable them or not. 
-
-![Chat Command Settings](./assets/ep-chat-command-settings.png)
 
 ## Triggers
 

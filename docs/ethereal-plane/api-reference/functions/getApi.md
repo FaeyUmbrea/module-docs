@@ -2,7 +2,7 @@
 
 > **getApi**(): `any`
 
-Defined in: [api.ts:5](https://github.com/FaeyUmbrea/ethereal-plane/blob/87608a257e63e8ef7f890f543d51b94230e05fd6/src/utils/api.ts#L5)
+Defined in: [api.ts:5](https://github.com/FaeyUmbrea/ethereal-plane/blob/1d4d60df97c1fc21ce8c9e3e9353d8854bae0828/src/utils/api.ts#L5)
 
 ## Returns
 

@@ -6,83 +6,78 @@ sidebar_label: OBS Remote
 
 # OBS Remote
 
-This goes over the Features of the new OBS Remote Functionality.
+OBS Remote lets you tie Foundry events to OBS actions — switch scenes when combat starts, toggle a "round timer" source when the round changes, stop recording on `core.onStopStreaming`, etc.
 
-Watch our [OBS Remote tutorial video](https://www.youtube.com/watch?v=wnCPbJ1eHRs) for a visual guide.
+Watch the [OBS Remote tutorial video](https://www.youtube.com/watch?v=wnCPbJ1eHRs) for a visual guide (pre-V5; the new menu is described below).
 
 ## Caveats
 
-First a few Caveats for this Feature.
+OBS Browser Sources expose a minimal API automatically — only scene switching and start/stop recording or streaming. For the full feature set (source toggles, audio control, anything else), you need **OBS Websocket V5** installed inside OBS itself.
 
-OBS Utils is capable of using the OBS-Browser-Source API that is automatically provided. 
-However, this API can only switch scenes and start or stop recordings and streams.
+OBS Remote runs in the OBS browser source, so it only acts on the `/game` view by default. Use `/stream` directly if your scene only has the chromeless overlay view.
 
-For the full feature set, you need to enable OBS-Websocket.
+## The combined menu
 
-This is also only supported for the /game view.
+In V5 the OBS Remote menu and the old OBS Websocket Settings menu have been merged. There's one entry now — **Module Settings → OBS Remote Settings** — with two tabs.
 
-## OBS Websocket
+![OBS Remote menu](./assets/obs-remote-menu.png)
 
-:::warning
-THIS REQUIRES OBS Websocket V5 to be installed in OBS
-:::
+### Connection tab
 
-To Enable Websocket Support, you have two choices:
-* Globally store your Websocket credentials in foundry for all connected accounts to see
-* Inject the Credentials only into your browser source
+![OBS Remote Connection tab](./assets/obs-remote-connection.png)
 
-Generally, injecting the Credentials is preferred.
-If you do so, you can ignore the OBS Websocket Settings.
+Enter your OBS Websocket URL, port, and password. The **Save** button persists; the **Sync** button below pushes the local credentials to whichever user is selected in the dropdown (the typical flow: configure on the GM machine, sync to the OBS user).
 
-### Setup
+You have two options for the credentials:
 
-First enable using Websocket in the Module Settings.
+1. **In-Foundry**: enter them here. Stored in the world settings.
+2. **In OBS browser source CSS**: paste the following block into your Browser Source's *Custom CSS* field and they override whatever Foundry has stored:
 
-The Websocket is executed inside the OBS Browser Source. So you can use localhost as the url.
+   ```css
+   :root {
+     --local-obs-host: localhost;
+     --local-obs-port: 4455;
+     --local-obs-password: P4ssw0rd!;
+   }
+   ```
 
-Then either enter your Websocket Settings directly in Module Settings and sync them to your stream user.
+   No quotes, no spaces; keep the trailing semicolons. You can override only some — e.g. just the password.
 
+The Websocket Master Setting (**Enable OBS Websocket?**) still lives in Module Settings; the new menu doesn't change that toggle.
 
-Alternatively, add this block to your Browser Source's Custom CSS: 
+### Events tab
 
-`:root { --local-obs-host:[host]; --local-obs-port:[port]; --local-obs-password:[password]; }`
+Pick an event type from the dropdown and add **actions** (or, for events with conditions, **instances**, each with their own action list).
 
-Replace [host] with your host name, i.e., localhost.
-Do not add quotation marks or spaces and make sure to keep the trailing semicolon.
-`--Local-obs-host:localhost;` or `--local-obs-host:your.host.com;` or `--local-obs-host:127.0.0.1;` all work.
+#### Built-in event types
 
-Then replace [port] with the port of your Websocket. This is usually 4455.
-`--Local-obs-port:4455;`
+| Key | Fires |
+|---|---|
+| `core.onLoad` | When Foundry first loads on the OBS client. |
+| `core.onCombatStart` | First turn of round 1 of any new combat. |
+| `core.onCombatEnd` | Combat is deleted. |
+| `core.onPause` | Game paused. |
+| `core.onUnpause` | Game unpaused. |
+| `core.onSceneLoad` | A scene is viewed. Has a `sceneName` condition — only fires actions configured for a matching scene name. |
+| `core.onStopStreaming` | OBS Websocket reports streaming stopped. Hidden unless OBS Websocket is enabled. |
 
-Finally, replace [password] with your websocket password.
-`--Local-obs-password:P4ssw0rd!;`
+#### Conditions
 
-This will override whatever you put into OBS Websocket Settings as well.
-You can also define only some of these settings for partial overriding.
+Event types may declare a schema of condition fields. The editor renders the schema as inputs — text fields for strings, number fields for numbers, checkboxes for booleans.
 
-## Foundry
+Example: `core.onSceneLoad` has a `sceneName` condition. You can have multiple **instances** of `core.onSceneLoad`, each watching for a different scene name, each with its own action list.
 
-### Events
+#### Available actions
 
-The Tab in OBS Remote Settings dictates what event the changes are fired on.
+| Action | Needs Websocket? | Notes |
+|---|---|---|
+| Switch Scene | No (browser-source API) | Enter the OBS scene name. |
+| Toggle Source | Yes | Enter the OBS scene name + source name. |
+| Enable Source | Yes | Same. |
+| Disable Source | Yes | Same. |
 
-Currently available are:
-* Load > When Foundry First Loads
-* Combat Start > When ever any combat starts
-* Combat End > When ever any combat ends
-* Pause > When the game is Paused
-* Unpause > When the game is Unparsed
-* Close Obs > Only with Websocket enabled, will fire when OBS is about to close.
+Actions fire in sequence in the order configured.
 
-### Actions
+## Custom event types via API
 
-Added to the Tab, are the actions to be taken on this event.
-They are all always fired in sequence when the event occurs.
-
-Available Event Types are:
-* Switch Scene > Enter a Scene name. That Scene will be switched to.
-
-Available Websocket only Event Types are:
-* Toggle Source > Enter a Scene name and a Source name. That source will be enabled when its disabled, or disabled when its enabled.
-* Enable Source > Enter a Scene name and a Source name. That source will be enabled.
-* Disable Source > Enter a Scene name and a Source name. That source will be disabled.
+Third-party modules can register their own event types — see [API: OBS Remote events](./api.md#obs-remote-events). The editor picks them up alongside the built-ins, with no editor changes needed.

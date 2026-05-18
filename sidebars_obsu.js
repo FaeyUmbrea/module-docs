@@ -27,10 +27,13 @@ const sidebars = {
       type: 'category',
       label: 'Features',
       items: [
-        'obs-remote',
+        'overlay-editor',
         'stream-overlay-css',
-        'api',
-        'manual-mode'
+        'obs-remote',
+        'multi-gm',
+        'scene-presets',
+        'manual-mode',
+        'api'
       ],
     },
     {

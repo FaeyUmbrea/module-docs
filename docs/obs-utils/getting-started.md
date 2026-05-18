@@ -6,73 +6,72 @@ sidebar_label: Getting Started
 
 # Getting Started
 
-Check out our [official tutorial videos playlist](https://www.youtube.com/watch?v=XdpdAU-raUU&list=PLCnj_GvvIWGIrMXWKbcmAgfCvbqDtUZER) for OBS Utils for Beginners.
+## Install
 
-## Setup
+Use Foundry's Module Installer to add **OBS Utils**, then enable it in your world's Module Management.
 
-Watch our [Basic Setup tutorial video](https://www.youtube.com/watch?v=JbWA9kARx0U) for a visual guide.
+## Set up your OBS browser source
 
-Installing this module is as easy as any other!
-Just use the Module Installer in Foundry!
+Create a Browser Source in your OBS scene and point it at your Foundry server. The URL has two flavors:
 
-## Configuration
+- `https://your-foundry.example/game` — the standard game-board view
+- `https://your-foundry.example/stream` — a chromeless stream view that renders only the overlays
 
-### Setting up OBS
+Use the OBS Interact button to log in inside the source. If you want to use both views in one scene, create both sources and toggle visibility so only one is connected at a time.
 
-Create a Browser-Source in your OBS Scene and set it to the desired size.
-After that, add the link to your Foundry Installation and append either /game for the gameboard view or /stream for the stream view.
+## OBS Mode
 
-Once Loaded, use the Interact Mode to Log In
+The browser source needs to be in **OBS Mode** so Foundry hides chrome, mutes audio, etc. There are three ways to enter OBS Mode (settings in the OBS Utils config):
 
-#### Using both /game and /stream
+| Setting | What it does | When to use |
+|---|---|---|
+| **Pin This Browser to OBS Mode** | Client-side toggle. Every tab in the same browser stays in OBS Mode forever. | Last-resort for unusual setups — locks you in until you disable it. |
+| **Designate User as OBS Client** | World setting. The chosen user is always treated as the OBS source no matter which browser they log in from. | Most common path: create a dedicated `OBS` user and pick it here. |
+| **Force OBS Mode on /stream** | Always renders overlays on the `/stream` page regardless of user. | If your scene only uses `/stream`. |
 
-Create two sources as described above, one with /game and one with /stream.
+There's also a **Disable OBS Mode for Everyone** kill-switch if a user accidentally pins themselves in.
 
-Set at least one of them to be disabled when it is not visible.
+OBS Browser Sources autodetect and enter OBS Mode automatically — you don't need to flip anything for those.
 
-Disable that source and log in with the other.
+## Basic settings
 
-Finally enable that source. It will now automatically load the other view!
+In the world config:
 
-### Setting up Foundry
+- **Minimum / Maximum Scale** — bounds for camera zoom on the OBS view (relative to the scene's background size).
+- **Pop-up Close Delay** — seconds before automatically closing a journal or image popout that the GM opened.
+- **Show Combat Tracker in Combat** — toggles the combat tracker sidebar visibility on the OBS view during a combat encounter.
 
-#### Basic Settings
+Watch the [Basic Setup tutorial](https://www.youtube.com/watch?v=JbWA9kARx0U) for a visual walkthrough (predates V5 but the connection steps are unchanged).
 
-Go to Settings and set Minimum Scale and Maximum Scale to your liking. They are scale values relative to the Scene background Size. Higher numbers mean more zoomed in.
+## The Director
 
-Finally, configure the Popout Zoom Delay and decide if you want the Combat Tracker to show up in /game view during combat.
+The Director is the GM-side control panel for the OBS view. Open it via the Scene Controls button (the broadcasting-signal icon in the Token tools).
 
-#### The Director
+It has three tabs:
 
-Watch our [Director tutorial video](https://www.youtube.com/watch?v=6QNDJy2rv6c) for a visual guide.
+### Controls
 
-The Director Window contains the main set of Controls for this Module.
-Hover over each button to get a brief description of what it does.
+The day-to-day controls. Pick a camera-tracking mode for in-combat and out-of-combat, plus a target player if relevant.
 
-In Combat Controls are only active while there is a combat running.
+![Director Controls tab](./assets/director-controls.png)
 
-Out of Combat Controls are active when ever there isn't a combat.
+| Mode | Behavior |
+|---|---|
+| Track Owned Tokens | Follow tokens owned by the OBS user. |
+| Track Active Owned Token | Follow the current-turn token if it's owned by the OBS user. |
+| Clone Selected Player | Mirror whatever player is picked in the Tracked Player dropdown. |
+| Clone Active GM | Mirror the active GM's viewport (see [Multi-GM Handover](./multi-gm.md) for what "active" means with multiple GMs online). |
+| Clone Turn Player | Mirror the current combat turn player's viewport. |
+| Fit Map to Scene | Zoom out to fit the entire scene. |
 
-##### Track all Owned Tokens
+Below the mode radios, the Camera Smoothing section gives you an easing curve and a duration (0–1500ms) for camera tweens. All tracking modes use this — pans are no longer abrupt.
 
-This will automatically Track all Tokens that the User logged in with OBS owns.
+There are also toggle buttons for **Limit Canvas to Edges**, **Pause Camera Tracking**, and a **Force-Open OBS Settings** button (sends a Foundry settings dialog open command to the OBS client over socket).
 
-##### Track the currently active Owned Token
+### Presets
 
-This will track the current turn combatant token, if that token is owned by the OBS Account.
+See [Scene Camera Presets](./scene-presets.md).
 
-##### Clone the Selected Player's Viewport
+### Co-DMs
 
-This will copy the Viewport of which ever Player is selected with the Dropdown in the Director.
-
-##### Clone the DM's Viewport
-
-This will copy the Viewport of the DM. This currently only supports one connected DM Account.
-
-##### Fit Map to Scene
-
-Just what it sais on the tin. This will zoom out the map to fit exactly, centered and with minimal bars.
-
-##### Clone the Turn Player's Viewport
-
-This will copy the Viewport of the current Turn Player.
+See [Multi-GM Handover](./multi-gm.md).

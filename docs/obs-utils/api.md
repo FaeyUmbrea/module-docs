@@ -6,131 +6,113 @@ sidebar_label: API
 
 # API
 
-OBS Utils comes with an API to allow custom overlays to be registered to it.
+OBS Utils exposes an API for registering custom overlay types and OBS Remote event types so other modules can extend it without forking.
 
 ## Accessing the API
 
-The OBS Utils API can be accessed using:
+```javascript
+const api = game.modules.get('obs-utils').api;
+```
+
+A typed reference is generated from the source — see the [auto-generated API reference](./api-reference/index.md) for the full surface. Treat anything not documented on this page as internal.
+
+## Internationalisation
+
+All user-facing strings passed to the API (`registerOverlayType`'s `readableName`, `registerOBSRemoteEventType`'s `name`, condition-field labels) are resolved with `game.i18n.localize()` at render time. Pass an i18n key for translatable strings, or a literal string for a single-locale module.
+
+## Overlay types
+
+A custom overlay type combines a Svelte renderer with a set of components and, optionally, an editor for the Stream Composer.
 
 ```javascript
-game.modules.get("obs-utils").api
+import MyOverlay from './MyOverlay.svelte';
+import MyOverlayEditor from './MyOverlayEditor.svelte';
+
+Hooks.once('obs-utils.init', () => {
+  const api = game.modules.get('obs-utils').api;
+  const myType = new api.OverlayType(MyOverlay);
+  myType.registerOverlayEditor(MyOverlayEditor);
+  myType.perActor = true; // renders once per selected actor (default)
+  api.registerOverlayType('my-key', 'mymod.overlays.myType.name', myType);
+});
 ```
 
-Consider any API properties not mentioned in this Guide "internal."
-Not all use-cases are supported for external Components and will cause the module to break.
+The `obs-utils.init` hook fires once the API is attached but before the world is ready, so register types there to ensure they're available when the editor opens.
 
-## Self-Contained, single instance overlays
+### Single-instance overlays
 
-You can create an overlay that will be rendered into the stream page exactly once. 
-To do so, create a Svelte component of your desired overlay and then pass the Class Object you get from importing the Svelte Component to the API:
+For overlays that render exactly once globally (not per-actor), register the Svelte class directly:
 
 ```javascript
-import YourOverlay from "../YourOverlay.svelte";
-
-game.modules.get("obs-utils").api.registerUniqueOverlay(YourOverlay);
+api.registerUniqueOverlaySvelte5(MyGlobalOverlay);
 ```
 
-The overlay will then be instanced on reload!
+The class is mounted once into the `.overlay-renderer` subtree on `/stream`, the Full Preview, and the editor.
 
-## API Reference
+## OBS Remote events
 
-The OBS Utils API provides the following methods and properties:
+Custom event types appear in the OBS Remote → Events dropdown alongside the built-ins. They can declare a schema of condition fields the editor renders as inputs.
 
-### Properties
+```javascript
+const api = game.modules.get('obs-utils').api;
 
-- `overlayTypes`: Map of overlay types registered with the API
-- `overlayTypeNames`: Map of readable names for overlay types
-- `singleInstanceOverlays`: Set of Svelte components registered as single instance overlays
-
-### Methods
-
-#### registerOverlayType(key: string, readableName: string, type: OverlayType)
-
-Registers a new overlay type with the API.
-
-**Parameters:**
-- `key` (string): The key to identify the overlay type
-- `readableName` (string): A human-readable name for the overlay type
-- `type` (OverlayType): The overlay type object
-
-#### registerUniqueOverlay(overlay: SvelteComponentConstructor)
-
-Registers a Svelte component as a unique overlay that will be rendered once.
-
-**Parameters:**
-- `overlay` (SvelteComponentConstructor): The Svelte component to register
-
-#### getSelectedActors()
-
-Returns the currently selected actors for overlays.
-
-**Returns:** Array of actor IDs
-
-#### setSelectedActors(actorArray: string[])
-
-Sets the selected actors for overlays.
-
-**Parameters:**
-- `actorArray` (string[]): Array of actor IDs
-
-#### setAVData(actorValueArray: ActorValues)
-
-Sets actor values data.
-
-**Parameters:**
-- `actorValueArray` (ActorValues): Actor values data
-
-#### getOBSWebsocketClient()
-
-Returns the OBS WebSocket client if the WebSocket API is allowed.
-
-**Returns:** OBS WebSocket client or undefined
-
-#### isOBS()
-
-Checks if the current context is OBS.
-
-**Returns:** boolean
-
-### ObsUtilsApi
-
-The main API class that provides methods for registering overlay types and components.
-
-```typescript
-export class ObsUtilsApi {
-  // Properties
-  overlayTypes: Map<string, OverlayType>;
-  overlayTypeNames: Map<string, string>;
-  singleInstanceOverlays: Set<SvelteComponentConstructor>;
-
-  // Methods
-  registerOverlayType(key: string, readableName: string, type: OverlayType);
-  registerUniqueOverlay(overlay: SvelteComponentConstructor);
-  getSelectedActors();
-  setSelectedActors(actorArray: string[]);
-  setAVData(actorValueArray: ActorValues);
-  getOBSWebsocketClient();
-  isOBS();
-}
+api.registerOBSRemoteEventType({
+  key: 'mymod.onLowHP',
+  name: 'mymod.events.lowHP.name',     // localised at render time
+  icon: 'fas fa-heart-crack',
+  conditionFields: [
+    {
+      key: 'threshold',
+      label: 'mymod.events.lowHP.threshold',
+      type: 'number',
+      default: 5,
+    },
+    {
+      key: 'actorName',
+      label: 'mymod.events.lowHP.actorName',
+      type: 'string',
+      default: '',
+    },
+  ],
+  matcher: (conditions, context) => {
+    // Called for each configured instance of this event type when the event
+    // fires. Return true to run the instance's actions, false to skip.
+    if (conditions.actorName && conditions.actorName !== context.actor?.name) return false;
+    return context.hp <= conditions.threshold;
+  },
+});
 ```
 
-### OverlayType
+To fire the event, call:
 
-A class for defining custom overlay types.
-
-```typescript
-export class OverlayType {
-  // Properties
-  overlayEditor: SvelteComponentConstructor;
-  overlayComponents: Map<string, SvelteComponentConstructor>;
-  overlayClass: SvelteComponentConstructor;
-  overlayComponentNames: Map<string, string>;
-  overlayComponentEditors: Map<string, SvelteComponentConstructor>;
-  compactEditorButtons: Map<string, boolean>;
-
-  // Methods
-  registerOverlayEditor(editor: SvelteComponentConstructor);
-  registerComponent(key: string, readableName: string, type: SvelteComponentConstructor);
-  registerComponentEditor(key: string, editor: SvelteComponentConstructor, compactButtons: boolean);
-}
+```javascript
+api.triggerOBSRemoteEvent('mymod.onLowHP', { actor, hp });
 ```
+
+Only the OBS client actually applies the actions — `triggerOBSRemoteEvent` is a no-op on non-OBS pages. Pass any context object you need; the matcher receives it as the second argument.
+
+### Condition field types
+
+| `type` | Editor input |
+|---|---|
+| `'string'` | `<input type="text">` |
+| `'number'` | `<input type="number">` |
+| `'boolean'` | `<input type="checkbox">` |
+
+### Multiple instances
+
+Event types with at least one `conditionFields` entry let users configure multiple instances (each with its own conditions + actions). No-condition events collapse to a single implicit instance — the Events tab just shows the action list.
+
+## Settings and stores
+
+Reading settings programmatically:
+
+```javascript
+game.settings.get('obs-utils', 'streamOverlays');     // OverlayData[]
+game.settings.get('obs-utils', 'overlayActors');      // string[] of actor IDs
+game.settings.get('obs-utils', 'globalOverlayCSS');   // string
+game.settings.get('obs-utils', 'actorOverlayCSS');    // Record<actorId, css>
+game.settings.get('obs-utils', 'activeGMUserId');     // string (current active GM)
+```
+
+For reactive consumers inside obs-utils Svelte components, prefer `settings.getStore(key)` / `settings.getReadableStore(key)` — both expose Svelte stores that mirror the setting and propagate updates from socket-driven changes.

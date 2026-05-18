@@ -58,13 +58,13 @@ Defined in: [api.ts:69](https://github.com/FaeyUmbrea/obs-utils/blob/e90e6297824
 
 ### getOBSWebsocketClient()
 
-> **getOBSWebsocketClient**(): `undefined` \| `Promise`\<`any`\>
+> **getOBSWebsocketClient**(): `Promise`\<`any`\> \| `undefined`
 
 Defined in: [api.ts:140](https://github.com/FaeyUmbrea/obs-utils/blob/e90e62978247d2cf2a4109933f44082df703f5f8/src/utils/api.ts#L140)
 
 #### Returns
 
-`undefined` \| `Promise`\<`any`\>
+`Promise`\<`any`\> \| `undefined`
 
 ***
 
@@ -223,7 +223,7 @@ Defined in: [api.ts:132](https://github.com/FaeyUmbrea/obs-utils/blob/e90e629782
 
 ### triggerOBSRemoteEvent()
 
-> **triggerOBSRemoteEvent**(`key`, `context`): `Promise`\<`void`\>
+> **triggerOBSRemoteEvent**(`key`, `context?`): `Promise`\<`void`\>
 
 Defined in: [api.ts:94](https://github.com/FaeyUmbrea/obs-utils/blob/e90e62978247d2cf2a4109933f44082df703f5f8/src/utils/api.ts#L94)
 
@@ -241,7 +241,7 @@ already gated to the OBS-mode client by triggerOBSAction.
 
 `string`
 
-##### context
+##### context?
 
 `Record`\<`string`, `any`\> = `{}`
 

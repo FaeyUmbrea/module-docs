@@ -6,7 +6,7 @@ Defined in: [api.ts:29](https://github.com/FaeyUmbrea/obs-utils/blob/e90e6297824
 
 ### default?
 
-> `optional` **default**: `any`
+> `optional` **default?**: `any`
 
 Defined in: [api.ts:41](https://github.com/FaeyUmbrea/obs-utils/blob/e90e62978247d2cf2a4109933f44082df703f5f8/src/utils/api.ts#L41)
 

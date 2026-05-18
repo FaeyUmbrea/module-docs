@@ -124,7 +124,7 @@ The Svelte component class that renders the data.
 
 ### registerComponentEditor()
 
-> **registerComponentEditor**(`key`, `editor`, `compactButtons`): `void`
+> **registerComponentEditor**(`key`, `editor`, `compactButtons?`): `void`
 
 Defined in: [api.ts:191](https://github.com/FaeyUmbrea/obs-utils/blob/e90e62978247d2cf2a4109933f44082df703f5f8/src/utils/api.ts#L191)
 
@@ -138,7 +138,7 @@ Defined in: [api.ts:191](https://github.com/FaeyUmbrea/obs-utils/blob/e90e629782
 
 `Component`\<`any`, `any`, `any`\>
 
-##### compactButtons
+##### compactButtons?
 
 `boolean` = `false`
 

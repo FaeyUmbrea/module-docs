@@ -6,7 +6,7 @@ Defined in: [api.ts:44](https://github.com/FaeyUmbrea/obs-utils/blob/e90e6297824
 
 ### conditionFields?
 
-> `optional` **conditionFields**: [`OBSRemoteConditionField`](OBSRemoteConditionField.md)[]
+> `optional` **conditionFields?**: [`OBSRemoteConditionField`](OBSRemoteConditionField.md)[]
 
 Defined in: [api.ts:56](https://github.com/FaeyUmbrea/obs-utils/blob/e90e62978247d2cf2a4109933f44082df703f5f8/src/utils/api.ts#L56)
 
@@ -16,7 +16,7 @@ Per-instance condition fields the user fills in when configuring.
 
 ### icon?
 
-> `optional` **icon**: `string`
+> `optional` **icon?**: `string`
 
 Defined in: [api.ts:54](https://github.com/FaeyUmbrea/obs-utils/blob/e90e62978247d2cf2a4109933f44082df703f5f8/src/utils/api.ts#L54)
 
@@ -34,9 +34,9 @@ Unique key — namespace with your module id (e.g. 'dnd5e.hpThreshold').
 
 ***
 
-### matcher()?
+### matcher?
 
-> `optional` **matcher**: (`conditions`, `context`) => `boolean`
+> `optional` **matcher?**: (`conditions`, `context`) => `boolean`
 
 Defined in: [api.ts:62](https://github.com/FaeyUmbrea/obs-utils/blob/e90e62978247d2cf2a4109933f44082df703f5f8/src/utils/api.ts#L62)
 

@@ -32,7 +32,9 @@ The **+** button at the top opens an Add menu — pick an overlay type to create
 
 The footer carries two utility buttons:
 
-- **Manage Actors** — pick which actors the overlays render for. Includes a User Tokens row of quick-select chips for any user-assigned characters.
+- **Manage Actors** — pick which actors the overlays render for. Includes a User Tokens row of quick-select chips for any user-assigned characters, a search box, and per-actor CSS buttons.
+
+  ![Actor Selection UI](./assets/actor-select.png)
 - **Global CSS** — opens the [global CSS editor](./stream-overlay-css.md).
 
 ### Canvas (center)

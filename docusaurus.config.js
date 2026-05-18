@@ -63,8 +63,13 @@ const config = {
         id: 'obs-utils',
         sidebarPath: './sidebars_obsu.js',
         path: 'docs/obs-utils',
-        routeBasePath: 'obs-utils', // Serve the docs at the site's root
-        // ... other options
+        routeBasePath: 'obs-utils',
+        lastVersion: 'current',
+        includeCurrentVersion: true,
+        versions: {
+          current: { label: '5.0', path: '' },
+          '4.0': { label: '4.0', path: '4.0' },
+        },
       },
     ],
     [
@@ -121,6 +126,11 @@ const config = {
             position: 'left',
             label: 'OBS Utils',
             docsPluginId: 'obs-utils',
+          },
+          {
+            type: 'docsVersionDropdown',
+            docsPluginId: 'obs-utils',
+            position: 'right',
           },
           {
             type: 'docSidebar',

@@ -24,6 +24,11 @@ const sidebars = {
       label: 'Getting Started',
     },
     {
+      type: 'doc',
+      id: 'migrate-from-v4',
+      label: 'Migrate from v4',
+    },
+    {
       type: 'category',
       label: 'Features',
       items: [

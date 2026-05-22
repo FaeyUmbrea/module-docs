@@ -10,12 +10,17 @@ Start with [Getting Started](./getting-started.md) for installation and a tour o
 
 ## Feature guides
 
-- [Stream Composer](./overlay-editor.md) — designing actor overlays (Simple, WYSIWYG, Roll)
+- [Stream Composer](./overlay-editor.md) — designing actor overlays (Inline, Canvas)
+- [Overlay Animations](./overlay-animations.md) — keyframe-based animation tracks and triggers
+- [Triggers](./triggers.md) — Foundry events that drive overlay animation transitions
 - [Custom CSS](./stream-overlay-css.md) — styling overlays at four scopes
 - [OBS Remote](./obs-remote.md) — Foundry events triggering OBS actions
+- [Bundles](./bundles.md) — packaging and sharing overlay sets as `.vmoverlay` files
 - [Multi-GM Co-DM Handover](./multi-gm.md) — passing the active GM seat between Co-DMs
 - [Scene Camera Presets](./scene-presets.md) — per-scene saved viewports
 - [Manual OBS Mode](./manual-mode.md) — forcing OBS Mode on a browser or user
+- [Director API](./director-api.md) — registering custom Director tabs and reading Director state
+- [Camera Keyframes](./camera-keyframes.md) — keyframed camera preset sequences
 - [API](./api.md) — registering custom overlay types and OBS Remote event types
 
 ## Video tutorials

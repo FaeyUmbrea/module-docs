@@ -21,11 +21,11 @@ Open the Director and switch to the **Co-DMs** tab. It lists every GM-permission
 Click **Take Active** on your own row to claim the active seat. OBS Utils negotiates a handover with the current active GM over socket and:
 
 1. Reads the previous active GM's current viewport.
-2. Pans your camera to that viewport (so the OBS view doesn't snap).
-3. Updates the `activeGMUserId` world setting to your user ID.
+2. Snaps your canvas to that viewport via `clampAndApplyExternal` — the position is applied synchronously, with no eased pan.
+3. Writes the `activeGMUserId` world setting to your user ID.
 4. From this point on, your pans drive the `Clone Active GM` mirror.
 
-The handover settles the camera animation before honoring further pans, so the OBS view stays continuous.
+The `cameraTrackingMode` setting (`raw` / `smooth` (default) / `dragRelease`) controls how the new active GM's viewport events are smoothed before they reach OBS observers. See [Director API](./director-api.md) for details on reading and writing Director state.
 
 ## Who's active by default?
 

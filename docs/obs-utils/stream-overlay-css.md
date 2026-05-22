@@ -37,12 +37,16 @@ The IDs in `data-overlay-id` and `data-component-id` are stable UUIDs that survi
 
 | Scope | Selector wrap | Edit where | Survives reorder |
 |---|---|---|---|
-| **Global** | `.overlay-renderer { ... }` (auto-applied) | Overlay Editor footer → Global CSS | n/a |
+| **Global** | `.overlay-renderer { ... }` (auto-applied) | Composer footer → Global CSS | n/a |
 | **Per actor** | `#actor{id} { ... }` | Manage Actors → CSS button on the row | yes (actor ID) |
-| **Per overlay** | `[data-overlay-id="..."] { ... }` | Style tab → Advanced when an overlay is selected | yes (stable UUID) |
-| **Per component** | `[data-component-id="..."] { ... }` | Style tab → Advanced when a component is selected | yes (stable UUID) |
+| **Per overlay** | `[data-overlay-id="..."] { ... }` | Style drawer → Advanced when an overlay is selected | yes (stable UUID) |
+| **Per component** | `[data-component-id="..."] { ... }` | Style drawer → Advanced when a component is selected | yes (stable UUID) |
 
 The Global scope is auto-wrapped in `.overlay-renderer` so a careless rule like `.app { color: red }` can't bleed into Foundry's chrome or another module's DOM. The other three are scoped by construction.
+
+## Opening the Style editor
+
+The Style editor is a **slide-in drawer** opened from a button at the bottom of the component section in the Properties panel (Layout workspace). When no component is selected, the button styles the overlay itself; when a component is selected, it styles that component.
 
 ## Simple vs Advanced
 
@@ -52,11 +56,11 @@ Each `customCSS` field has a **Simple** mode (form fields) and an **Advanced** m
 - Anything Simple can't represent — nested rules, pseudo-elements, unknown declarations — is preserved verbatim and shown in a read-only "Preserved CSS" summary at the bottom of Simple mode.
 - **Advanced** shows the same CSS string raw. Edits round-trip into Simple's fields on switch.
 
-![Style tab in Simple mode](./assets/style-tab-simple.png)
+![Style drawer in Simple mode](./assets/style-drawer.png)
 
 ### Nested rules and pseudo-elements
 
-For Simple Overlay components, the `data-component-id` wrapper uses `display: contents`, so layout properties (padding, background, width) won't apply to it directly. To style the inner element, use a nested selector:
+For Inline overlay components, the `data-component-id` wrapper uses `display: contents`, so layout properties (padding, background, width) won't apply to it directly. To style the inner element, use a nested selector:
 
 ```css
 i { color: gold; font-size: 22px; }
@@ -67,14 +71,14 @@ progress::-webkit-progress-value { background: linear-gradient(90deg, #f55, #ff5
 
 Inheritable properties like `color` and `font-*` still propagate through `display: contents`, so they work at the top level.
 
-WYSIWYG component wrappers are real positioning elements — top-level layout properties work directly.
+Canvas component wrappers are real positioning elements — top-level layout properties work directly.
 
 ## Lifecycle
 
 The `<style>` tags (`obs-utils-css-global`, `obs-utils-css-actors`, `obs-utils-css-overlays`, `obs-utils-css-components`) are mounted when an overlay renderer activates and removed when the last renderer unmounts. Active renderers are:
 
 - `OverlayRenderer` on `/stream`
-- `OverlayPreviewUI` (Full Preview window)
-- `Composer` (the overlay editor's canvas pane)
+- `Composer` (the overlay editor's canvas, active while the Composer window is open)
+- The Preview workspace mode tab inside the Composer
 
 You won't find these style tags in the document on `/game` unless one of those is open. The OBS browser source keeps them mounted as long as `/stream` is loaded.

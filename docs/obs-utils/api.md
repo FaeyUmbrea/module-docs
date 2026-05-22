@@ -105,14 +105,151 @@ Event types with at least one `conditionFields` entry let users configure multip
 
 ## Settings and stores
 
-Reading settings programmatically:
+The list below covers selected settings that are useful to read from third-party modules. It is not exhaustive.
 
 ```javascript
-game.settings.get('obs-utils', 'streamOverlays');     // OverlayData[]
-game.settings.get('obs-utils', 'overlayActors');      // string[] of actor IDs
-game.settings.get('obs-utils', 'globalOverlayCSS');   // string
-game.settings.get('obs-utils', 'actorOverlayCSS');    // Record<actorId, css>
-game.settings.get('obs-utils', 'activeGMUserId');     // string (current active GM)
+game.settings.get('obs-utils', 'streamOverlays');        // OverlayData[]
+game.settings.get('obs-utils', 'overlayActors');         // string[] of actor IDs
+game.settings.get('obs-utils', 'overlayActorsModified'); // boolean — true once the GM has manually edited the actor list
+game.settings.get('obs-utils', 'globalOverlayCSS');      // string
+game.settings.get('obs-utils', 'actorOverlayCSS');       // Record<actorId, css>
+game.settings.get('obs-utils', 'activeGMUserId');        // string (current active GM)
+game.settings.get('obs-utils', 'cameraTrackingMode');    // 'raw' | 'smooth' | 'dragRelease'
+game.settings.get('obs-utils', 'cameraSmoothing');       // number, 0–1500 ms
+game.settings.get('obs-utils', 'cameraEasing');          // string (easing function name)
 ```
 
 For reactive consumers inside obs-utils Svelte components, prefer `settings.getStore(key)` / `settings.getReadableStore(key)` — both expose Svelte stores that mirror the setting and propagate updates from socket-driven changes.
+
+## Overlay triggers
+
+Overlay triggers are named Foundry events that animation tracks can subscribe to — they drive track transitions without tight coupling between the firing module and the overlay system.
+
+```javascript
+api.registerOverlayTrigger({
+  key: 'mymod.onSpellCast',
+  name: 'mymod.triggers.spellCast.name',
+  icon: 'fas fa-wand-sparkles',
+  payloadSchema: [
+    { key: 'actor', type: 'Actor', label: 'mymod.triggers.spellCast.actor', display: true, filter: true },
+    { key: 'spellName', type: 'string', label: 'mymod.triggers.spellCast.spell', display: true, filter: true },
+  ],
+});
+```
+
+To fire the trigger from your module:
+
+```javascript
+api.fireOverlayTrigger('mymod.onSpellCast', { actor, spellName });
+```
+
+`fireOverlayTrigger` dispatches via `Hooks.callAll('obs-utils.overlayTrigger', key, payload)` — any number of overlay renderers can react without direct coupling.
+
+## Director tabs
+
+Third-party modules can add tabs to the Director window:
+
+```javascript
+import MyTab from './MyTab.svelte';
+
+api.registerDirectorTab({
+  key: 'mymod.weatherTab',
+  label: 'mymod.director.weather.label',
+  icon: 'fas fa-cloud',
+  component: MyTab,   // receives { disabled } prop
+  order: 100,         // built-ins use 10/20/30; module tabs default to 100
+});
+```
+
+## Director state
+
+```javascript
+const state = api.getDirectorState(); // DirectorState snapshot
+```
+
+Subscribe to changes via the `obs-utils.director.stateChanged` hook:
+
+```javascript
+Hooks.on('obs-utils.director.stateChanged', (next, prev) => {
+  // next: DirectorState, prev: DirectorState | undefined
+});
+```
+
+## Camera presets
+
+```javascript
+// Broadcast the preset — claims active GM, swaps tracking mode, broadcasts to all OBS clients.
+api.playPreset(preset);  // void
+
+// Local-only preview (no broadcast, no state changes). Returns a SequenceController.
+const controller = api.previewPreset(preset);
+controller.pause();
+controller.resume();
+controller.scrub(timeMs);
+controller.stop();
+```
+
+## Actor selection and AV data
+
+```javascript
+// Selected actors (the array of actor IDs the overlay tiling works from).
+api.getSelectedActors();                        // string[] | undefined
+await api.setSelectedActors(['actorId1', ...]);
+
+// Flat AV data (last writer wins).
+api.setAVData(actorValueArray);
+
+// Grouped AV data — group labels are i18n keys, localised at flatten time.
+api.setAVDataGrouped(groups);
+```
+
+## Starter overlays
+
+System companion modules can register a starter overlay set that replaces the generic default in the overlay editor's template menu:
+
+```javascript
+api.registerStarterOverlays(overlaysArray);  // last writer wins
+```
+
+## Migration helper
+
+```javascript
+// Build a canvas overlay that emulates the 4.x roll overlay from a legacy flat config.
+// Returns OverlayData; does not touch settings.
+const overlay = api.buildLegacyRollOverlayCanvas(legacyConfig);
+```
+
+## OBS client utilities
+
+```javascript
+api.isOBS();                    // boolean — true on OBS-mode pages
+
+// Returns the OBSWebSocket client if allowWebsocketAPI is enabled, otherwise undefined.
+api.getOBSWebsocketClient();
+```
+
+## OverlayType methods
+
+An `OverlayType` instance wires together a renderer, component types, and optional editors.
+
+```javascript
+const myType = new api.OverlayType(MyOverlaySvelte);
+myType.perActor = true;  // render once per selected actor (default: true)
+
+// Register a renderable component type.
+myType.registerComponent('my-key', 'mymod.components.foo.name', FooComponent);
+
+// Register an editor for a component type (shown in the Stream Composer).
+myType.registerComponentEditor('my-key', FooEditor);
+
+// Register image-slot handlers so the bundle walker can extract and rewrite image refs.
+myType.registerComponentImageSlots('my-key', {
+  extract: (data) => [/* image paths from data */],
+  rewrite: (data, pathMap) => /* new data string with paths replaced */,
+});
+
+// Register a custom editor UI for the overlay itself (replaces the default).
+myType.registerOverlayEditor(MyOverlayEditor);
+
+api.registerOverlayType('my-key', 'mymod.overlays.myType.name', myType);
+```

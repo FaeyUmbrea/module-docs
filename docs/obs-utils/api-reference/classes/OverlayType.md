@@ -1,6 +1,6 @@
 # Class: OverlayType
 
-Defined in: [api.ts:153](https://github.com/FaeyUmbrea/obs-utils/blob/e90e62978247d2cf2a4109933f44082df703f5f8/src/utils/api.ts#L153)
+Defined in: [api.ts:153](https://github.com/FaeyUmbrea/obs-utils/blob/80f19c0312521604f37f888f0545f00fb84188f8/src/utils/api.ts#L153)
 
 ## Constructors
 
@@ -8,7 +8,7 @@ Defined in: [api.ts:153](https://github.com/FaeyUmbrea/obs-utils/blob/e90e629782
 
 > **new OverlayType**(`overlayClass`): `OverlayType`
 
-Defined in: [api.ts:163](https://github.com/FaeyUmbrea/obs-utils/blob/e90e62978247d2cf2a4109933f44082df703f5f8/src/utils/api.ts#L163)
+Defined in: [api.ts:163](https://github.com/FaeyUmbrea/obs-utils/blob/80f19c0312521604f37f888f0545f00fb84188f8/src/utils/api.ts#L163)
 
 #### Parameters
 
@@ -26,7 +26,7 @@ Defined in: [api.ts:163](https://github.com/FaeyUmbrea/obs-utils/blob/e90e629782
 
 > **compactEditorButtons**: `Map`\<`string`, `boolean`\>
 
-Defined in: [api.ts:159](https://github.com/FaeyUmbrea/obs-utils/blob/e90e62978247d2cf2a4109933f44082df703f5f8/src/utils/api.ts#L159)
+Defined in: [api.ts:159](https://github.com/FaeyUmbrea/obs-utils/blob/80f19c0312521604f37f888f0545f00fb84188f8/src/utils/api.ts#L159)
 
 ***
 
@@ -34,7 +34,7 @@ Defined in: [api.ts:159](https://github.com/FaeyUmbrea/obs-utils/blob/e90e629782
 
 > **hasCustomOverlayEditor**: `boolean` = `false`
 
-Defined in: [api.ts:160](https://github.com/FaeyUmbrea/obs-utils/blob/e90e62978247d2cf2a4109933f44082df703f5f8/src/utils/api.ts#L160)
+Defined in: [api.ts:160](https://github.com/FaeyUmbrea/obs-utils/blob/80f19c0312521604f37f888f0545f00fb84188f8/src/utils/api.ts#L160)
 
 ***
 
@@ -42,7 +42,7 @@ Defined in: [api.ts:160](https://github.com/FaeyUmbrea/obs-utils/blob/e90e629782
 
 > **overlayClass**: `Component`
 
-Defined in: [api.ts:156](https://github.com/FaeyUmbrea/obs-utils/blob/e90e62978247d2cf2a4109933f44082df703f5f8/src/utils/api.ts#L156)
+Defined in: [api.ts:156](https://github.com/FaeyUmbrea/obs-utils/blob/80f19c0312521604f37f888f0545f00fb84188f8/src/utils/api.ts#L156)
 
 ***
 
@@ -50,7 +50,7 @@ Defined in: [api.ts:156](https://github.com/FaeyUmbrea/obs-utils/blob/e90e629782
 
 > **overlayComponentEditors**: `Map`\<`string`, `Component`\<`any`, `any`, `any`\>\>
 
-Defined in: [api.ts:158](https://github.com/FaeyUmbrea/obs-utils/blob/e90e62978247d2cf2a4109933f44082df703f5f8/src/utils/api.ts#L158)
+Defined in: [api.ts:158](https://github.com/FaeyUmbrea/obs-utils/blob/80f19c0312521604f37f888f0545f00fb84188f8/src/utils/api.ts#L158)
 
 ***
 
@@ -58,7 +58,7 @@ Defined in: [api.ts:158](https://github.com/FaeyUmbrea/obs-utils/blob/e90e629782
 
 > **overlayComponentNames**: `Map`\<`string`, `string`\>
 
-Defined in: [api.ts:157](https://github.com/FaeyUmbrea/obs-utils/blob/e90e62978247d2cf2a4109933f44082df703f5f8/src/utils/api.ts#L157)
+Defined in: [api.ts:157](https://github.com/FaeyUmbrea/obs-utils/blob/80f19c0312521604f37f888f0545f00fb84188f8/src/utils/api.ts#L157)
 
 ***
 
@@ -66,7 +66,7 @@ Defined in: [api.ts:157](https://github.com/FaeyUmbrea/obs-utils/blob/e90e629782
 
 > **overlayComponents**: `Map`\<`string`, `Component`\<`any`, `any`, `any`\>\>
 
-Defined in: [api.ts:155](https://github.com/FaeyUmbrea/obs-utils/blob/e90e62978247d2cf2a4109933f44082df703f5f8/src/utils/api.ts#L155)
+Defined in: [api.ts:155](https://github.com/FaeyUmbrea/obs-utils/blob/80f19c0312521604f37f888f0545f00fb84188f8/src/utils/api.ts#L155)
 
 ***
 
@@ -74,7 +74,7 @@ Defined in: [api.ts:155](https://github.com/FaeyUmbrea/obs-utils/blob/e90e629782
 
 > **overlayEditor**: `Component`
 
-Defined in: [api.ts:154](https://github.com/FaeyUmbrea/obs-utils/blob/e90e62978247d2cf2a4109933f44082df703f5f8/src/utils/api.ts#L154)
+Defined in: [api.ts:154](https://github.com/FaeyUmbrea/obs-utils/blob/80f19c0312521604f37f888f0545f00fb84188f8/src/utils/api.ts#L154)
 
 ***
 
@@ -82,7 +82,7 @@ Defined in: [api.ts:154](https://github.com/FaeyUmbrea/obs-utils/blob/e90e629782
 
 > **perActor**: `boolean` = `true`
 
-Defined in: [api.ts:161](https://github.com/FaeyUmbrea/obs-utils/blob/e90e62978247d2cf2a4109933f44082df703f5f8/src/utils/api.ts#L161)
+Defined in: [api.ts:161](https://github.com/FaeyUmbrea/obs-utils/blob/80f19c0312521604f37f888f0545f00fb84188f8/src/utils/api.ts#L161)
 
 ## Methods
 
@@ -90,7 +90,7 @@ Defined in: [api.ts:161](https://github.com/FaeyUmbrea/obs-utils/blob/e90e629782
 
 > **registerComponent**(`key`, `readableName`, `type`): `void`
 
-Defined in: [api.ts:186](https://github.com/FaeyUmbrea/obs-utils/blob/e90e62978247d2cf2a4109933f44082df703f5f8/src/utils/api.ts#L186)
+Defined in: [api.ts:186](https://github.com/FaeyUmbrea/obs-utils/blob/80f19c0312521604f37f888f0545f00fb84188f8/src/utils/api.ts#L186)
 
 Register a renderable component type for this overlay.
 
@@ -126,7 +126,7 @@ The Svelte component class that renders the data.
 
 > **registerComponentEditor**(`key`, `editor`, `compactButtons?`): `void`
 
-Defined in: [api.ts:191](https://github.com/FaeyUmbrea/obs-utils/blob/e90e62978247d2cf2a4109933f44082df703f5f8/src/utils/api.ts#L191)
+Defined in: [api.ts:191](https://github.com/FaeyUmbrea/obs-utils/blob/80f19c0312521604f37f888f0545f00fb84188f8/src/utils/api.ts#L191)
 
 #### Parameters
 
@@ -152,7 +152,7 @@ Defined in: [api.ts:191](https://github.com/FaeyUmbrea/obs-utils/blob/e90e629782
 
 > **registerOverlayEditor**(`editor`): `void`
 
-Defined in: [api.ts:172](https://github.com/FaeyUmbrea/obs-utils/blob/e90e62978247d2cf2a4109933f44082df703f5f8/src/utils/api.ts#L172)
+Defined in: [api.ts:172](https://github.com/FaeyUmbrea/obs-utils/blob/80f19c0312521604f37f888f0545f00fb84188f8/src/utils/api.ts#L172)
 
 #### Parameters
 

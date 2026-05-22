@@ -33,12 +33,17 @@ const sidebars = {
       label: 'Features',
       items: [
         'overlay-editor',
+        'triggers',
+        'overlay-animations',
+        'bundles',
         'stream-overlay-css',
         'obs-remote',
         'multi-gm',
         'scene-presets',
+        'camera-keyframes',
         'manual-mode',
-        'api'
+        'api',
+        'director-api'
       ],
     },
     {

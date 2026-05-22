@@ -8,6 +8,8 @@ sidebar_label: Manual OBS Mode
 
 OBS Browser Sources autodetect and enter OBS Mode automatically — you don't need any of the below for the common case. These three settings exist for setups where the browser source isn't recognised (custom embeddings, non-OBS browsers viewing `/game` or `/stream`, etc.).
 
+![Manual OBS Mode settings](./assets/manual_mode_settings.png)
+
 | Setting | Scope | Effect |
 |---|---|---|
 | **Pin This Browser to OBS Mode** | Client | Every tab in this browser stays in OBS Mode until disabled. |
@@ -18,7 +20,13 @@ There's a fourth setting that acts as a kill-switch:
 
 - **Disable OBS Mode for Everyone** — overrides all three of the above. Useful if a user accidentally pins themselves into OBS Mode and can't find their way out.
 
-A keybinding (CTRL+SHIFT+ALT+O by default) toggles **Pin This Browser** off as an escape hatch — a manual page refresh is needed afterward.
+## Keyboard escape hatch
+
+| Keybinding | Action |
+|------------|--------|
+| Ctrl+Shift+Alt+O | Disable OBS Mode — turns off the **Pin This Browser** client setting so the page returns to the normal Foundry UI. |
+
+A page refresh is needed after triggering this shortcut. The binding is editable in Foundry's **Configure Controls** settings.
 
 ## With Websocket
 

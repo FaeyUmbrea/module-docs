@@ -43,7 +43,7 @@ You have two options for the credentials:
 
    No quotes, no spaces; keep the trailing semicolons. You can override only some — e.g. just the password.
 
-The Websocket Master Setting (**Enable OBS Websocket?**) still lives in Module Settings; the new menu doesn't change that toggle.
+The **Enable OBS Websocket?** toggle lives in the standard Foundry module settings (gear icon → Manage Modules → OBS Utils settings), not inside the OBS Remote Settings menu. The OBS Remote Settings menu covers connection credentials and event configuration only — the on/off toggle for the websocket feature is a separate module config entry.
 
 ### Events tab
 
@@ -54,7 +54,7 @@ Pick an event type from the dropdown and add **actions** (or, for events with co
 | Key | Fires |
 |---|---|
 | `core.onLoad` | When Foundry first loads on the OBS client. |
-| `core.onCombatStart` | First turn of round 1 of any new combat. |
+| `core.onCombatStart` | Fires when `updateCombat` advances to turn 0 of round 1 — i.e., the moment combat reaches its first turn. |
 | `core.onCombatEnd` | Combat is deleted. |
 | `core.onPause` | Game paused. |
 | `core.onUnpause` | Game unpaused. |

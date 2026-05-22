@@ -1,6 +1,6 @@
 # Class: ObsUtilsApi
 
-Defined in: [api.ts:65](https://github.com/FaeyUmbrea/obs-utils/blob/e90e62978247d2cf2a4109933f44082df703f5f8/src/utils/api.ts#L65)
+Defined in: [api.ts:65](https://github.com/FaeyUmbrea/obs-utils/blob/80f19c0312521604f37f888f0545f00fb84188f8/src/utils/api.ts#L65)
 
 ## Constructors
 
@@ -8,7 +8,7 @@ Defined in: [api.ts:65](https://github.com/FaeyUmbrea/obs-utils/blob/e90e6297824
 
 > **new ObsUtilsApi**(): `ObsUtilsApi`
 
-Defined in: [api.ts:72](https://github.com/FaeyUmbrea/obs-utils/blob/e90e62978247d2cf2a4109933f44082df703f5f8/src/utils/api.ts#L72)
+Defined in: [api.ts:72](https://github.com/FaeyUmbrea/obs-utils/blob/80f19c0312521604f37f888f0545f00fb84188f8/src/utils/api.ts#L72)
 
 #### Returns
 
@@ -20,7 +20,7 @@ Defined in: [api.ts:72](https://github.com/FaeyUmbrea/obs-utils/blob/e90e6297824
 
 > **obsRemoteEventTypes**: `Map`\<`string`, [`OBSRemoteEventTypeRegistration`](../interfaces/OBSRemoteEventTypeRegistration.md)\>
 
-Defined in: [api.ts:70](https://github.com/FaeyUmbrea/obs-utils/blob/e90e62978247d2cf2a4109933f44082df703f5f8/src/utils/api.ts#L70)
+Defined in: [api.ts:70](https://github.com/FaeyUmbrea/obs-utils/blob/80f19c0312521604f37f888f0545f00fb84188f8/src/utils/api.ts#L70)
 
 ***
 
@@ -28,7 +28,7 @@ Defined in: [api.ts:70](https://github.com/FaeyUmbrea/obs-utils/blob/e90e6297824
 
 > **overlayTypeNames**: `Map`\<`string`, `string`\>
 
-Defined in: [api.ts:67](https://github.com/FaeyUmbrea/obs-utils/blob/e90e62978247d2cf2a4109933f44082df703f5f8/src/utils/api.ts#L67)
+Defined in: [api.ts:67](https://github.com/FaeyUmbrea/obs-utils/blob/80f19c0312521604f37f888f0545f00fb84188f8/src/utils/api.ts#L67)
 
 ***
 
@@ -36,7 +36,7 @@ Defined in: [api.ts:67](https://github.com/FaeyUmbrea/obs-utils/blob/e90e6297824
 
 > **overlayTypes**: `Map`\<`string`, [`OverlayType`](OverlayType.md)\>
 
-Defined in: [api.ts:66](https://github.com/FaeyUmbrea/obs-utils/blob/e90e62978247d2cf2a4109933f44082df703f5f8/src/utils/api.ts#L66)
+Defined in: [api.ts:66](https://github.com/FaeyUmbrea/obs-utils/blob/80f19c0312521604f37f888f0545f00fb84188f8/src/utils/api.ts#L66)
 
 ***
 
@@ -44,7 +44,7 @@ Defined in: [api.ts:66](https://github.com/FaeyUmbrea/obs-utils/blob/e90e6297824
 
 > **singleInstanceOverlays**: `Set`\<`Component`\>
 
-Defined in: [api.ts:68](https://github.com/FaeyUmbrea/obs-utils/blob/e90e62978247d2cf2a4109933f44082df703f5f8/src/utils/api.ts#L68)
+Defined in: [api.ts:68](https://github.com/FaeyUmbrea/obs-utils/blob/80f19c0312521604f37f888f0545f00fb84188f8/src/utils/api.ts#L68)
 
 ***
 
@@ -52,7 +52,7 @@ Defined in: [api.ts:68](https://github.com/FaeyUmbrea/obs-utils/blob/e90e6297824
 
 > **singleInstanceOverlaysSvelte5**: `Set`\<`Component`\>
 
-Defined in: [api.ts:69](https://github.com/FaeyUmbrea/obs-utils/blob/e90e62978247d2cf2a4109933f44082df703f5f8/src/utils/api.ts#L69)
+Defined in: [api.ts:69](https://github.com/FaeyUmbrea/obs-utils/blob/80f19c0312521604f37f888f0545f00fb84188f8/src/utils/api.ts#L69)
 
 ## Methods
 
@@ -60,7 +60,7 @@ Defined in: [api.ts:69](https://github.com/FaeyUmbrea/obs-utils/blob/e90e6297824
 
 > **getOBSWebsocketClient**(): `Promise`\<`any`\> \| `undefined`
 
-Defined in: [api.ts:140](https://github.com/FaeyUmbrea/obs-utils/blob/e90e62978247d2cf2a4109933f44082df703f5f8/src/utils/api.ts#L140)
+Defined in: [api.ts:140](https://github.com/FaeyUmbrea/obs-utils/blob/80f19c0312521604f37f888f0545f00fb84188f8/src/utils/api.ts#L140)
 
 #### Returns
 
@@ -72,7 +72,7 @@ Defined in: [api.ts:140](https://github.com/FaeyUmbrea/obs-utils/blob/e90e629782
 
 > **getSelectedActors**(): `any`
 
-Defined in: [api.ts:128](https://github.com/FaeyUmbrea/obs-utils/blob/e90e62978247d2cf2a4109933f44082df703f5f8/src/utils/api.ts#L128)
+Defined in: [api.ts:128](https://github.com/FaeyUmbrea/obs-utils/blob/80f19c0312521604f37f888f0545f00fb84188f8/src/utils/api.ts#L128)
 
 #### Returns
 
@@ -84,7 +84,7 @@ Defined in: [api.ts:128](https://github.com/FaeyUmbrea/obs-utils/blob/e90e629782
 
 > **isOBS**(): `any`
 
-Defined in: [api.ts:148](https://github.com/FaeyUmbrea/obs-utils/blob/e90e62978247d2cf2a4109933f44082df703f5f8/src/utils/api.ts#L148)
+Defined in: [api.ts:148](https://github.com/FaeyUmbrea/obs-utils/blob/80f19c0312521604f37f888f0545f00fb84188f8/src/utils/api.ts#L148)
 
 #### Returns
 
@@ -96,7 +96,7 @@ Defined in: [api.ts:148](https://github.com/FaeyUmbrea/obs-utils/blob/e90e629782
 
 > **registerOBSRemoteEventType**(`reg`): `void`
 
-Defined in: [api.ts:81](https://github.com/FaeyUmbrea/obs-utils/blob/e90e62978247d2cf2a4109933f44082df703f5f8/src/utils/api.ts#L81)
+Defined in: [api.ts:81](https://github.com/FaeyUmbrea/obs-utils/blob/80f19c0312521604f37f888f0545f00fb84188f8/src/utils/api.ts#L81)
 
 Public — modules call this in their init hook to expose a new event type.
 
@@ -116,7 +116,7 @@ Public — modules call this in their init hook to expose a new event type.
 
 > **registerOverlayType**(`key`, `readableName`, `type`): `void`
 
-Defined in: [api.ts:113](https://github.com/FaeyUmbrea/obs-utils/blob/e90e62978247d2cf2a4109933f44082df703f5f8/src/utils/api.ts#L113)
+Defined in: [api.ts:113](https://github.com/FaeyUmbrea/obs-utils/blob/80f19c0312521604f37f888f0545f00fb84188f8/src/utils/api.ts#L113)
 
 Register a new overlay type. Surfaces in the Stream Composer's "+ new"
 menu and elsewhere the type list is consumed.
@@ -153,7 +153,7 @@ The OverlayType instance with the renderer and editor wired up.
 
 > **registerUniqueOverlay**(`overlay`): `void`
 
-Defined in: [api.ts:119](https://github.com/FaeyUmbrea/obs-utils/blob/e90e62978247d2cf2a4109933f44082df703f5f8/src/utils/api.ts#L119)
+Defined in: [api.ts:119](https://github.com/FaeyUmbrea/obs-utils/blob/80f19c0312521604f37f888f0545f00fb84188f8/src/utils/api.ts#L119)
 
 #### Parameters
 
@@ -171,7 +171,7 @@ Defined in: [api.ts:119](https://github.com/FaeyUmbrea/obs-utils/blob/e90e629782
 
 > **registerUniqueOverlaySvelte5**(`overlay`): `void`
 
-Defined in: [api.ts:124](https://github.com/FaeyUmbrea/obs-utils/blob/e90e62978247d2cf2a4109933f44082df703f5f8/src/utils/api.ts#L124)
+Defined in: [api.ts:124](https://github.com/FaeyUmbrea/obs-utils/blob/80f19c0312521604f37f888f0545f00fb84188f8/src/utils/api.ts#L124)
 
 #### Parameters
 
@@ -189,7 +189,7 @@ Defined in: [api.ts:124](https://github.com/FaeyUmbrea/obs-utils/blob/e90e629782
 
 > **setAVData**(`actorValueArray`): `void`
 
-Defined in: [api.ts:136](https://github.com/FaeyUmbrea/obs-utils/blob/e90e62978247d2cf2a4109933f44082df703f5f8/src/utils/api.ts#L136)
+Defined in: [api.ts:136](https://github.com/FaeyUmbrea/obs-utils/blob/80f19c0312521604f37f888f0545f00fb84188f8/src/utils/api.ts#L136)
 
 #### Parameters
 
@@ -207,7 +207,7 @@ Defined in: [api.ts:136](https://github.com/FaeyUmbrea/obs-utils/blob/e90e629782
 
 > **setSelectedActors**(`actorArray`): `Promise`\<`void`\>
 
-Defined in: [api.ts:132](https://github.com/FaeyUmbrea/obs-utils/blob/e90e62978247d2cf2a4109933f44082df703f5f8/src/utils/api.ts#L132)
+Defined in: [api.ts:132](https://github.com/FaeyUmbrea/obs-utils/blob/80f19c0312521604f37f888f0545f00fb84188f8/src/utils/api.ts#L132)
 
 #### Parameters
 
@@ -225,7 +225,7 @@ Defined in: [api.ts:132](https://github.com/FaeyUmbrea/obs-utils/blob/e90e629782
 
 > **triggerOBSRemoteEvent**(`key`, `context?`): `Promise`\<`void`\>
 
-Defined in: [api.ts:94](https://github.com/FaeyUmbrea/obs-utils/blob/e90e62978247d2cf2a4109933f44082df703f5f8/src/utils/api.ts#L94)
+Defined in: [api.ts:94](https://github.com/FaeyUmbrea/obs-utils/blob/80f19c0312521604f37f888f0545f00fb84188f8/src/utils/api.ts#L94)
 
 Public — modules call this when their in-system condition fires
 (e.g. on `updateActor` with `system.attributes.hp.value` changed).

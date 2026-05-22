@@ -1,6 +1,6 @@
 # Interface: OBSRemoteEventTypeRegistration
 
-Defined in: [api.ts:44](https://github.com/FaeyUmbrea/obs-utils/blob/e90e62978247d2cf2a4109933f44082df703f5f8/src/utils/api.ts#L44)
+Defined in: [api.ts:44](https://github.com/FaeyUmbrea/obs-utils/blob/80f19c0312521604f37f888f0545f00fb84188f8/src/utils/api.ts#L44)
 
 ## Properties
 
@@ -8,7 +8,7 @@ Defined in: [api.ts:44](https://github.com/FaeyUmbrea/obs-utils/blob/e90e6297824
 
 > `optional` **conditionFields?**: [`OBSRemoteConditionField`](OBSRemoteConditionField.md)[]
 
-Defined in: [api.ts:56](https://github.com/FaeyUmbrea/obs-utils/blob/e90e62978247d2cf2a4109933f44082df703f5f8/src/utils/api.ts#L56)
+Defined in: [api.ts:56](https://github.com/FaeyUmbrea/obs-utils/blob/80f19c0312521604f37f888f0545f00fb84188f8/src/utils/api.ts#L56)
 
 Per-instance condition fields the user fills in when configuring.
 
@@ -18,7 +18,7 @@ Per-instance condition fields the user fills in when configuring.
 
 > `optional` **icon?**: `string`
 
-Defined in: [api.ts:54](https://github.com/FaeyUmbrea/obs-utils/blob/e90e62978247d2cf2a4109933f44082df703f5f8/src/utils/api.ts#L54)
+Defined in: [api.ts:54](https://github.com/FaeyUmbrea/obs-utils/blob/80f19c0312521604f37f888f0545f00fb84188f8/src/utils/api.ts#L54)
 
 Optional Font Awesome icon class for the header (e.g. 'fas fa-heart').
 
@@ -28,7 +28,7 @@ Optional Font Awesome icon class for the header (e.g. 'fas fa-heart').
 
 > **key**: `string`
 
-Defined in: [api.ts:46](https://github.com/FaeyUmbrea/obs-utils/blob/e90e62978247d2cf2a4109933f44082df703f5f8/src/utils/api.ts#L46)
+Defined in: [api.ts:46](https://github.com/FaeyUmbrea/obs-utils/blob/80f19c0312521604f37f888f0545f00fb84188f8/src/utils/api.ts#L46)
 
 Unique key — namespace with your module id (e.g. 'dnd5e.hpThreshold').
 
@@ -38,7 +38,7 @@ Unique key — namespace with your module id (e.g. 'dnd5e.hpThreshold').
 
 > `optional` **matcher?**: (`conditions`, `context`) => `boolean`
 
-Defined in: [api.ts:62](https://github.com/FaeyUmbrea/obs-utils/blob/e90e62978247d2cf2a4109933f44082df703f5f8/src/utils/api.ts#L62)
+Defined in: [api.ts:62](https://github.com/FaeyUmbrea/obs-utils/blob/80f19c0312521604f37f888f0545f00fb84188f8/src/utils/api.ts#L62)
 
 Decide whether a configured instance should fire given its saved
 `conditions` and the runtime `context` passed to triggerOBSRemoteEvent.
@@ -64,7 +64,7 @@ Omit → instance always fires.
 
 > **name**: `string`
 
-Defined in: [api.ts:52](https://github.com/FaeyUmbrea/obs-utils/blob/e90e62978247d2cf2a4109933f44082df703f5f8/src/utils/api.ts#L52)
+Defined in: [api.ts:52](https://github.com/FaeyUmbrea/obs-utils/blob/80f19c0312521604f37f888f0545f00fb84188f8/src/utils/api.ts#L52)
 
 i18n key for the section header. Resolved via `game.i18n.localize()`
 at render time. Pass a literal string only if you are intentionally

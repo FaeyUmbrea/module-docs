@@ -1,0 +1,31 @@
+/** @type {import('@docusaurus/plugin-content-docs').SidebarsConfig} */
+const sidebars = {
+  splashSidebar: [
+    {
+      type: 'doc',
+      id: 'index',
+      label: 'Welcome'
+    },
+    {
+      type: 'doc',
+      id: 'getting-started',
+      label: 'Getting Started',
+    },
+    {
+      type: 'category',
+      label: 'Features',
+      items: [
+        'editor',
+        'layers-and-modes',
+        'actions',
+        'synced-mode',
+        'triggers',
+        'presets',
+        'effects',
+        'api'
+      ],
+    },
+  ],
+};
+
+module.exports = sidebars;

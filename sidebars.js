@@ -27,6 +27,11 @@ const sidebars = {
       type: 'link',
       label: 'Ethereal Plane',
       href: '/ethereal-plane',
+    },
+    {
+      type: 'link',
+      label: 'Splash',
+      href: '/splash',
     }
   ],
 };

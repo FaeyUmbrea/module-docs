@@ -73,6 +73,15 @@ const config = {
       },
     ],
     [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'splash',
+        path: 'docs/splash',
+        routeBasePath: 'splash',
+        sidebarPath: './sidebars_splash.js',
+      },
+    ],
+    [
       'docusaurus-plugin-typedoc',
       {
         id: 'typedoc-obs-utils',
@@ -138,6 +147,13 @@ const config = {
             position: 'left',
             label: 'Ethereal Plane',
             docsPluginId: 'ethereal-plane',
+          },
+          {
+            type: 'docSidebar',
+            sidebarId: 'splashSidebar',
+            position: 'left',
+            label: 'Splash',
+            docsPluginId: 'splash',
           },
           {
             href: 'https://discord.com/invite/WfMaKPPdeM',

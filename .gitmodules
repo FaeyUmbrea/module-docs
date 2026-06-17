@@ -4,3 +4,6 @@
 [submodule "submodules/obs-utils"]
 	path = submodules/obs-utils
 	url = https://github.com/FaeyUmbrea/obs-utils.git
+[submodule "submodules/splash"]
+	path = submodules/splash
+	url = https://github.com/FaeyUmbrea/splash.git

@@ -109,6 +109,20 @@ const config = {
         skipErrorChecking: true
       },
     ],
+    [
+      'docusaurus-plugin-typedoc',
+      {
+        id: 'typedoc-splash',
+        entryPoints: ['submodules/splash/src/api/api.ts'],
+        tsconfig: 'submodules/splash/tsconfig.json',
+        out: 'docs/splash/api-reference',
+        readme: 'none',
+        plugin: ['typedoc-plugin-markdown'],
+        excludePrivate: true,
+        categorizeByGroup: true,
+        skipErrorChecking: true
+      },
+    ],
   ],
 
   themeConfig:

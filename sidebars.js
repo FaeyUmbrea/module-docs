@@ -24,6 +24,11 @@ const sidebars = {
       href: '/obs-utils',
     },
     {
+      type: 'doc',
+      id: 'lib-camera',
+      label: 'libCamera',
+    },
+    {
       type: 'link',
       label: 'Ethereal Plane',
       href: '/ethereal-plane',

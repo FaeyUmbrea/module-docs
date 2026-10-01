@@ -5,7 +5,7 @@
   "type": "module",
   "packageManager": "yarn@4.9.2",
   "engines": {
-    "node": ">=22.12.0"
+    "node": ">=22.22.2"
   },
   "scripts": {
     "dev": "astro dev --host 127.0.0.1",
@@ -18,8 +18,9 @@
     "test": "node --test tests/*.test.mjs",
     "release:import": "node tools/import-release.mjs",
     "docs:prepare": "yarn build",
-    "docs:check": "yarn lint && yarn typecheck && yarn test && yarn build",
-    "deploy": "yarn docs:check && wrangler deploy"
+    "docs:check": "yarn security:check && yarn lint && yarn typecheck && yarn test && yarn build",
+    "deploy": "yarn docs:check && wrangler deploy",
+    "security:check": "yarn npm audit --all --recursive"
   },
   "dependencies": {
     "@astrojs/starlight": "0.42.4",
@@ -28,8 +29,8 @@
   },
   "devDependencies": {
     "@astrojs/check": "0.9.10",
-    "@eslint/js": "^9.39.0",
-    "eslint": "^9.39.0",
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.11.0",
     "globals": "^16.5.0",
     "typedoc": "^0.28.19",
     "typedoc-plugin-markdown": "4.13.1",

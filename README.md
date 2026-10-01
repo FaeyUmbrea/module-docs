@@ -37,4 +37,4 @@ yarn preview
 yarn docs:check
 ```
 
-Review the preview, then publish through the existing production deployment. Pushing to `master` runs `yarn deploy`, which checks the docs before uploading them. The same command can be run locally for an explicit publication. Verify the module's exact documentation link afterward.
+Review the preview, then publish through the existing production deployment. Pushing to `master` runs `yarn deploy`, which audits dependencies and checks the docs before uploading them. A failing audit stops publication. The same command can be run locally for an explicit publication. Verify the module's exact documentation link afterward.

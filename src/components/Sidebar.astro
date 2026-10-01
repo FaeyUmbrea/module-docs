@@ -1,0 +1,57 @@
+---
+import DefaultSidebar from '@astrojs/starlight/components/Sidebar.astro';
+import { Icon } from '@astrojs/starlight/components';
+import { modules, preferredRelease, releaseUrl, channelLabels } from '../lib/docs';
+const data = Astro.locals.starlightRoute.entry.data;
+const module = modules.find((item) => item.id === data.moduleId);
+const release = module?.releases.find((item) => item.channel === data.channel && item.version === data.version);
+const audience = data.audience ?? 'user';
+const availableChannels = [...new Set(module?.releases.map((item) => item.channel))];
+---
+{module && release && <div class="module-navigation" data-pagefind-ignore>
+  <label class="select-label" for="module-select">Module</label>
+  <div class="select-control"><select id="module-select" aria-label="Choose module" autocomplete="off" data-doc-select>
+    {modules.map((item) => <option value={releaseUrl(item.id, preferredRelease(item), audience)} selected={item.id === module.id}>{item.title}</option>)}
+  </select><Icon name="down-caret" class="select-caret" /></div>
+  {availableChannels.length > 1 && <>
+    <label class="select-label" for="channel-select">Release channel</label>
+    <div class="select-control"><select id="channel-select" aria-label="Choose release channel" autocomplete="off" data-doc-select>
+      {availableChannels.map((channel) => <option value={releaseUrl(module.id, module.releases.find((item) => item.channel === channel)!, audience)} selected={channel === release.channel}>{channelLabels[channel]}</option>)}
+    </select><Icon name="down-caret" class="select-caret" /></div>
+  </>}
+  <label class="select-label" for="release-select">Documentation version</label>
+  <div class="select-control"><select id="release-select" aria-label="Choose documentation version" autocomplete="off" data-doc-select>
+    {module.releases.filter((item) => item.channel === release.channel).map((item) => <option value={releaseUrl(module.id, item, audience)} selected={item.channel === release.channel && item.version === release.version}>
+      {item.version === 'unreleased' ? 'In development' : item.version === 'current' ? 'Previous docs' : item.version}
+    </option>)}
+  </select><Icon name="down-caret" class="select-caret" /></div>
+  <nav class="audience-tabs" aria-label="Documentation audience">
+    <a href={releaseUrl(module.id, release, 'user')} aria-current={audience === 'user' ? 'page' : undefined}>User guide</a>
+    <a href={releaseUrl(module.id, release, 'dev')} aria-current={audience === 'dev' ? 'page' : undefined}>Developer docs</a>
+  </nav>
+</div>}
+<DefaultSidebar><slot /></DefaultSidebar>
+<div class="sidebar-links" data-pagefind-ignore>
+  <a href="/"><Icon name="list-format" />All modules</a>
+</div>
+<script>
+  document.querySelectorAll<HTMLSelectElement>('[data-doc-select]').forEach((select) => {
+    select.addEventListener('change', () => { window.location.href = select.value; });
+  });
+</script>
+<style>
+  .module-navigation { margin-bottom: 1.5rem; }
+  .select-label { display: block; font-size: .75rem; font-weight: 550; color: var(--sl-color-gray-2); margin: .85rem 0 .4rem; }
+  .select-control { position: relative; }
+  .select-control :global(.select-caret) { position: absolute; inset-inline-end: .65rem; top: 50%; transform: translateY(-50%); width: 1rem; height: 1rem; color: var(--sl-color-gray-2); pointer-events: none; }
+  select { -webkit-appearance: none; appearance: none; display: block; box-sizing: border-box; width: 100%; min-width: 0; min-height: 2.65rem; margin: 0; padding: .65rem 2.2rem .65rem .75rem; border: 1px solid var(--sl-color-gray-5); border-radius: 5px; background-color: var(--vm-control-bg); color: var(--sl-color-white); font-family: var(--sl-font); font-size: .85rem; font-weight: 400; line-height: 1.4; text-overflow: ellipsis; cursor: pointer; }
+  select:hover { border-color: var(--sl-color-gray-3); }
+  option { background-color: var(--vm-control-bg); color: var(--sl-color-white); }
+  @media (max-width: 49.99rem) { select { font-size: 1rem; } }
+  .audience-tabs { display: flex; margin-top: 1.3rem; border-bottom: 1px solid var(--sl-color-hairline); gap: 1.25rem; }
+  .audience-tabs a { font-size: .8rem; padding-bottom: .7rem; text-decoration: none; color: var(--sl-color-gray-2); }
+  .audience-tabs a[aria-current] { border-bottom: 2px solid var(--vm-red); color: var(--sl-color-white); font-weight: 650; }
+  .sidebar-links { display: flex; flex-wrap: wrap; gap: .8rem; border-top: 1px solid var(--sl-color-hairline); padding-top: 1.25rem; margin-top: 2rem; font-size: .75rem; }
+  .sidebar-links a { display: inline-flex; align-items: center; gap: .45rem; color: var(--sl-color-gray-2); text-decoration: none; }
+  .sidebar-links a:hover { color: var(--sl-color-white); }
+</style>

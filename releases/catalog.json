@@ -1,0 +1,231 @@
+[
+  {
+    "id": "obs-utils",
+    "title": "OBS Utils",
+    "summary": "Control OBS Studio and build overlays for your Foundry stream.",
+    "repositories": {
+      "public": "FaeyUmbrea/obs-utils",
+      "early-access": "FaeyUmbrea/obs-utils-premium"
+    },
+    "releases": [
+      {
+        "channel": "legacy",
+        "version": "current",
+        "legacy": true,
+        "source": "docs/obs-utils",
+        "oldBase": "/obs-utils"
+      },
+      {
+        "channel": "public",
+        "version": "5.3.0",
+        "tag": "5.3.0",
+        "repository": "FaeyUmbrea/obs-utils",
+        "manifest": "https://github.com/FaeyUmbrea/obs-utils/releases/download/5.3.0/module.json",
+        "source": "content/obs-utils/public/5.3.0",
+        "api": {
+          "name": "@faeyumbrea/obs-utils-api-types",
+          "version": "5.3.0",
+          "asset": "https://github.com/FaeyUmbrea/obs-utils/releases/download/5.3.0/obs-utils-api-types.tgz",
+          "sha256": "478f0b6e08b17fb22ed411acab9ea8aba4dd54829981f4ca8ca6150e642673b7",
+          "source": "release-archive"
+        }
+      },
+      {
+        "channel": "legacy",
+        "version": "4.0",
+        "legacy": true,
+        "source": "obs-utils_versioned_docs/version-4.0",
+        "oldBase": "/obs-utils/4.0"
+      },
+      {
+        "channel": "early-access",
+        "version": "unreleased",
+        "legacy": true,
+        "source": "content/obs-utils/early-access/unreleased"
+      }
+    ]
+  },
+  {
+    "id": "splash",
+    "title": "Splash",
+    "summary": "Build interactive handouts, puzzles, and screens for your table.",
+    "repositories": {
+      "public": "FaeyUmbrea/splash",
+      "early-access": "FaeyUmbrea/splash-premium"
+    },
+    "releases": [
+      {
+        "channel": "public",
+        "version": "1.1.0",
+        "tag": "1.1.0",
+        "repository": "FaeyUmbrea/splash",
+        "manifest": "https://github.com/FaeyUmbrea/splash/releases/download/1.1.0/module.json",
+        "source": "content/splash/public/1.1.0"
+      },
+      {
+        "channel": "legacy",
+        "version": "current",
+        "legacy": true,
+        "source": "docs/splash",
+        "oldBase": "/splash"
+      },
+      {
+        "channel": "early-access",
+        "version": "unreleased",
+        "legacy": true,
+        "source": "content/splash/early-access/unreleased"
+      }
+    ]
+  },
+  {
+    "id": "ethereal-plane",
+    "title": "Ethereal Plane",
+    "summary": "Bring Twitch and YouTube chat, polls, and events into Foundry.",
+    "repositories": {
+      "public": "FaeyUmbrea/ethereal-plane"
+    },
+    "releases": [
+      {
+        "channel": "public",
+        "version": "3.3.0",
+        "tag": "3.3.0",
+        "repository": "FaeyUmbrea/ethereal-plane",
+        "manifest": "https://github.com/FaeyUmbrea/ethereal-plane/releases/download/3.3.0/module.json",
+        "source": "content/ethereal-plane/public/3.3.0"
+      },
+      {
+        "channel": "legacy",
+        "version": "current",
+        "legacy": true,
+        "source": "docs/ethereal-plane",
+        "oldBase": "/ethereal-plane"
+      }
+    ]
+  },
+  {
+    "id": "lib-camera",
+    "title": "libCamera",
+    "summary": "Let modules share camera control, with priorities you can manage.",
+    "repositories": {
+      "public": "FaeyUmbrea/foundry-lib-camera"
+    },
+    "releases": [
+      {
+        "channel": "public",
+        "version": "1.14.0",
+        "tag": "v1.14.0",
+        "repository": "FaeyUmbrea/foundry-lib-camera",
+        "manifest": "https://github.com/FaeyUmbrea/foundry-lib-camera/releases/download/v1.14.0/module.json",
+        "source": "content/lib-camera/public/1.14.0",
+        "api": {
+          "source": "npm",
+          "name": "@faeyumbrea/lib-camera-api-types",
+          "version": "1.14.0",
+          "asset": "https://registry.npmjs.org/@faeyumbrea/lib-camera-api-types/-/lib-camera-api-types-1.14.0.tgz",
+          "integrity": "sha512-VPEMBPr2pi1Lm1GmtNeGIjB2TzMAARRKuKAwhnbpCsJMAVdXfoWNXIhCb8+ET4UoEPh6Gy72Ps0UfL56alMqZQ==",
+          "sha256": "ada704ca1c839081414fa30ff67700eb0d8b3be3bac9ccb7e6d3be2add5b91ef",
+          "filesSha256": "b27b708673ce93fe3c09e5c380123089baf8c8cb4d1f3a4a7fc0ad72c609459b"
+        }
+      },
+      {
+        "channel": "public",
+        "version": "1.13.0",
+        "tag": "v1.13.0",
+        "repository": "FaeyUmbrea/foundry-lib-camera",
+        "manifest": "https://github.com/FaeyUmbrea/foundry-lib-camera/releases/download/v1.13.0/module.json",
+        "source": "content/lib-camera/public/1.13.0",
+        "api": {
+          "source": "npm",
+          "name": "@faeyumbrea/lib-camera-api-types",
+          "version": "1.13.0",
+          "asset": "https://registry.npmjs.org/@faeyumbrea/lib-camera-api-types/-/lib-camera-api-types-1.13.0.tgz",
+          "integrity": "sha512-J+Dq5gfcsxcqu8RqLscyscXABY5gJTE0hl6bEjZm7B67G2BT1D2z6Yjosva8ixtBoMeY/QcPhcjBv/sV7COwhg==",
+          "sha256": "ee7aa97f64411566880f3be09a8dc3f99ae4189126e566e5a7a2f26ea3e03c86",
+          "filesSha256": "ec3badaf1d54e15d361d5417fbe1b4e6ff4234aeba418acdeaf70dba03587e07"
+        }
+      }
+    ]
+  },
+  {
+    "id": "obs-utils-dnd5e",
+    "title": "OBS Utils · D&D 5e",
+    "summary": "Readable D&D 5e actor values and transformation tracking.",
+    "repositories": {
+      "premium": "FaeyUmbrea/obs-utils-dnd5e"
+    },
+    "releases": [
+      {
+        "channel": "premium",
+        "version": "0.2.0",
+        "tag": "0.2.0",
+        "repository": "FaeyUmbrea/obs-utils-dnd5e",
+        "manifest": "https://github.com/FaeyUmbrea/obs-utils-dnd5e/releases/download/0.2.0/module.json",
+        "source": "content/obs-utils-dnd5e/premium/0.2.0"
+      }
+    ]
+  },
+  {
+    "id": "obs-utils-pf2e",
+    "title": "OBS Utils · Pathfinder 2e",
+    "summary": "Pathfinder 2e actor values and system-specific overlay events.",
+    "repositories": {
+      "premium": "FaeyUmbrea/obs-utils-pf2e"
+    },
+    "releases": [
+      {
+        "channel": "legacy",
+        "version": "unreleased",
+        "legacy": true,
+        "source": "content/obs-utils-pf2e/legacy/unreleased"
+      }
+    ]
+  },
+  {
+    "id": "obs-utils-coc",
+    "title": "OBS Utils · Call of Cthulhu",
+    "summary": "Investigator values and CoC7 events for your stream overlays.",
+    "repositories": {
+      "premium": "FaeyUmbrea/obs-utils-coc"
+    },
+    "releases": [
+      {
+        "channel": "legacy",
+        "version": "unreleased",
+        "legacy": true,
+        "source": "content/obs-utils-coc/legacy/unreleased"
+      }
+    ]
+  },
+  {
+    "id": "obs-utils-scene-levels",
+    "title": "OBS Utils · Scene Levels",
+    "summary": "Soften the edges of Foundry’s level reveals on your stream.",
+    "repositories": {
+      "premium": "FaeyUmbrea/obs-utils-scene-levels"
+    },
+    "releases": [
+      {
+        "channel": "legacy",
+        "version": "unreleased",
+        "legacy": true,
+        "source": "content/obs-utils-scene-levels/legacy/unreleased"
+      }
+    ]
+  },
+  {
+    "id": "illumhyr-homebrew",
+    "title": "Illumhyr Homebrew",
+    "summary": "Pathfinder 2e content for Illumhyr.",
+    "repositories": {
+      "public": "FaeyUmbrea/illumhyr-homebrew"
+    },
+    "releases": [
+      {
+        "channel": "legacy",
+        "version": "unreleased",
+        "legacy": true,
+        "source": "content/illumhyr-homebrew/legacy/unreleased"
+      }
+    ]
+  }
+]

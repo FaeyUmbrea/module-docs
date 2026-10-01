@@ -1,0 +1,27 @@
+{
+  "name": "@faeyumbrea/lib-camera-api-types",
+  "version": "1.14.0",
+  "description": "Public API declarations for libCamera 1.14.0 on Foundry 14.",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FaeyUmbrea/foundry-lib-camera.git"
+  },
+  "homepage": "https://docs.void.monster/lib-camera/public/1.14.0/dev/",
+  "types": "./public-api.d.ts",
+  "exports": {
+    ".": {
+      "types": "./public-api.d.ts"
+    }
+  },
+  "files": [
+    "**/*.d.ts",
+    "LICENSE",
+    "README.md"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/",
+    "tag": "latest"
+  }
+}

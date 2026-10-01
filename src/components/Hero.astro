@@ -1,0 +1,27 @@
+---
+import Catalogue from './Catalogue.astro';
+import Hexes from './Hexes.astro';
+const { hero } = Astro.locals.starlightRoute.entry.data;
+---
+<section class="docs-hero" aria-labelledby="_top">
+  <div class="hero-words">
+    <div class="hero-kicker">Void Monster · Module documentation</div>
+    <h1 id="_top">{hero?.title}</h1>
+    <p>{hero?.tagline}</p>
+  </div>
+  <img class="hero-art" src="/brand/eyes-and-mouth.svg" width="360" height="360" alt="" aria-hidden="true" />
+</section>
+<Hexes class="catalogue-divider" count={5} />
+<Catalogue />
+<style>
+  .docs-hero { display: grid; grid-template-columns: 1.4fr 1fr; align-items: center; gap: 2rem; position: relative; isolation: isolate; padding: 3rem 0 2.5rem; }
+  .docs-hero::before { content: ''; position: absolute; inset: -2rem -4rem; z-index: -1; pointer-events: none; background: url('/brand/stars.svg') center / 560px, radial-gradient(ellipse at 85% 45%, #7c233028, transparent 65%); opacity: .6; -webkit-mask-image: linear-gradient(transparent, black 20%, black 70%, transparent); mask-image: linear-gradient(transparent, black 20%, black 70%, transparent); }
+  .hero-kicker { color: var(--sl-color-gray-2); font-size: .72rem; letter-spacing: .14em; text-transform: uppercase; margin-bottom: 1.3rem; }
+  h1 { max-width: 13ch; font-size: clamp(2.5rem, 5vw, 4rem); line-height: 1.1; letter-spacing: -.045em; font-weight: 720; margin: 0; text-wrap: balance; background-image: linear-gradient(100deg, #c44743, #ff6d52 45%, #e6c655); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  p { max-width: 36rem; font-size: 1.1rem; line-height: 1.8; color: var(--sl-color-gray-1); margin-top: 1.5rem; }
+  .hero-art { width: min(100%, 21rem); height: auto; justify-self: center; opacity: .85; filter: drop-shadow(0 0 32px #7c23304d); }
+  :global(.catalogue-divider) { margin-block: .5rem 2rem; }
+  :global([data-theme='light']) .docs-hero::before { opacity: .25; }
+  :global([data-theme='light']) h1 { background-image: linear-gradient(100deg, #7c2330, #a8232e 45%, #805817); }
+  @media (max-width: 40rem) { .docs-hero { gap: 1.2rem; grid-template-columns: 1fr; padding-top: 2rem; } .docs-hero::before { inset-inline: 0; } .hero-art { width: 9rem; position: absolute; right: 0; top: 0; opacity: .12; z-index: -1; } h1 { font-size: 2.8rem; } p { font-size: 1rem; } }
+</style>

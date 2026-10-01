@@ -1,0 +1,36 @@
+---
+const { moduleId, channel, version } = Astro.locals.starlightRoute.entry.data;
+---
+<docs-search data-module={moduleId} data-channel={channel} data-version={version} data-search-dev={import.meta.env.DEV}>
+  <button class="search-trigger" type="button" aria-label="Search documentation" aria-haspopup="dialog" aria-keyshortcuts="Control+K Meta+K">
+    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="6" stroke="currentColor" stroke-width="1.8"/><path d="m15 15 5 5" stroke="currentColor" stroke-width="1.8"/></svg>
+    <span>Search documentation</span><kbd>⌘ / Ctrl K</kbd>
+  </button>
+  <dialog aria-label="Search documentation">
+    <div class="search-top"><label for="docs-query">Search documentation</label><button class="close-search" type="button" aria-label="Close search">Close</button></div>
+    <input id="docs-query" type="search" placeholder="What are you looking for?" autocomplete="off" />
+    <label class="search-scope"><input type="checkbox" checked /> {moduleId ? 'Search this module and version' : 'Search latest documentation only'}</label>
+    <p class="search-status" role="status" aria-live="polite">Type to search guides and API reference.</p>
+    <ol class="search-results" aria-label="Search results"></ol>
+  </dialog>
+</docs-search>
+<script is:inline type="module" src="/search.js"></script>
+<style>
+  docs-search { display: block; width: min(30rem, 42vw); }
+  .search-trigger { display: flex; align-items: center; gap: .65rem; width: 100%; padding: .6rem .8rem; font: inherit; font-size: .8rem; color: var(--sl-color-gray-2); background: var(--sl-color-bg); border: 1px solid var(--sl-color-gray-5); border-radius: 5px; cursor: pointer; }
+  kbd { margin-left: auto; font-size: .65rem; white-space: nowrap; }
+  dialog { width: min(42rem, calc(100vw - 2rem)); max-height: 80vh; margin: 10vh auto auto; background: var(--sl-color-bg); color: var(--sl-color-white); border: 1px solid var(--sl-color-gray-4); border-radius: 8px; padding: 1.5rem; overflow-y: auto; }
+  dialog::backdrop { background: #0009; }
+  .search-top { display: flex; justify-content: space-between; align-items: center; gap: 1rem; margin-bottom: 1rem; }
+  .search-top label { font-weight: 600; }
+  .close-search { color: var(--sl-color-gray-2); background: none; border: none; font: inherit; font-size: .8rem; cursor: pointer; padding: .5rem; }
+  input[type='search'] { display: block; width: 100%; font: inherit; padding: .8rem; background: var(--sl-color-bg-sidebar); color: inherit; border: 1px solid var(--sl-color-gray-4); border-radius: 4px; }
+  .search-scope { display: flex; gap: .5rem; align-items: center; font-size: .8rem; color: var(--sl-color-gray-2); margin-top: 1rem; }
+  .search-status { font-size: .85rem; margin-top: 1rem; color: var(--sl-color-gray-2); }
+  .search-results { list-style: none; padding: 0; }
+  .search-results :global(li) { padding: 1rem 0; border-bottom: 1px solid var(--sl-color-hairline); }
+  .search-results :global(a) { font-weight: 600; text-decoration: none; }
+  .search-results :global(small) { display: block; color: var(--sl-color-gray-2); font-size: .7rem; margin-top: .3rem; }
+  .search-results :global(p) { font-size: .8rem; margin-top: .4rem; color: var(--sl-color-gray-2); }
+  @media (max-width: 49.99rem) { docs-search { width: auto; } .search-trigger span, kbd { display: none; } }
+</style>

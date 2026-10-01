@@ -1,80 +1,40 @@
-# Void Monster Foundry Modules Documentation
+# Void Monster module docs
 
-This repository contains the documentation for Void Monster's Foundry VTT modules, built with [Docusaurus](https://docusaurus.io/).
+User guides and developer docs for Void Monster’s Foundry modules, built with Astro and Starlight. Search runs locally with Pagefind.
 
-## Modules
+Use Node 22.12 or newer and Yarn 4:
 
-- [OBS Utils](https://github.com/FaeyUmbrea/obs-utils)
-- [Ethereal Plane](https://github.com/FaeyUmbrea/ethereal-plane)
-
-## Development
-
-### Installation
-
-```bash
-# Install dependencies
+```sh
+corepack enable
 yarn install
-```
-
-### Local Development
-
-```bash
-# Start the development server
 yarn start
 ```
 
-This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
+For the complete static site, including search:
 
-### Build
-
-```bash
-# Build the static site
+```sh
 yarn build
+yarn preview
 ```
 
-This command generates static content into the `build` directory that can be served by any static content hosting service.
+The preview stays on localhost. These commands do not publish anything.
 
-### Deploy
+Release guides live in `content/`; published manifests and API type packages live in `releases/`. Previous documentation is preserved under the legacy versions. API references use snapshots of exact published npm packages, so rebuilding never follows a module’s development branch or a moving npm tag. Historical references whose packages were never published on npm retain their original release archives.
 
-```bash
-# Deploy to Cloudflare Pages
-yarn deploy
+The [documentation overhaul article](https://tasks.void.monster/articles/MODULEDOCS-A-1) describes the approved release and navigation model.
+
+For a new module release, update its guides and source docstrings first. After publishing its API package, import the release with the exact package version:
+
+```sh
+yarn release:import lib-camera public v1.14.1 @faeyumbrea/lib-camera-api-types@1.14.1
 ```
 
-## API Documentation
+For a release without an API, omit the package argument. Add its user and developer guides under the content path printed in the release catalog. Existing releases cannot be reimported with a different API mapping.
 
-The API documentation is automatically generated from the TypeScript source code using [TypeDoc](https://typedoc.org/) and [docusaurus-plugin-typedoc](https://github.com/tgreyuk/typedoc-plugin-markdown/tree/master/packages/docusaurus-plugin-typedoc).
-
-### Generating API Documentation
-
-To generate the API documentation, run:
-
-```bash
-yarn generate-api-docs
+```sh
+yarn docs:prepare
+yarn preview
+yarn docs:check
 ```
 
-This command will generate Markdown files in the `docs/api-reference` directory based on the TypeScript source code in the submodules.
-
-### Configuration
-
-The TypeDoc configuration is defined in `typedoc.json` and the Docusaurus plugin configuration is in `docusaurus.config.js`.
-
-## Project Structure
-
-```
-module-docs/
-├── docs/                    # Documentation files
-│   ├── ethereal-plane/      # Ethereal Plane documentation
-│   ├── obs-utils/           # OBS Utils documentation
-│   └── api-reference/       # Auto-generated API documentation
-├── src/                     # Docusaurus theme customizations
-├── static/                  # Static files
-├── submodules/              # Git submodules
-│   ├── ethereal-plane/      # Ethereal Plane source code
-│   └── obs-utils/           # OBS Utils source code
-├── docusaurus.config.js     # Docusaurus configuration
-├── sidebars.js              # Sidebar configuration
-├── package.json             # Project dependencies
-├── tsconfig.json            # TypeScript configuration
-└── typedoc.json             # TypeDoc configuration
-```
+Review the preview, then publish the checked documentation through the existing production deployment. Verify the module's exact documentation link afterward. Pushing to `master` deploys the site.

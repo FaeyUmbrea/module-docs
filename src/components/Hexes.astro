@@ -1,0 +1,25 @@
+---
+/* Thin-stroke hexagon outlines, Faey's tail markings. Decorative divider. */
+interface Props {
+  class?: string;
+  count?: number;
+}
+const { class: className = '', count = 3 } = Astro.props;
+const sizes = [14, 20, 14, 10, 16];
+---
+
+<div class={`hex-row ${className}`} aria-hidden="true">
+  {Array.from({ length: count }).map((_, i) => {
+    const s = sizes[i % sizes.length];
+    return (
+      <svg width={s} height={s} viewBox="0 0 24 24" fill="none" class={i % 2 ? 'animate-drift' : ''}>
+        <path
+          d="M12 2 L20.66 7 V17 L12 22 L3.34 17 V7 Z"
+          stroke="rgb(168 35 46)"
+          stroke-opacity={i % 2 ? 0.55 : 0.8}
+          stroke-width="1.2"
+        />
+      </svg>
+    );
+  })}
+</div>

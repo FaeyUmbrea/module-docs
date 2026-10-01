@@ -1,0 +1,106 @@
+---
+/*
+  The eye-con: center eye from Faey's Eyes+Mouth.svg, layer proportions
+  per her direction: yellow sclera, orange iris, dark-orange slit pupil.
+  Iris and pupil are clipped by the sclera shape and both follow the
+  cursor (iris with less travel, pupil with more, like an actual eye).
+  All shapes are transforms of her original paths, no redrawing.
+*/
+interface Props {
+  class?: string;
+}
+/* Size with BOTH h-* and w-* classes; inline svg won't derive width
+   from the viewBox like an <img> does, in any browser. 496:714 ≈ 0.695. */
+const { class: className = 'h-7 w-[19px]' } = Astro.props;
+---
+
+<svg
+  class={`eye-track ${className}`}
+  viewBox="752 78 496 714"
+  xmlns="http://www.w3.org/2000/svg"
+  aria-hidden="true"
+  style="fill-rule:evenodd;clip-rule:evenodd;"
+>
+  <defs>
+    <clipPath id="eyemark-sclera-clip">
+      <path
+        d="M999.863,93.301c71.854,77.829 116.543,206.416 114.271,339.947c-2.665,156.618 -67.968,276.501 -114.513,345.523c-45.668,-67.793 -110.903,-187.134 -113.78,-344.064c-2.454,-133.855 41.956,-263.407 114.022,-341.406"
+        transform="translate(1000 436) scale(2.15 1) translate(-1000 -436)"
+      />
+    </clipPath>
+  </defs>
+
+  <!-- Sclera (yellow) -->
+  <g transform="translate(1000 436) scale(2.15 1) translate(-1000 -436)">
+    <path
+      d="M999.863,93.301c71.854,77.829 116.543,206.416 114.271,339.947c-2.665,156.618 -67.968,276.501 -114.513,345.523c-45.668,-67.793 -110.903,-187.134 -113.78,-344.064c-2.454,-133.855 41.956,-263.407 114.022,-341.406"
+      fill="#efd565"
+      fill-rule="nonzero"
+    />
+  </g>
+
+  <!-- Everything inside the eye stays inside the eye -->
+  <g clip-path="url(#eyemark-sclera-clip)">
+    <!-- Iris (orange), follows the cursor a little -->
+    <g class="eye-iris" style="transition: transform 0.14s ease-out;">
+      <g transform="translate(1000 442) scale(1.62 0.84) translate(-1000 -442)">
+        <path
+          d="M1000,185.783c50.883,0 85.514,40.651 89.945,44.056c14.237,10.942 46.199,30.325 50.308,32.817c38.929,23.609 89.638,53.004 112.568,118.58c9.198,26.303 9.253,48.467 9.299,52.211c0.987,81.722 -64.322,133.096 -108.066,147.693c-3.916,1.307 -4.111,1.052 -4.622,1.808c-2.77,4.103 -20.541,41.315 -63.741,67.914c-39.039,24.036 -76.563,24.192 -85.69,24.192c-56.866,-0 -114.462,-29.511 -149.065,-91.443c-0.85,-1.521 -1.189,-1.179 -4.989,-2.471c-41.852,-14.22 -67.866,-45.131 -74.051,-52.647c-32.893,-39.973 -34.202,-79.594 -34.016,-95.046c0.235,-19.448 4.728,-78.625 61.228,-128.771c32.429,-28.782 70.139,-44.905 109.678,-73.903c4.076,-2.99 10.351,-10.786 24.417,-21.092c27.056,-19.825 50.512,-23.898 66.796,-23.898Z"
+          fill="#f7822b"
+        />
+        <path
+          d="M1000,203.323c52.342,0 88.294,42.369 93.345,46.524c34.122,28.068 82.295,52.576 116.426,88.822c38.978,41.393 52.26,88.46 52.72,124.843c0.208,16.48 -0.099,73.491 -62.197,127.23c-22.755,19.692 -43.655,28.846 -44.008,29.116c-1.88,1.44 -18.937,40.456 -63.648,69.391c-42.028,27.198 -83.06,27.301 -92.638,27.301c-59.271,0 -119.37,-30.754 -155.423,-95.45c-1.087,-1.95 -1.548,-1.463 -7.263,-4.486c-3.004,-1.589 -101.093,-51.205 -99.805,-153.102c0.306,-24.242 6.857,-81.17 60.769,-132.968c32.192,-30.93 77.557,-55.346 108.377,-80.698c5.052,-4.155 41.003,-46.524 93.345,-46.524Z"
+          fill="#f7822b"
+        />
+      </g>
+    </g>
+
+    <!-- Pupil (dark orange slit), follows the cursor more -->
+    <g class="eye-pupil" style="transition: transform 0.12s ease-out;">
+      <g transform="translate(1000 478) scale(1.32 0.72) translate(-1000 -478)">
+        <path
+          d="M999.918,341.817c54.767,77.175 73.539,199.169 -0.04,308.35c-72.798,-108.064 -55.028,-230.78 0.04,-308.35"
+          fill="#934215"
+          fill-rule="nonzero"
+        />
+      </g>
+    </g>
+  </g>
+</svg>
+
+<script is:inline>
+  (() => {
+    if (window.__eyeTrackInit) return;
+    window.__eyeTrackInit = true;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    let mx = -1, my = -1, raf = 0;
+
+    function update() {
+      raf = 0;
+      document.querySelectorAll('.eye-track').forEach((svg) => {
+        const iris = svg.querySelector('.eye-iris');
+        const pupil = svg.querySelector('.eye-pupil');
+        if (!iris || !pupil) return;
+        const r = svg.getBoundingClientRect();
+        if (r.width === 0) return;
+        const cx = r.left + r.width / 2;
+        const cy = r.top + r.height / 2;
+        const nx = Math.max(-1, Math.min(1, (mx - cx) / 220));
+        const ny = Math.max(-1, Math.min(1, (my - cy) / 220));
+        iris.style.transform = `translate(${(nx * 48).toFixed(1)}px, ${(ny * 26).toFixed(1)}px)`;
+        pupil.style.transform = `translate(${(nx * 105).toFixed(1)}px, ${(ny * 58).toFixed(1)}px)`;
+      });
+    }
+
+    window.addEventListener(
+      'mousemove',
+      (e) => {
+        mx = e.clientX;
+        my = e.clientY;
+        if (!raf) raf = requestAnimationFrame(update);
+      },
+      { passive: true }
+    );
+  })();
+</script>

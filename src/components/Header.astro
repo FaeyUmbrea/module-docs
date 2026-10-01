@@ -1,0 +1,22 @@
+---
+import Search from './Search.astro';
+import EyeMark from './EyeMark.astro';
+import ThemeSelect from '@astrojs/starlight/components/ThemeSelect.astro';
+import '@fontsource-variable/inter';
+---
+<div class="docs-header">
+  <a class="brand" href="/" aria-label="Void Monster documentation home">
+    <EyeMark class="brand-eye" />
+    <span>Void Monster <span class="brand-docs">Docs</span></span>
+  </a>
+  <Search />
+  <div class="header-actions"><ThemeSelect /></div>
+</div>
+<style>
+  .docs-header { display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; height: 100%; }
+  .brand { display: flex; align-items: center; gap: .7rem; text-decoration: none; color: var(--sl-color-white); font-weight: 650; white-space: nowrap; font-size: 1rem; }
+  .brand :global(.brand-eye) { width: 22px; height: 32px; flex-shrink: 0; filter: drop-shadow(0 0 8px #c3944040); }
+  .brand-docs { color: var(--sl-color-gray-2); font-weight: 400; margin-left: .35rem; }
+  .header-actions { display: flex; align-items: center; font-size: .85rem; }
+  @media (max-width: 49.99rem) { .header-actions { display: none; } .brand-docs { display: none; } .docs-header { gap: .6rem; } }
+</style>

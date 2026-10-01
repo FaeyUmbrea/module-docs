@@ -1,0 +1,36 @@
+---
+import Hexes from './Hexes.astro';
+import { modules, channelLabels, preferredRelease } from '../lib/docs';
+const { entry } = Astro.locals.starlightRoute;
+const data = entry.data;
+const module = modules.find((item) => item.id === data.moduleId);
+const release = module?.releases.find((item) => item.channel === data.channel && item.version === data.version);
+---
+{module && <div class="doc-context" data-pagefind-ignore><a href={`/${module.id}/`}>{module.title}</a><span>/</span><span>{data.audience === 'dev' ? 'Developer docs' : 'User guide'}</span></div>}
+<h1 id="_top">{data.title}</h1>
+{release && <div class="release-meta" data-pagefind-ignore>
+  <span class="release-badge">{release.version === 'unreleased' ? 'In development' : `${channelLabels[release.channel]} ${release.version === 'current' ? 'documentation' : release.version}`}</span>
+  {release.api && data.audience === 'dev' && <span>API {release.api.version}</span>}
+</div>}
+{module && <Hexes class="article-divider" count={3} />}
+{data.legacy && <aside class="legacy-notice" aria-label="Documentation status">
+  {data.version === 'unreleased'
+    ? 'This module is in development. These guides describe the current work, not a published release.'
+    : 'These pages preserve the previous documentation. Their exact release coverage has not been verified.'}
+</aside>}
+{module && <div hidden data-pagefind-filter={`module:${module.id}`} />}
+{data.channel && <div hidden data-pagefind-filter={`channel:${data.channel}`} />}
+{data.version && <div hidden data-pagefind-filter={`version:${data.version}`} />}
+{data.audience && <div hidden data-pagefind-filter={`audience:${data.audience}`} />}
+{module && release === preferredRelease(module) && <div hidden data-pagefind-filter="latest:yes" />}
+{module && <div hidden data-pagefind-meta={`module:${module.title}`} />}
+{release && <div hidden data-pagefind-meta={`release:${channelLabels[release.channel]} ${release.version}`} />}
+<style>
+  :global(.article-divider) { max-width: 18rem; margin-top: 1.5rem; }
+  .doc-context { display: flex; align-items: center; gap: .65rem; font-size: .8rem; color: var(--sl-color-gray-2); }
+  .doc-context a { color: inherit; text-decoration: none; }
+  h1 { font-size: clamp(1.8rem, 4vw, 2.55rem); font-weight: 700; letter-spacing: -.035em; line-height: 1.2; margin-top: .8rem; }
+  .release-meta { display: flex; gap: .75rem; align-items: center; flex-wrap: wrap; font-size: .75rem; color: var(--sl-color-gray-2); margin-top: 1rem; }
+  .release-badge { border: 1px solid var(--sl-color-hairline); padding: .25rem .55rem; border-radius: 4px; background: var(--sl-color-bg-sidebar); }
+  .legacy-notice { border-left: 2px solid var(--vm-gold); padding: .75rem 1rem; font-size: .85rem; background: var(--sl-color-bg-sidebar); margin-top: 1rem; }
+</style>

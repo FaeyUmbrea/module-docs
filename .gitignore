@@ -58,3 +58,9 @@ coverage
 .pnp.*
 
 .wrangler
+.astro
+.release-cache
+src/content/docs
+
+/public/media/
+/submodules/

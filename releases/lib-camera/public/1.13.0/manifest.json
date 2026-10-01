@@ -1,0 +1,53 @@
+{
+  "id": "lib-camera",
+  "title": "libCamera",
+  "description": "Shared camera ownership, priorities and viewport control for Foundry VTT.",
+  "version": "1.13.0",
+  "compatibility": {
+    "minimum": "13.351",
+    "verified": "13.351",
+    "maximum": "13"
+  },
+  "authors": [
+    {
+      "name": "Faey Umbrea",
+      "url": "https://github.com/FaeyUmbrea",
+      "discord": "Faey#0001"
+    }
+  ],
+  "relationships": {
+    "requires": [
+      {
+        "id": "lib-wrapper",
+        "type": "module",
+        "manifest": "https://github.com/ruipin/fvtt-lib-wrapper/releases/latest/download/module.json",
+        "compatibility": {
+          "minimum": "1.13.0.0"
+        }
+      }
+    ],
+    "systems": []
+  },
+  "esmodules": [
+    "dist/lib-camera.js"
+  ],
+  "styles": [
+    "dist/lib-camera.css"
+  ],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    }
+  ],
+  "url": "https://github.com/FaeyUmbrea/foundry-lib-camera",
+  "manifest": "https://raw.githubusercontent.com/FaeyUmbrea/foundry-lib-camera/13/module.json",
+  "download": "https://github.com/FaeyUmbrea/foundry-lib-camera/releases/download/v1.13.0/module.zip",
+  "readme": "https://github.com/FaeyUmbrea/foundry-lib-camera/blob/13/README.md",
+  "license": "Apache-2.0",
+  "socket": true,
+  "persistentStorage": false,
+  "library": true,
+  "media": []
+}

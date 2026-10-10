@@ -36,5 +36,8 @@
     "typedoc-plugin-markdown": "4.13.1",
     "typescript": "~6.0.3",
     "wrangler": "^4.92.0"
+  },
+  "resolutions": {
+    "postcss-nested/postcss-selector-parser": "7.1.6"
   }
 }

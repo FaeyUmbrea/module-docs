@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
-import { defaultRelease, releaseRoot, validateRelease, readCatalog } from '../tools/catalog.mjs';
+import { defaultRelease, releaseRoot, validateRelease, readCatalog, channelRedirects } from '../tools/catalog.mjs';
 import { article } from '../tools/prepare-docs.mjs';
 import { readFile } from 'node:fs/promises';
 import { exactPackage, assertNewRelease } from '../tools/npm-api.mjs';
@@ -64,4 +64,29 @@ test('every catalog release has a guide and API metadata matches the released pa
       }
     }
   }
+});
+
+test('channel links select the latest release in each channel without changing version URLs', () => {
+  const module = { id: 'camera', releases: [
+    { channel: 'early-access', version: 'unreleased', legacy: true },
+    { channel: 'public', version: '1.9.0' },
+    { channel: 'early-access', version: '2.0.0' },
+    { channel: 'public', version: '1.14.0' },
+    { channel: 'premium', version: '3.0.0' },
+  ] };
+  const redirects = channelRedirects([module]);
+  assert.deepEqual(redirects['/camera/public'], { destination: '/camera/public/1.14.0/user/', status: 302 });
+  assert.deepEqual(redirects['/camera/early-access/dev'], { destination: '/camera/early-access/2.0.0/dev/', status: 302 });
+  assert.deepEqual(redirects['/camera/premium/user'], { destination: '/camera/premium/3.0.0/user/', status: 302 });
+  assert.equal(redirects['/camera/public/1.9.0/user'], undefined);
+  assert.equal(defaultRelease(module).version, '1.14.0');
+  module.releases.push({ channel: 'early-access', version: '2.1.0' });
+  assert.equal(channelRedirects([module])['/camera/early-access'].destination, '/camera/early-access/2.1.0/user/');
+});
+
+test('channel links use development docs until a released entry is available and omit absent channels', () => {
+  const redirects = channelRedirects([{ id: 'camera', releases: [{ channel: 'early-access', version: 'unreleased', legacy: true }] }, { id: 'empty', releases: [] }]);
+  assert.equal(redirects['/camera/early-access'].destination, '/camera/early-access/unreleased/user/');
+  assert.equal(redirects['/camera/public'], undefined);
+  assert.equal(redirects['/empty/public'], undefined);
 });

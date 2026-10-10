@@ -13,6 +13,21 @@ export function defaultRelease(module) {
     ?? newestFirst[0];
 }
 
+export function channelRedirects(catalog) {
+  const result = {};
+  for (const module of catalog) {
+    for (const channel of new Set(module.releases.map((release) => release.channel))) {
+      const release = defaultRelease({ releases: module.releases.filter((release) => release.channel === channel) });
+      const base = `/${module.id}/${channel}`;
+      for (const audience of ['user', 'dev']) {
+        result[`${base}/${audience}`] = { destination: `${releaseRoot(module.id, release)}${audience}/`, status: 302 };
+      }
+      result[base] = result[`${base}/user`];
+    }
+  }
+  return result;
+}
+
 export async function readCatalog() {
   return JSON.parse(await readFile(new URL('../releases/catalog.json', import.meta.url), 'utf8'));
 }

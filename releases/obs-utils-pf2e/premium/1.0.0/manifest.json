@@ -1,0 +1,76 @@
+{
+  "id": "obs-utils-pf2e",
+  "title": "OBS Utils - Pathfinder 2e",
+  "description": "Pathfinder Second Edition companion for OBS Utils. Adds system-specific actor value paths, grouped data picker, and pf2e overlay triggers.",
+  "version": "1.0.0",
+  "compatibility": {
+    "minimum": "14.360",
+    "verified": "14.363",
+    "maximum": "14"
+  },
+  "authors": [
+    {
+      "name": "Faey Umbrea",
+      "url": "https://github.com/FaeyUmbrea",
+      "discord": "Faey#0001"
+    }
+  ],
+  "relationships": {
+    "recommends": [
+      {
+        "compatibility": {
+          "minimum": "5.3.0"
+        },
+        "id": "obs-utils",
+        "type": "module"
+      },
+      {
+        "compatibility": {
+          "minimum": "5.3.0"
+        },
+        "id": "obs-utils-premium",
+        "type": "module"
+      }
+    ],
+    "systems": [
+      {
+        "compatibility": {
+          "minimum": "8.1.2",
+          "verified": "8.1.2",
+          "maximum": "8.999.999"
+        },
+        "id": "pf2e",
+        "type": "system"
+      }
+    ]
+  },
+  "esmodules": [
+    "dist/obs-utils-pf2e.js"
+  ],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    },
+    {
+      "lang": "de",
+      "name": "Deutsch",
+      "path": "lang/de.json"
+    }
+  ],
+  "url": "https://github.com/FaeyUmbrea/obs-utils-pf2e",
+  "manifest": "https://r2.foundryvtt.com/packages-public/obs-utils-pf2e/module.json",
+  "readme": "https://github.com/FaeyUmbrea/obs-utils-pf2e/blob/main/README.md",
+  "license": "All Rights Reserved",
+  "socket": false,
+  "persistentStorage": true,
+  "library": false,
+  "media": [
+    {
+      "type": "icon",
+      "url": "https://avatars2.githubusercontent.com/u/71292812?s=400&u=ccdb4eeb7abf551ca8f314e5a9bfd0479a4d3d41&v=4"
+    }
+  ],
+  "protected": true
+}

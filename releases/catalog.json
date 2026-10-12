@@ -207,6 +207,14 @@
     },
     "releases": [
       {
+        "channel": "premium",
+        "version": "1.0.0",
+        "tag": "1.0.0",
+        "repository": "FaeyUmbrea/obs-utils-pf2e",
+        "manifest": "https://r2.foundryvtt.com/packages-public/obs-utils-pf2e/module.json",
+        "source": "content/obs-utils-pf2e/premium/1.0.0"
+      },
+      {
         "channel": "legacy",
         "version": "unreleased",
         "legacy": true,

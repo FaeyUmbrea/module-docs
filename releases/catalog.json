@@ -112,6 +112,23 @@
     "releases": [
       {
         "channel": "public",
+        "version": "1.14.2",
+        "tag": "v1.14.2",
+        "repository": "FaeyUmbrea/foundry-lib-camera",
+        "manifest": "https://github.com/FaeyUmbrea/foundry-lib-camera/releases/download/v1.14.2/module.json",
+        "source": "content/lib-camera/public/1.14.2",
+        "api": {
+          "source": "npm",
+          "name": "@faeyumbrea/lib-camera-api-types",
+          "version": "1.14.2",
+          "asset": "https://registry.npmjs.org/@faeyumbrea/lib-camera-api-types/-/lib-camera-api-types-1.14.2.tgz",
+          "integrity": "sha512-Bm3SwEdi/IpjXkL6JZIe8o+T4WNzTI3aBME8gGCjR4qAWwkBJ5JfSJxorgh9vVphU7hQoijXHR3oDFaFTCZeHQ==",
+          "sha256": "3f22641ffb8bf8bac150dea9b57c4d6ddfe3da70ba341bda85e4e95b61f7bb1a",
+          "filesSha256": "ebddc1aa4c78f9ad3cf3c198461be77d501ac9d3166a682af7d3a353611a4e77"
+        }
+      },
+      {
+        "channel": "public",
         "version": "1.14.1",
         "tag": "v1.14.1",
         "repository": "FaeyUmbrea/foundry-lib-camera",
@@ -142,6 +159,23 @@
           "integrity": "sha512-VPEMBPr2pi1Lm1GmtNeGIjB2TzMAARRKuKAwhnbpCsJMAVdXfoWNXIhCb8+ET4UoEPh6Gy72Ps0UfL56alMqZQ==",
           "sha256": "ada704ca1c839081414fa30ff67700eb0d8b3be3bac9ccb7e6d3be2add5b91ef",
           "filesSha256": "b27b708673ce93fe3c09e5c380123089baf8c8cb4d1f3a4a7fc0ad72c609459b"
+        }
+      },
+      {
+        "channel": "public",
+        "version": "1.13.2",
+        "tag": "v1.13.2",
+        "repository": "FaeyUmbrea/foundry-lib-camera",
+        "manifest": "https://github.com/FaeyUmbrea/foundry-lib-camera/releases/download/v1.13.2/module.json",
+        "source": "content/lib-camera/public/1.13.2",
+        "api": {
+          "source": "npm",
+          "name": "@faeyumbrea/lib-camera-api-types",
+          "version": "1.13.2",
+          "asset": "https://registry.npmjs.org/@faeyumbrea/lib-camera-api-types/-/lib-camera-api-types-1.13.2.tgz",
+          "integrity": "sha512-xtm1J2uG/JDkzsG7gpZyGLEQlIWz1EzIfwmYjhMHwVXpRKfhVJAnGnuw1/cV4x+MJlRo6zv+yNbF64wlYljnNA==",
+          "sha256": "10a5f11f5955ed0239e3dc6318c1390eff2971e3d963ab95d31470a780475cea",
+          "filesSha256": "b034cd78e11f121a4144b8667b65d37cdf0f4e2e5b286439a0b3f686ccd716c3"
         }
       },
       {

@@ -1,0 +1,71 @@
+{
+  "id": "obs-utils-dnd5e",
+  "title": "OBS Utils - D&D 5e",
+  "description": "D&D 5th Edition companion for OBS Utils. Adds system-specific actor value paths, grouped data picker, and dnd5e overlay triggers.",
+  "version": "1.0.0",
+  "compatibility": {
+    "minimum": "14.369",
+    "verified": "14.369",
+    "maximum": "14"
+  },
+  "authors": [
+    {
+      "name": "Faey Umbrea",
+      "url": "https://github.com/FaeyUmbrea",
+      "discord": "Faey#0001"
+    }
+  ],
+  "relationships": {
+    "recommends": [
+      {
+        "compatibility": {
+          "minimum": "5.3.0"
+        },
+        "id": "obs-utils",
+        "type": "module"
+      },
+      {
+        "compatibility": {
+          "minimum": "5.3.0"
+        },
+        "id": "obs-utils-premium",
+        "type": "module"
+      }
+    ],
+    "systems": [
+      {
+        "compatibility": {
+          "minimum": "6.0.6",
+          "verified": "6.0.6",
+          "maximum": "6.999.999"
+        },
+        "id": "dnd5e",
+        "type": "system"
+      }
+    ]
+  },
+  "esmodules": [
+    "dist/obs-utils-dnd5e.js"
+  ],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    }
+  ],
+  "url": "https://github.com/FaeyUmbrea/obs-utils-dnd5e",
+  "manifest": "https://r2.foundryvtt.com/packages-public/obs-utils-dnd5e/module.json",
+  "readme": "https://github.com/FaeyUmbrea/obs-utils-dnd5e/blob/main/README.md",
+  "license": "All Rights Reserved",
+  "socket": false,
+  "persistentStorage": true,
+  "library": false,
+  "media": [
+    {
+      "type": "icon",
+      "url": "https://avatars2.githubusercontent.com/u/71292812?s=400&u=ccdb4eeb7abf551ca8f314e5a9bfd0479a4d3d41&v=4"
+    }
+  ],
+  "protected": true
+}

@@ -239,6 +239,14 @@
     "releases": [
       {
         "channel": "premium",
+        "version": "1.0.0",
+        "tag": "1.0.0",
+        "repository": "FaeyUmbrea/obs-utils-dnd5e",
+        "manifest": "https://r2.foundryvtt.com/packages-public/obs-utils-dnd5e/module.json",
+        "source": "content/obs-utils-dnd5e/premium/1.0.0"
+      },
+      {
+        "channel": "premium",
         "version": "0.2.0",
         "tag": "0.2.0",
         "repository": "FaeyUmbrea/obs-utils-dnd5e",

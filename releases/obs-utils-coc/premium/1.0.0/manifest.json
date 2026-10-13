@@ -1,0 +1,70 @@
+{
+  "id": "obs-utils-coc",
+  "title": "OBS Utils - Call of Cthulhu 7e",
+  "description": "Call of Cthulhu companion for OBS Utils. Adds curated actor values, system events and an investigator ribbon.",
+  "version": "1.0.0",
+  "compatibility": {
+    "minimum": "14",
+    "verified": "14",
+    "maximum": "14"
+  },
+  "authors": [
+    {
+      "name": "Faey Umbrea",
+      "url": "https://github.com/FaeyUmbrea",
+      "discord": "Faey#0001"
+    }
+  ],
+  "relationships": {
+    "recommends": [
+      {
+        "compatibility": {
+          "minimum": "5.3.0"
+        },
+        "id": "obs-utils",
+        "type": "module"
+      },
+      {
+        "compatibility": {
+          "minimum": "5.3.0"
+        },
+        "id": "obs-utils-premium",
+        "type": "module"
+      }
+    ],
+    "systems": [
+      {
+        "compatibility": {
+          "minimum": "8.15",
+          "verified": "8.15"
+        },
+        "id": "CoC7",
+        "type": "system"
+      }
+    ]
+  },
+  "esmodules": [
+    "dist/obs-utils-coc.js"
+  ],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    }
+  ],
+  "url": "https://github.com/FaeyUmbrea/obs-utils-coc",
+  "manifest": "https://r2.foundryvtt.com/packages-public/obs-utils-coc/module.json",
+  "readme": "https://github.com/FaeyUmbrea/obs-utils-coc/blob/main/README.md",
+  "license": "All Rights Reserved",
+  "socket": false,
+  "persistentStorage": true,
+  "library": false,
+  "media": [
+    {
+      "type": "icon",
+      "url": "https://avatars2.githubusercontent.com/u/71292812?s=400&u=ccdb4eeb7abf551ca8f314e5a9bfd0479a4d3d41&v=4"
+    }
+  ],
+  "protected": true
+}

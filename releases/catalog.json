@@ -42,6 +42,21 @@
         "version": "unreleased",
         "legacy": true,
         "source": "content/obs-utils/early-access/unreleased"
+      },
+      {
+        "channel": "public",
+        "version": "5.3.1",
+        "tag": "5.3.1",
+        "repository": "FaeyUmbrea/obs-utils",
+        "manifest": "https://github.com/FaeyUmbrea/obs-utils/releases/download/5.3.1/module.json",
+        "source": "content/obs-utils/public/5.3.1",
+        "api": {
+          "name": "@faeyumbrea/obs-utils-api-types",
+          "version": "5.3.0",
+          "asset": "https://github.com/FaeyUmbrea/obs-utils/releases/download/5.3.0/obs-utils-api-types.tgz",
+          "sha256": "478f0b6e08b17fb22ed411acab9ea8aba4dd54829981f4ca8ca6150e642673b7",
+          "source": "release-archive"
+        }
       }
     ]
   },
@@ -216,7 +231,7 @@
   },
   {
     "id": "obs-utils-dnd5e",
-    "title": "OBS Utils · D&D 5e",
+    "title": "OBS Utils \u00b7 D&D 5e",
     "summary": "Readable D&D 5e actor values and transformation tracking.",
     "repositories": {
       "premium": "FaeyUmbrea/obs-utils-dnd5e"
@@ -234,7 +249,7 @@
   },
   {
     "id": "obs-utils-pf2e",
-    "title": "OBS Utils · Pathfinder 2e",
+    "title": "OBS Utils \u00b7 Pathfinder 2e",
     "summary": "Pathfinder 2e actor values and system-specific overlay events.",
     "repositories": {
       "premium": "FaeyUmbrea/obs-utils-pf2e"
@@ -258,7 +273,7 @@
   },
   {
     "id": "obs-utils-coc",
-    "title": "OBS Utils · Call of Cthulhu",
+    "title": "OBS Utils \u00b7 Call of Cthulhu",
     "summary": "Investigator values and CoC7 events for your stream overlays.",
     "repositories": {
       "premium": "FaeyUmbrea/obs-utils-coc"
@@ -274,8 +289,8 @@
   },
   {
     "id": "obs-utils-scene-levels",
-    "title": "OBS Utils · Scene Levels",
-    "summary": "Soften the edges of Foundry’s level reveals on your stream.",
+    "title": "OBS Utils \u00b7 Scene Levels",
+    "summary": "Soften the edges of Foundry\u2019s level reveals on your stream.",
     "repositories": {
       "premium": "FaeyUmbrea/obs-utils-scene-levels"
     },

@@ -58,4 +58,4 @@ The package supplies declarations, not a second copy of libCamera. Foundry still
 
 ## 3D Canvas integrations and terms
 
-3D Canvas has its own [Terms of Use](https://www.patreon.com/theripper93/posts/terms-of-use-65901721). libCamera's Apache-2.0 license does not apply to 3D Canvas. If your module uses this integration, review those terms, including permission and commercial-credit requirements. Contact [theripper93 on Discord](https://discord.theripper93.com/) if you need permission or clarification.
+3D Canvas has its own Terms of Use. libCamera's Apache-2.0 license does not apply to 3D Canvas. If your module uses this integration, [review those terms](https://theripper93.com/info/faq), including permission and commercial-credit requirements.

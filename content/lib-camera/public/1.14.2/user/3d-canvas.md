@@ -19,3 +19,7 @@ and collision handling, and manual camera input stays available.
 Cooperating modules can follow another user's native 3D view. Both clients
 need a ready free camera on the same scene. The integration can read camera
 availability and respond when it changes.
+
+## 3D Canvas credit
+
+This module features the [3D Canvas](https://theripper93.com/module/levels-3d-preview) module by [theripper93](https://theripper93.com/) through its optional camera integration.

@@ -32,3 +32,7 @@ The import copies world settings when you have permission to configure the world
 Settings from an older release are migrated during import. Settings from the same release are copied directly. Settings from a newer release are rejected; update the destination edition first. Existing Free settings without a release marker are recognised as legacy 5.3.0 settings through their migration marker. If no saved settings are found, Setup tells you.
 
 After a successful import, reload when Foundry asks. Importing requires an installed release version; development builds marked `0.0.0` cannot import settings.
+
+## 3D Canvas credit
+
+This module features the [3D Canvas](https://theripper93.com/module/levels-3d-preview) module by [theripper93](https://theripper93.com/) through its optional camera integration.

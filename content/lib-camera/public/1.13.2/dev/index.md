@@ -55,3 +55,7 @@ const region: CameraBounds = { x: 500, y: 300, width: 200, height: 300 };
 ```
 
 The package supplies declarations, not a second copy of libCamera. Foundry still loads the module, and your integration still needs to check its runtime API. Keep your project's Foundry types installed too.
+
+## 3D Canvas integrations and terms
+
+3D Canvas has its own [Terms of Use](https://www.patreon.com/theripper93/posts/terms-of-use-65901721). libCamera's Apache-2.0 license does not apply to 3D Canvas. If your module uses this integration, review those terms, including permission and commercial-credit requirements. Contact [theripper93 on Discord](https://discord.theripper93.com/) if you need permission or clarification.

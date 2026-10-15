@@ -71,6 +71,23 @@
     "releases": [
       {
         "channel": "public",
+        "version": "1.2.0",
+        "tag": "1.2.0",
+        "repository": "FaeyUmbrea/splash",
+        "manifest": "https://github.com/FaeyUmbrea/splash/releases/download/1.2.0/module.json",
+        "source": "content/splash/public/1.2.0",
+        "api": {
+          "source": "npm",
+          "name": "@faeyumbrea/splash-api-types",
+          "version": "1.2.0",
+          "asset": "https://registry.npmjs.org/@faeyumbrea/splash-api-types/-/splash-api-types-1.2.0.tgz",
+          "integrity": "sha512-TRrGPWnGdJRuM5v3OXd183dIVrNHzHcJK6/mb+B2xCSzyJ9QgqXbVsGWTeMci4VpMU1VKqipnqvoRC2n0q5v4g==",
+          "sha256": "f67a4fea5d333516e9c92a313b808162d437a104b67dfb47fa757988a297ce93",
+          "filesSha256": "e4dbe76bdff3b0f4fb0b61af9318d30f1fc159892ad440be231068cc0e9ec240"
+        }
+      },
+      {
+        "channel": "public",
         "version": "1.1.0",
         "tag": "1.1.0",
         "repository": "FaeyUmbrea/splash",
@@ -89,6 +106,12 @@
         "version": "unreleased",
         "legacy": true,
         "source": "content/splash/early-access/unreleased"
+      },
+      {
+        "channel": "public",
+        "version": "unreleased",
+        "legacy": true,
+        "source": "content/splash/public/unreleased"
       }
     ]
   },

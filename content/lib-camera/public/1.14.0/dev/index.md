@@ -39,7 +39,7 @@ Declare libCamera as a required module dependency if your feature cannot work wi
 
 ## Use the released types
 
-The generated reference comes from the exact npm package `@faeyumbrea/lib-camera-api-types` **1.14.0**. Install the exact version matching the release you support:
+Install the API types for this release:
 
 ```sh
 npm install --save-dev --save-exact @faeyumbrea/lib-camera-api-types@1.14.0

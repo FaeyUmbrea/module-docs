@@ -75,3 +75,9 @@ h1, h2, h3, h4 { font-family: var(--sl-font); }
 .hero .tagline { font-size: 1.05rem; max-width: 40rem; line-height: 1.75; }
 :focus-visible { outline: 2px solid var(--vm-red); outline-offset: 3px; }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; } }
+
+.setup-url-example { margin: 1.5rem 0; padding: 1rem; border: 1px solid var(--sl-color-hairline); border-radius: 6px; background: var(--sl-color-bg-sidebar); }
+.setup-url-example figcaption { font-weight: 600; margin-bottom: .8rem; }
+.setup-url-example > div { display: grid; gap: .3rem; margin-top: .7rem; }
+.setup-url-example code { display: block; overflow-wrap: anywhere; white-space: normal; }
+.setup-url-example mark { background: var(--sl-color-accent-low); color: var(--sl-color-white); font-weight: 700; padding: .1em .2em; border: 1px solid var(--sl-color-text-accent); border-radius: 3px; }

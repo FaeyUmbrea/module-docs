@@ -9,7 +9,7 @@ export default defineConfig({
   site: 'https://docs.void.monster',
   outDir: './build',
   trailingSlash: 'always',
-  redirects: { ...await redirects(), ...channelRedirects(catalog), ...Object.fromEntries(catalog.filter((item) => item.releases.length).map((item) => [`/${item.id}`, `${releaseRoot(item.id, defaultRelease(item))}user/`])) },
+  redirects: { ...await redirects(), ...channelRedirects(catalog), ...Object.fromEntries(['user', 'dev'].map((audience) => [`/obs-utils/early-access/unreleased/${audience}`, `/obs-utils/early-access/${audience}/`])), ...Object.fromEntries(catalog.filter((item) => item.releases.length).map((item) => [`/${item.id}`, `${releaseRoot(item.id, defaultRelease(item))}user/`])) },
   integrations: [starlight({
     title: 'Void Monster Docs',
     description: 'User guides and developer documentation for Void Monster’s Foundry modules.',

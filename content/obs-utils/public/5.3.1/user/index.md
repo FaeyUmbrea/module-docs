@@ -8,7 +8,7 @@ Start with [Getting started](./getting-started/) to connect your browser source.
 
 ## Languages in 5.3.1
 
-This release temporarily includes English and German only. Community translations are preserved in the repository while we clarify an acceptable verification process with Foundry. Other interface languages fall back to English.
+This release temporarily includes English and German only. Other interface languages fall back to English.
 
 ## What you can do
 
@@ -17,9 +17,9 @@ This release temporarily includes English and German only. Community translation
 - Use Foundry events to drive overlay triggers and OBS actions.
 - Import and export overlay bundles.
 
-For older feature walkthroughs, use the **Legacy** channel. They are preserved separately because their exact release coverage has not been verified.
+For walkthroughs of the older interface, choose the **Legacy** channel.
 
-Writing an integration? [Developer docs](../dev/) includes the reference generated from the 5.3.0 release.
+Writing an integration? Start with the [Developer docs](../dev/).
 
 ## Guides
 

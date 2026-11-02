@@ -34,7 +34,7 @@ Namespace registration keys with your module ID. They are saved in user configur
 
 ## Use the release's types
 
-The declaration archive contains package metadata named `@faeyumbrea/obs-utils-api-types` **5.3.0**. Install the exact release artifact:
+Install the API types for this release:
 
 ```sh
 npm install --save-dev --save-exact https://github.com/FaeyUmbrea/obs-utils/releases/download/5.3.0/obs-utils-api-types.tgz

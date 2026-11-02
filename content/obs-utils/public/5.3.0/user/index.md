@@ -13,9 +13,9 @@ Start with [Getting started](./getting-started/) to connect your browser source.
 - Use Foundry events to drive overlay triggers and OBS actions.
 - Import and export overlay bundles.
 
-For older feature walkthroughs, use the **Legacy** channel. They are preserved separately because their exact release coverage has not been verified.
+For walkthroughs of the older interface, choose the **Legacy** channel.
 
-Writing an integration? [Developer docs](../dev/) includes the reference generated from the 5.3.0 release.
+Writing an integration? Start with the [Developer docs](../dev/).
 
 ## Guides
 

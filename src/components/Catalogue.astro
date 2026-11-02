@@ -4,11 +4,12 @@ import { modules, preferredRelease, releaseUrl } from '../lib/docs';
 <div class="module-catalogue">
   {modules.map((module) => {
     const release = preferredRelease(module);
+    const hasEarlyAccess = module.releases.some((item) => item.channel === 'early-access' && !item.legacy);
     return <article class="module-card">
       <h2><a href={releaseUrl(module.id, release)}>{module.title}</a></h2>
       <p>{module.summary}</p>
       <div class="module-status">{release.legacy ? 'In development' : `${release.channel === 'premium' ? 'Premium' : 'Public'} · ${release.version}`}</div>
-      <nav aria-label={`${module.title} documentation`}><a href={releaseUrl(module.id, release)}>User guide <span aria-hidden="true">↗</span></a><a href={releaseUrl(module.id, release, 'dev')}>Developer docs</a></nav>
+      <nav aria-label={`${module.title} documentation`}><a href={releaseUrl(module.id, release)}>User guide <span aria-hidden="true">↗</span></a><a href={releaseUrl(module.id, release, 'dev')}>Developer docs</a>{hasEarlyAccess && <a href={`/${module.id}/early-access/user/`}>Early access</a>}</nav>
     </article>;
   })}
 </div>

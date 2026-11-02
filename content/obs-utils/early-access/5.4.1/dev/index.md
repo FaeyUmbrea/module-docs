@@ -35,5 +35,3 @@ import type { ObsUtilsApi, OverlayTriggerRegistration } from '@faeyumbrea/obs-ut
 ```
 
 These declarations are for compile-time checking. Obtain the runtime API from Foundry's enabled `obs-utils-premium` module; the types package isn't a JavaScript implementation.
-
-The 5.4.1 reference is pinned to **1.1.0-ea.5.4.1**. It does not replace the API reference of any previous release.

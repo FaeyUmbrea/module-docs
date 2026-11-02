@@ -4,7 +4,7 @@ title: "Integrating with OBS Utils"
 
 OBS Utils exposes a registration API for modules that add overlay events, actor-value fields, overlay types, or Director tabs. Register the feature once, then feed it data when your system's events happen.
 
-This guide covers **public OBS Utils 5.3.0**. Check the installed host before using it; another edition or an older host is not automatically the same contract.
+This guide covers **public OBS Utils 5.3.1**.
 
 ## Choose your integration
 
@@ -34,7 +34,7 @@ Namespace registration keys with your module ID. They are saved in user configur
 
 ## Use the release's types
 
-The declaration archive contains package metadata named `@faeyumbrea/obs-utils-api-types` **5.3.0**. Install the exact release artifact:
+Install the API types for this release:
 
 ```sh
 npm install --save-dev --save-exact https://github.com/FaeyUmbrea/obs-utils/releases/download/5.3.0/obs-utils-api-types.tgz
@@ -55,4 +55,4 @@ The [previous integration guide](/obs-utils/legacy/current/dev/api/) remains ava
 
 ## API compatibility in 5.3.1
 
-The 5.3.1 hotfix preserves the public API. Its reference uses the unchanged declarations archived with 5.3.0. The fixes affect bundle animation references, event cleanup and playback restart, partial viewport broadcasts, and editor mode detection.
+The API is unchanged from 5.3.0; both versions use the same types package.

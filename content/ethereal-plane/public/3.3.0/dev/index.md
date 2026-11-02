@@ -39,4 +39,4 @@ Do not enable it automatically from your integration. The streamer also needs a 
 
 ## Scope of this release
 
-The guide is checked against the **3.3.0** source, not the development branch. There is no published declaration archive for this release, so there is no generated type reference here. Internal poll, trigger, and connection classes are not additional public API methods.
+Internal poll, trigger and connection classes are not part of the public API.

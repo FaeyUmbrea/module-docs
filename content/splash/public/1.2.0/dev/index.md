@@ -2,7 +2,7 @@
 title: "Splash 1.2.0 integration"
 ---
 
-These notes cover Splash 1.2.0. Its generated reference uses the exact published `@faeyumbrea/splash-api-types@1.2.0` package; earlier module releases retain their own documentation mappings.
+Use the Splash API to add editor fields and actions or control running Splashes. [API reference](./api-reference/) lists the available methods and types.
 
 ## Editor field metadata
 

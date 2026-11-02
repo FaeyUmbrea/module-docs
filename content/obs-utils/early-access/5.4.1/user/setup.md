@@ -15,11 +15,18 @@ The Director keeps its operational camera controls. Open the Overlay Editor and 
 
 ## Import settings from the other edition
 
-Open Setup in the edition you want to use, select **Import & Reset**, then click **Import settings from Free** or **Import settings from Premium**. This replaces that edition's settings with the other edition's saved configuration. The source settings stay intact.
+To move from Free to Premium:
+
+1. In **Manage Modules**, enable **OBS Utils Premium** and disable **OBS Utils**. Save and let Foundry reload.
+2. Open **Settings → Configure Settings → OBS Utils Premium → Open Setup**.
+3. Select **Import & Reset**, then **Import settings from Free**.
+4. After the import succeeds, click **Reload to apply changes**.
+
+The import replaces Premium's settings with your saved Free settings. It does not delete or change the Free settings. Import before making a new Premium configuration you want to keep.
 
 The import copies world settings when you have permission to configure the world, plus preferences for your current user and browser. Repeat it in your stream browser to carry over that browser's connection and stream settings. Scene presets and tracked-token flags are already shared between editions.
 
-Settings from an older release are migrated during import. Settings from the same release are copied directly. Settings from a newer release are rejected; update the destination edition first. Existing Free settings without a release marker are recognised as legacy 5.3.0 settings through their migration marker. If no saved settings are found, Setup tells you.
+Older settings are updated during import. You can't import settings from a newer module release into an older one: update the destination edition first. If no saved settings are found, Setup tells you.
 
-After a successful import, use **Reload to apply changes**. Importing requires an installed release version; development builds marked `0.0.0` cannot import settings.
+If you later switch back to Free, check its release version first. Free 5.3.1 cannot import settings saved by Premium 5.4.1; wait for a compatible public release.
 

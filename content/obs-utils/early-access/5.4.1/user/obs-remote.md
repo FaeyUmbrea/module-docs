@@ -2,20 +2,55 @@
 title: "Control OBS from Foundry"
 ---
 
-OBS Remote connects Foundry events to OBS actions. For example, combat starting can switch to your encounter scene, or a scene change can enable a source.
+OBS Remote lets Foundry events control OBS. For example, combat starting can switch to your encounter scene, or an event can show or hide a source.
 
-## Connect
+> **Video walkthrough:** [Watch OBS Utils — OBS Remote Control on YouTube](https://www.youtube.com/watch?v=wnCPbJ1eHRs). It shows an older interface; use the menu locations below for this release.
 
-Open **OBS Remote Settings**. Its **Connection** tab holds the OBS WebSocket connection details. Save them, then sync them to the intended OBS user if you're configuring the connection from your GM browser.
+To put your Foundry game into OBS, start with [Getting started](../getting-started/). You don't need WebSocket settings just to display the game or overlays.
 
-Enable **OBS Websocket?** in the module settings when you need WebSocket actions. The browser-source API can switch scenes and start or stop recording or streaming; source controls need WebSocket access.
+## 1. Enable OBS's WebSocket server
 
-## Add an event
+In **OBS Studio**, open **Tools → WebSocket Server Settings**, enable the server, and keep authentication enabled. Use the connection information there for the port and password. WebSocket support is built into OBS Studio 28 and later; you don't need a separate plugin for those versions. [OBS's remote-control guide](https://obsproject.com/kb/remote-control-guide) covers its server settings.
 
-In the **Events** tab, choose the event and add its actions in the order they should run. Scene-load events can be narrowed to a particular scene name.
+## 2. Enter the connection in Foundry
 
-Start with one action, such as switching to a named OBS scene when combat starts. Check that the name matches OBS exactly, then try the event while watching the source.
+Open **Settings → Configure Settings → OBS Utils Premium → OBS Remote Settings → Open Menu**, then choose **Connection**.
 
-## If nothing happens
+**Leave the URL as `localhost` or `127.0.0.1` unless the connection doesn't work.** This is the usual setup when OBS and its Foundry browser source run on the same computer, even if Foundry itself is hosted elsewhere.
 
-Check the connection, whether WebSocket access is enabled for the action, and whether the configuration reached the OBS user. A working Foundry game view does not by itself confirm that OBS Remote is connected.
+| Field | What to enter |
+| --- | --- |
+| **URL** | `localhost` or `127.0.0.1`. This is the computer running OBS, not your Foundry game URL. Do not add `https://`, `ws://`, `/game` or `/stream`. |
+| **Port** | `4455`, unless you changed it in OBS's WebSocket server settings. |
+| **Password** | The WebSocket password from OBS. This is not your Foundry login password. |
+
+![OBS Remote Connection tab with URL set to localhost, port set to 4455, a Password field, and Save and Sync controls.](./assets/obs-remote-connection.png)
+
+The screenshot shows the shared connection fields. In Premium 5.4.1, the connection options also appear above these fields.
+
+In this Connection tab, turn on **Enable OBS Websocket?**. You do not need **Allow OBS Websocket API Access?** just to use OBS Remote; that option lets other modules call the connection.
+
+Click **Save** after entering the connection details. If you entered them in your GM browser, select the online **OBS** user under **Sync Target Client**, then click **Sync**. Select the user logged into the OBS browser source, not your GM account.
+
+If the OBS user isn't listed, use **Interact** on the browser source to log that user in, then reopen the Connection tab.
+
+## 3. Try one action
+
+1. In OBS Studio, choose a scene with a source you can safely show or hide. Note the exact scene and source names.
+2. In Foundry's **OBS Remote Settings → Events**, add a **Pause** event.
+3. Add a **Toggle Source** action and enter those OBS scene and source names.
+4. Make that OBS scene visible in the preview. In your GM browser, unpause the Foundry game if needed, then pause it.
+
+**The source should change visibility in OBS.** This checks an action that needs WebSocket access. Simple scene switching can also use OBS's browser-source API, so a scene switch alone doesn't confirm the WebSocket connection.
+
+Remove the test event when you're finished. You can then add the events and actions you want for your stream. Actions run in the order you put them in the event.
+
+## If it doesn't connect
+
+- Check OBS is running and its WebSocket server is enabled.
+- If `localhost` fails, try `127.0.0.1` before looking for another IP address.
+- Recheck the port and WebSocket password, then **Save** and **Sync** again. Refresh the OBS browser source after changing connection details.
+- Check **Enable OBS Websocket?** is enabled and the source is logged in as your intended OBS user.
+- Check scene and source names match OBS exactly.
+
+Only change `localhost` if OBS actually runs on a different computer from the client making the connection. In that case, enter the address of the **OBS computer**, not the Foundry hosting provider. Firewall or network configuration may also need attention; keep authentication enabled rather than removing the password to try to fix it.

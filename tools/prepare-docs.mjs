@@ -141,8 +141,8 @@ export async function prepareDocs() {
       const devIndex = path.join(output, module.id, release.channel, release.version, 'dev/index.md');
       try { await readFile(devIndex); } catch {
         await writePage(module, release, 'dev/', 'Developer docs', release.api
-          ? `The API reference is generated from the released **${release.api.name} ${release.api.version}** declaration archive.\n\n[Open the API reference](./api-reference/)`
-          : `This release does not include a published API type package.\n\n${release.legacy ? 'The preserved developer pages below describe the older documentation and may not match a released API.' : 'Use the release’s existing integration guide where available. A reference generated from development source would not describe this release reliably.'}`, 0);
+          ? `[Open the API reference](./api-reference/)`
+          : 'No developer guide or API reference is available for this release.', 0);
       }
     }
   }

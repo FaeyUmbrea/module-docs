@@ -16,7 +16,7 @@ const availableChannels = [...new Set(module?.releases.map((item) => item.channe
   {availableChannels.length > 1 && <>
     <label class="select-label" for="channel-select">Release channel</label>
     <div class="select-control"><select id="channel-select" aria-label="Choose release channel" autocomplete="off" data-doc-select>
-      {availableChannels.map((channel) => <option value={releaseUrl(module.id, module.releases.find((item) => item.channel === channel)!, audience)} selected={channel === release.channel}>{channelLabels[channel]}</option>)}
+      {availableChannels.map((channel) => <option value={`/${module.id}/${channel}/${audience}/`} selected={channel === release.channel}>{channelLabels[channel]}</option>)}
     </select><Icon name="down-caret" class="select-caret" /></div>
   </>}
   <label class="select-label" for="release-select">Documentation version</label>

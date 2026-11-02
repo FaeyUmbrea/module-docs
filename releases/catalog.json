@@ -57,6 +57,14 @@
           "sha256": "478f0b6e08b17fb22ed411acab9ea8aba4dd54829981f4ca8ca6150e642673b7",
           "source": "release-archive"
         }
+      },
+      {
+        "channel": "early-access",
+        "version": "5.4.1",
+        "tag": "5.4.1",
+        "repository": "FaeyUmbrea/obs-utils-premium",
+        "manifest": "https://r2.foundryvtt.com/packages-public/obs-utils-premium/module.json",
+        "source": "content/obs-utils/early-access/5.4.1"
       }
     ]
   },

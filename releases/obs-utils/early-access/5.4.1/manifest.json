@@ -1,0 +1,68 @@
+{
+  "id": "obs-utils-premium",
+  "title": "OBS Utils Premium",
+  "description": "This module features the 3D Canvas module by theripper93. For more information visit https://theripper93.com/.",
+  "version": "5.4.1",
+  "compatibility": {
+    "minimum": "13.351",
+    "verified": "14",
+    "maximum": "14"
+  },
+  "authors": [
+    {
+      "name": "Faey Umbrea",
+      "url": "https://github.com/FaeyUmbrea",
+      "discord": "Faey#0001"
+    }
+  ],
+  "relationships": {
+    "requires": [
+      {
+        "id": "lib-camera",
+        "compatibility": {
+          "minimum": "1.13.2",
+          "maximum": "1.999"
+        }
+      },
+      {
+        "id": "lib-wrapper"
+      }
+    ],
+    "systems": []
+  },
+  "scripts": [
+    "greensock/dist/gsap.min.js"
+  ],
+  "esmodules": [
+    "dist/obs-utils.js"
+  ],
+  "styles": [
+    "dist/obs-utils.css"
+  ],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    },
+    {
+      "lang": "de-DE",
+      "name": "Deutsch",
+      "path": "lang/de_DE.json"
+    }
+  ],
+  "url": "https://github.com/FaeyUmbrea/obs-utils-premium",
+  "manifest": "https://r2.foundryvtt.com/packages-public/obs-utils-premium/module.json",
+  "readme": "https://github.com/FaeyUmbrea/obs-utils/blob/main/README.md",
+  "license": "All Rights Reserved",
+  "socket": true,
+  "persistentStorage": true,
+  "library": false,
+  "media": [
+    {
+      "type": "icon",
+      "url": "https://avatars2.githubusercontent.com/u/71292812?s=400&u=ccdb4eeb7abf551ca8f314e5a9bfd0479a4d3d41&v=4"
+    }
+  ],
+  "protected": true
+}

@@ -18,4 +18,22 @@ Hooks.once('obs-utils.init', () => {
 
 Use stable, namespaced registration keys and provide matching localization entries. Declare the Premium module as a dependency when it is required; guard optional integrations when it is absent.
 
-The matching API type package has not been published yet. There is no generated API reference for 5.4.1 here; the public edition's historical declarations are not a verified substitute for this release.
+## Integration guides
+
+- [Events and actor values](./events-and-actor-values/) covers trigger payloads, OBS actions and system actor fields.
+- [Director tabs](./director-tabs/) covers mounting Svelte 5 tabs with your own module's runtime.
+- [API reference](./api-reference/) documents this release's exported contracts.
+
+## Install the matching types
+
+```sh
+npm install --save-dev --save-exact @faeyumbrea/obs-utils-api-types@1.1.0-ea.5.4.1
+```
+
+```ts
+import type { ObsUtilsApi, OverlayTriggerRegistration } from '@faeyumbrea/obs-utils-api-types';
+```
+
+These declarations are for compile-time checking. Obtain the runtime API from Foundry's enabled `obs-utils-premium` module; the types package isn't a JavaScript implementation.
+
+The 5.4.1 reference is pinned to **1.1.0-ea.5.4.1**. It does not replace the API reference of any previous release.

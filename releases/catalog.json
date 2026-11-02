@@ -64,7 +64,16 @@
         "tag": "5.4.1",
         "repository": "FaeyUmbrea/obs-utils-premium",
         "manifest": "https://r2.foundryvtt.com/packages-public/obs-utils-premium/module.json",
-        "source": "content/obs-utils/early-access/5.4.1"
+        "source": "content/obs-utils/early-access/5.4.1",
+        "api": {
+          "source": "npm",
+          "name": "@faeyumbrea/obs-utils-api-types",
+          "version": "1.1.0-ea.5.4.1",
+          "asset": "https://registry.npmjs.org/@faeyumbrea/obs-utils-api-types/-/obs-utils-api-types-1.1.0-ea.5.4.1.tgz",
+          "integrity": "sha512-3F5quW1wA+hQzz/MSlHnsGTtq+sL6M8cdMmYiiuzJ/lwXpTMR8ROFeCk6/NqWhikUcIFt4fS+pFrl/dHzKZthA==",
+          "sha256": "8dc5c9c205a405d0d1dcb7a06be53cf6b7891784e818da734cff970893dc4636",
+          "filesSha256": "60bcbb3607337d0abe0d2fa13b9d7842affaa030d3a0b90bf5670ee6fc732161"
+        }
       }
     ]
   },

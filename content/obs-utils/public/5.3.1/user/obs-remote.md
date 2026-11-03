@@ -30,9 +30,9 @@ This screenshot shows the public 5.3.1 Connection tab.
 
 In **Settings → Configure Settings → OBS Utils**, turn on **Enable OBS Websocket?** and save. The toggle is outside the OBS Remote window in this version.
 
-Click **Save** after entering the connection details. If you entered them in your GM browser, select the online **OBS** user under **Sync Target Client**, then click **Sync**. Select the user logged into the OBS browser source, not your GM account.
+Click **Save** after entering the connection details. If you entered them in your GM browser, select your online stream user under **Sync Target Client**, then click **Sync**. Select the user logged into the OBS browser source, not your GM account.
 
-If the OBS user isn't listed, use **Interact** on the browser source to log that user in, then reopen the Connection tab.
+If your stream user isn't listed, use **Interact** on the browser source to log that user in, then reopen the Connection tab.
 
 ## 3. Try one action
 
@@ -50,7 +50,7 @@ Remove the test event when you're finished. You can then add the events and acti
 - Check OBS is running and its WebSocket server is enabled.
 - If `localhost` fails, try `127.0.0.1` before looking for another IP address.
 - Recheck the port and WebSocket password, then **Save** and **Sync** again. Refresh the OBS browser source after changing connection details.
-- Check **Enable OBS Websocket?** is enabled and the source is logged in as your intended OBS user.
+- Check **Enable OBS Websocket?** is enabled and the source is logged in as your stream user.
 - Check scene and source names match OBS exactly.
 
 Only change `localhost` if OBS actually runs on a different computer from the client making the connection. In that case, enter the address of the **OBS computer**, not the Foundry hosting provider. Firewall or network configuration may also need attention; keep authentication enabled rather than removing the password to try to fix it.

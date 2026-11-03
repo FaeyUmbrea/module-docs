@@ -85,7 +85,7 @@ You can keep using `/game`. Use `/stream` when you want an overlays-only browser
 
 ## Optional: let Foundry control OBS
 
-You do not need a WebSocket connection just to display Foundry or its overlays. Set up [OBS Remote](../obs-remote/) when you want Foundry events to control OBS scenes or sources. That guide starts with the usual same-computer setup: **leave the host as `localhost` or `127.0.0.1`**.
+You do not need a WebSocket connection just to display Foundry or its overlays. Set up [OBS Remote](../obs-remote/) when you want Foundry events to control OBS scenes or sources.
 
 ## If you're stuck
 

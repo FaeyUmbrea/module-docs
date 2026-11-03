@@ -22,4 +22,4 @@ The camera controls panel shows registered modules and the current camera owner.
 
 ## Plain HTTP servers
 
-libCamera works on plain HTTP addresses, including servers reached over your local network. Version 1.14.1 fixes startup, remote movement and viewport subscriptions on these addresses. HTTPS is not required.
+libCamera works on plain HTTP addresses, including servers reached over your local network. Startup, remote movement and viewport subscriptions work without HTTPS.

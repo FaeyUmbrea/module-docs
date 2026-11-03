@@ -19,7 +19,7 @@ English is included. Actor values and overlay animations don't require an OBS We
 1. Install the companion through Foundry’s protected package platform using your premium access.
 2. Enable **OBS Utils - D&D 5e** in your D&D world alongside either OBS Utils or OBS Utils Premium.
 3. Reload the world. If a GM receives a dependency error, enable or update the module named in the message and reload again.
-4. Follow the [OBS Utils setup guide](/obs-utils/public/5.3.1/user/) to connect your stream browser and select actors.
+4. Follow the [OBS Utils setup guide](/obs-utils/public/5.3.1/user/getting-started/) to connect your stream browser and select actors.
 
 The current module ID is `obs-utils-dnd5e`. The archived 0.2.0 guide covers the older Foundry 11 module.
 

@@ -10,12 +10,12 @@ This guide covers **public OBS Utils 5.3.1**.
 
 - [Events and actor values](./events-and-actor-values/) shows how to register a trigger, fire it, and provide fields for the actor-value picker.
 - [Director tabs](./director-tabs/) covers mounting your module's Svelte UI safely across bundles.
-- [API reference](./api-reference/) lists the exported contracts from the 5.3.0 declaration archive.
+- [API reference](./api-reference/) lists the exported methods and types.
 
 ## Get the runtime API
 
 ```js
-Hooks.once('init', () => {
+Hooks.once('obs-utils.init', () => {
   const host = game.modules.get('obs-utils');
   const obs = host?.api;
   if (!host?.active || !obs) return;

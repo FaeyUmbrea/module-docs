@@ -8,7 +8,7 @@ sidebar_label: OBS Remote
 
 This goes over the Features of the new OBS Remote Functionality.
 
-Watch our [OBS Remote tutorial video](https://www.youtube.com/watch?v=wnCPbJ1eHRs) for a visual guide.
+Watch the [OBS Remote tutorial video](https://www.youtube.com/watch?v=wnCPbJ1eHRs) for a visual guide.
 
 ## Caveats
 
@@ -49,13 +49,13 @@ Alternatively, add this block to your Browser Source's Custom CSS:
 
 Replace [host] with your host name, i.e., localhost.
 Do not add quotation marks or spaces and make sure to keep the trailing semicolon.
-`--Local-obs-host:localhost;` or `--local-obs-host:your.host.com;` or `--local-obs-host:127.0.0.1;` all work.
+`--local-obs-host:localhost;` or `--local-obs-host:your.host.com;` or `--local-obs-host:127.0.0.1;` all work.
 
 Then replace [port] with the port of your Websocket. This is usually 4455.
-`--Local-obs-port:4455;`
+`--local-obs-port:4455;`
 
 Finally, replace [password] with your websocket password.
-`--Local-obs-password:P4ssw0rd!;`
+`--local-obs-password:P4ssw0rd!;`
 
 This will override whatever you put into OBS Websocket Settings as well.
 You can also define only some of these settings for partial overriding.

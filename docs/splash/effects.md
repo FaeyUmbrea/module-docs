@@ -66,7 +66,7 @@ Register your own effect types through the [API](./api.md).
 
 Animations are timed transitions that play once. An **animation in** runs when an object enters, an **animation out** runs when it leaves. Three types ship: **dissolve**, **glitch**, and **pixelate**.
 
-Both share a timing pair and an origin setup:
+All three share a timing pair and an origin setup:
 
 | Field | What it does |
 |---|---|

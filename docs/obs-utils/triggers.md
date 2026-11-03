@@ -26,7 +26,7 @@ Triggers were added in 5.1 and replace the legacy roll-overlay layer type.
 
 Note: `core.onPlayerRoll` carries a `roll` field (the Roll object) that has `filter: false` — it appears in component data paths via `trigger.roll` but is **not** available as a condition filter in the editor. Conditions for this trigger can only filter on `total`, `formula`, `isCritical`, `isFumble`, and `actor`.
 
-System companion modules add their own event keys (`dnd5e.onCrit`, `pf2e.onHeroPoint`, `coc.onSanLoss`, etc.). See each system module's docs for the full list.
+System companion modules add their own event keys (`dnd5e.onCrit`, `pf2e.onResourceChanged`, `coc.onResourceChanged`, etc.). See each system module's docs for the full list.
 
 ## Configuring triggers on an overlay
 

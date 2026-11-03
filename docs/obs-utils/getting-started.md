@@ -26,7 +26,7 @@ The browser source needs to be in **OBS Mode** so Foundry hides chrome, mutes au
 | Setting | What it does | When to use |
 |---|---|---|
 | **Pin This Browser to OBS Mode** | Client-side toggle. Every tab in the same browser stays in OBS Mode forever. | Last-resort for unusual setups — locks you in until you disable it. |
-| **Designate User as OBS Client** | World setting. The chosen user is always treated as the OBS source no matter which browser they log in from. | Most common path: create a dedicated `OBS` user and pick it here. |
+| **Designate User as OBS Client** | World setting. The chosen user is always treated as the OBS source no matter which browser they log in from. | For a browser that needs manual detection: select your dedicated stream user. |
 | **Force OBS Mode on /stream** | Always renders overlays on the `/stream` page regardless of user. | If your scene only uses `/stream`. |
 
 There's also a **Disable OBS Mode for Everyone** kill-switch if a user accidentally pins themselves in.
@@ -41,7 +41,7 @@ In the world config:
 - **Pop-up Close Delay** — seconds before automatically closing a journal or image popout that the GM opened.
 - **Show Combat Tracker in Combat** — toggles the combat tracker sidebar visibility on the OBS view during a combat encounter.
 
-Watch the [Basic Setup tutorial](https://www.youtube.com/watch?v=JbWA9kARx0U) for a visual walkthrough (predates V5 but the connection steps are unchanged).
+Watch the [Basic Setup tutorial](https://www.youtube.com/watch?v=JbWA9kARx0U) for a visual walkthrough (the connection steps are unchanged).
 
 ## The Director
 
@@ -109,7 +109,7 @@ See [Multi-GM Handover](./multi-gm.md).
 
 ## Stream Composer
 
-The Stream Composer is the overlay editor — where you build, position, and animate the layers that appear on your stream view. Open it from **Module Settings → Stream Composer** (the dedicated settings menu entry registered by OBS Utils).
+The Stream Composer is the overlay editor — where you build, position, and animate the layers that appear on your stream view. Open it from **Module Settings → Overlay Editor** (the dedicated settings menu entry registered by OBS Utils).
 
 The editor has four workspace mode tabs:
 

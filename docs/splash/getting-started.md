@@ -25,7 +25,7 @@ In the Manager, create a new splash and pick its presentation:
 | **Full** | A fullscreen overlay that covers the whole interface. |
 | **Scene** | An overlay over the canvas that leaves the sidebar, hotbar, and navigation usable. |
 | **HUD** | Like Scene, but it also hides the scene navigation and control bars so it can mask the map underneath. |
-| **Handout** | A normal, resizable, player-closable window. |
+| **Handout** | A player-closable window sized in the editor. |
 
 Give it a name and the journal it should live in, then open it in the editor.
 

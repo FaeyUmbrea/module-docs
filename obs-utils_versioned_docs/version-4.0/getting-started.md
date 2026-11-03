@@ -6,11 +6,11 @@ sidebar_label: Getting Started
 
 # Getting Started
 
-Check out our [official tutorial videos playlist](https://www.youtube.com/watch?v=XdpdAU-raUU&list=PLCnj_GvvIWGIrMXWKbcmAgfCvbqDtUZER) for OBS Utils for Beginners.
+Check out the [official tutorial videos playlist](https://www.youtube.com/watch?v=XdpdAU-raUU&list=PLCnj_GvvIWGIrMXWKbcmAgfCvbqDtUZER) for OBS Utils for Beginners.
 
 ## Setup
 
-Watch our [Basic Setup tutorial video](https://www.youtube.com/watch?v=JbWA9kARx0U) for a visual guide.
+Watch the [Basic Setup tutorial video](https://www.youtube.com/watch?v=JbWA9kARx0U) for a visual guide.
 
 Installing this module is as easy as any other!
 Just use the Module Installer in Foundry!
@@ -44,7 +44,7 @@ Finally, configure the Popout Zoom Delay and decide if you want the Combat Track
 
 #### The Director
 
-Watch our [Director tutorial video](https://www.youtube.com/watch?v=6QNDJy2rv6c) for a visual guide.
+Watch the [Director tutorial video](https://www.youtube.com/watch?v=6QNDJy2rv6c) for a visual guide.
 
 The Director Window contains the main set of Controls for this Module.
 Hover over each button to get a brief description of what it does.

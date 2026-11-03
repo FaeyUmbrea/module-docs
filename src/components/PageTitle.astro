@@ -15,7 +15,9 @@ const release = module?.releases.find((item) => item.channel === data.channel &&
 {module && <Hexes class="article-divider" count={3} />}
 {data.legacy && <aside class="legacy-notice" aria-label="Documentation status">
   {data.version === 'unreleased'
-    ? 'This module is in development. These guides describe the current work, not a published release.'
+    ? (module?.releases.some((item) => !item.legacy)
+      ? 'These pages preserve pre-release documentation. Choose a published version for installation and usage.'
+      : 'This module is in development. These guides describe the current work, not a published release.')
     : 'These pages preserve the previous documentation. Their exact release coverage has not been verified.'}
 </aside>}
 {module && <div hidden data-pagefind-filter={`module:${module.id}`} />}

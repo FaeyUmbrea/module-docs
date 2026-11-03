@@ -19,7 +19,7 @@ D&D 5e, Pathfinder 2e and Call of Cthulhu integrations are separate companion mo
 
 This release includes English and German. Other interface languages fall back to English.
 
-For help, join [Discord](https://discord.com/invite/WfMaKPPdeM). [Developer docs](../dev/) cover integration availability for this release.
+For help, join [Discord](https://discord.com/invite/WfMaKPPdeM). [Developer docs](../dev/) cover adding events, actor values and Director tabs.
 
 ## 3D Canvas credit
 

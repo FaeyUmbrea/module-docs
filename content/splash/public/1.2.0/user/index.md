@@ -2,9 +2,15 @@
 title: "Splash 1.2.0"
 ---
 
-Splash 1.2.0 includes the revised editor and playback fixes. For an older installation, use the [1.1.0 guide](/splash/public/1.1.0/user/).
+Splash turns Foundry journal pages into interactive handouts, puzzles and fullscreen displays.
 
 The editor helps you build an interactive handout from artwork, text and objects. Start from scratch or place an existing prefab, arrange the objects, then test the handout's states and values before showing it to players.
+
+## Install and open Splash
+
+Install **Splash: Interactive Handouts** and **libWrapper** through Foundry's module installer, then enable both in your world. This release supports Foundry **13.344 through 14**.
+
+Open **Settings → Configure Settings → Splash → Open Splash Manager** to create or edit a handout.
 
 ## Start with a workflow
 

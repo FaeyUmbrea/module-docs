@@ -97,7 +97,7 @@ Mode values are strings; the valid options match `ICCHOICES` / `OOCCHOICES` in o
 Hooks.once('obs-utils.init', () => {
     const api = game.modules.get('obs-utils').api;
 
-    Hooks.on('obs-utils.director.stateChanged', (next, prev) => {
+    Hooks.on('obs-utils.director.stateChanged', async (next, prev) => {
         if (!next.isInCombat) return;
         if (next.activeTrackingMode !== 'trackTurnPlayer') return;
         const combat = game.combat;

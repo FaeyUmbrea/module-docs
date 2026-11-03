@@ -19,7 +19,7 @@ English and German are included. The companion does not require an OBS WebSocket
 1. Install the companion through Foundry’s protected package platform using your premium access.
 2. Open your Pathfinder 2e world and enable **OBS Utils - Pathfinder 2e**, alongside either OBS Utils or OBS Utils Premium.
 3. Reload the world. If the companion reports a dependency error, follow the message to enable or update the required module, then reload again.
-4. Follow the [OBS Utils setup guide](/obs-utils/public/5.3.0/user/) to connect your stream browser and choose which actors to display.
+4. Follow the [OBS Utils setup guide](/obs-utils/public/5.3.1/user/getting-started/) to connect your stream browser and choose which actors to display.
 5. Open the Overlay Editor to use the PF2e values, events or preset.
 
 The companion adds to OBS Utils; it does not replace the base module or configure your OBS scene for you.
@@ -38,7 +38,7 @@ The ribbon is **420×156 pixels**. It shows portrait, name, class, HP and maximu
 
 HP loss briefly highlights damage; HP gain highlights healing. All five event families can display a translated event description inside the ribbon for **2.8 seconds**. Another event replaces the current effect. You can edit the imported ribbon's layout, styling and animations in the Overlay Editor.
 
-**With released OBS Utils 5.3.0:** actor events animate every actor's ribbon. Playback on only the matching actor requires the targeting correction in the newer OBS Utils build. Event payload filters and custom event testing also require that newer build.
+OBS Utils 5.3.0 plays actor events on every ribbon. Use 5.3.1 or newer for actor-specific playback. Payload filters and custom-event previews require an OBS Utils build that provides those controls.
 
 ## Use PF2e events
 
@@ -72,7 +72,7 @@ Use the editor's event test controls to preview animations. In builds with the s
 
 The same five PF2e events are available in OBS Remote Settings. Configure an event to run the OBS action you want and, where supported, use its text filters to narrow the match. For example, filter **Check resolved** to `criticalSuccess` to run an action only for that outcome.
 
-Follow the [OBS Utils guide](/obs-utils/public/5.3.0/user/) for OBS WebSocket setup. Adding the companion alone does not enable a connection or create remote actions.
+Follow the [OBS Remote guide](/obs-utils/public/5.3.1/user/obs-remote/) for OBS WebSocket setup. Adding the companion alone does not enable a connection or create remote actions.
 
 ## Troubleshooting
 
@@ -80,7 +80,7 @@ Follow the [OBS Utils guide](/obs-utils/public/5.3.0/user/) for OBS WebSocket se
 
 **A value is empty:** check the selected actor and its data path. Not every actor type has every field; empty does not mean zero.
 
-**An effect plays on every ribbon:** this is a limitation of released OBS Utils 5.3.0. Use the updated OBS Utils build with actor-specific targeting when available.
+**An effect plays on every ribbon:** update OBS Utils from 5.3.0 to 5.3.1 or newer for actor-specific playback.
 
 **A private check does not play an effect:** private and blind checks are intentionally excluded from stream events.
 

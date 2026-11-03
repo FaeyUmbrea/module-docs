@@ -28,8 +28,6 @@ Edit the small files in `resources/av-data/`; see the [field list](../user/actor
 
 Review absent curated paths separately from uncurated candidates. The CLI supports correcting entries, adding language keys, saving the latest extraction and reviewing ignored fields. `ignore.json` excludes parity candidates and isn't imported by the module. It doesn't block raw paths in OBS Utils.
 
-The saved CoC7 8.16 sample contains one character: 84 of 99 curated paths are present, and the 15 absent paths are retained for NPC, creature, vehicle or container actors. All extracted leaves are accounted for, with 102 ignored paths. Presence doesn't imply a populated value; the sample's SAN was null. This sample doesn't establish runtime coverage for other actor types.
-
 ## Build the companion
 
-Use Node.js 22.13 or newer and the repository’s Yarn 4.18.1 runtime. Run `yarn install`, `yarn lint`, `yarn typecheck`, `yarn test` and `yarn build`. Build dependencies belong in `devDependencies`; the companion doesn't bundle its Foundry type-support packages. The repository allows only the specific Git repositories required by those types.
+Use Node.js 22.13 or newer and the repository’s Yarn 4.18.1 runtime. Run `yarn install`, `yarn lint`, `yarn typecheck`, `yarn test` and `yarn build`.

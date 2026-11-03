@@ -6,134 +6,55 @@ sidebar_label: Migrate from v4
 
 # Migrate from v4
 
-V5 rewrote the overlay model. Most worlds upgrade cleanly because OBS Utils auto-migrates the data shape.
+Back up your world before upgrading. Keep a copy of any customised roll-overlay timings and image paths from V4.
 
-**Upgrading 5.0 → 5.1:** any `type: 'roll'` overlay is automatically converted in-place to a `wysiwyg` (canvas) tile-per-player layer with a `core.onPlayerRoll` transition. You don't need to run any snippet — the migration runs once on first load and the result appears in your Layers panel as normal.
+OBS Utils 5.1 and newer use animation tracks instead of the dedicated Roll overlay type. An existing 5.0 Roll layer is converted automatically when the world loads; you don't need a console snippet for that upgrade.
 
-**Upgrading 4.x → 5.1 directly:** the legacy flat `rollOverlay*` settings from V4 are not registered in V5, so there is nothing to auto-migrate. If you customised those settings and want them back, paste the V5.1+ snippet below into your browser console (F12) with your world open.
+## Upgrading directly from 4.x
 
-## On V5.0
+The old flat `rollOverlay…` settings are not read by the new overlay editor. Recreate the overlay in the [Stream Composer](./overlay-editor.md) using [animation tracks](./overlay-animations.md), or use the migration helper below with your saved values.
 
-Use this snippet to rebuild your old roll overlay as a `'roll'`-type layer. The V5.0 model still ships that layer type. **Note:** a `type: 'roll'` layer created this way will be automatically converted to a `wysiwyg` canvas layer when you upgrade to V5.1 — you won't need to run the snippet again.
+## Rebuild a roll overlay with the API
 
-```js
-(async () => {
-  const MOD = 'obs-utils';
-  const get = k => game.settings.get(MOD, k);
-  const set = (k, v) => game.settings.set(MOD, k, v);
-
-  const config = {
-    preRollEnabled:  get('rollOverlayPreRollEnabled')  ?? false,
-    preRollDelay:    get('rollOverlayPreRollDelay')    ?? 0,
-    preRollFadeIn:   get('rollOverlayPreRollFadeIn')   ?? 0,
-    preRollFadeOut:  get('rollOverlayPreRollFadeOut')  ?? 0,
-    preRollStay:     get('rollOverlayPreRollStay')     ?? 0,
-    preRollImage:    get('rollOverlayPreRollImage')    ?? '',
-    rollFadeIn:      get('rollOverlayRollFadeIn')      ?? 0,
-    rollFadeOut:     get('rollOverlayRollFadeOut')     ?? 0,
-    rollStay:        get('rollOverlayRollStay')        ?? 5000,
-    rollBackground:  get('rollOverlayRollBackground')  ?? '',
-    rollForeground:  get('rollOverlayRollForeground')  ?? '',
-    postRollEnabled: get('rollOverlayPostRollEnabled') ?? false,
-    postRollFadeIn:  get('rollOverlayPostRollFadeIn')  ?? 0,
-    postRollFadeOut: get('rollOverlayPostRollFadeOut') ?? 0,
-    postRollStay:    get('rollOverlayPostRollStay')    ?? 0,
-    postRollImage:   get('rollOverlayPostRollImage')   ?? '',
-  };
-
-  const overlays = (get('streamOverlays') ?? []).slice();
-  if (overlays.some(o => o.type === 'roll')) {
-    return ui.notifications.warn('OBS Utils: roll overlay already exists; not adding a duplicate.');
-  }
-  overlays.push({
-    id: foundry.utils.randomID(),
-    type: 'roll',
-    name: 'Roll Overlay',
-    enabled: true,
-    components: [],
-    style: '',
-    config,
-  });
-  await set('streamOverlays', overlays);
-  ui.notifications.info('OBS Utils: V4 roll overlay settings recovered as a new layer.');
-})();
-```
-
-## On V5.1+
-
-The `'roll'` layer type no longer exists in V5.1 — it was replaced by the generic trigger system on WYSIWYG layers. This snippet is only needed if you are upgrading directly from **4.x → 5.1** and want to recover your customised roll overlay settings. It builds an equivalent WYSIWYG layer with a `core.onPlayerRoll` trigger that fires whenever a public roll lands in chat.
-
-Under the hood the snippet calls `game.modules.get('obs-utils').api.buildLegacyRollOverlayCanvas(config)`. That API method is also available to module authors who need to construct the same overlay shape programmatically.
+Run this in your browser console as a GM with the world open on OBS Utils 5.1 or newer. Replace the example image paths and timing values with your saved V4 configuration. Times are in milliseconds; leave an image path empty when you don't use one.
 
 ```js
 (async () => {
-  const MOD = 'obs-utils';
-  const get = k => game.settings.get(MOD, k);
-  const set = (k, v) => game.settings.set(MOD, k, v);
-  const rid = () => foundry.utils.randomID();
-
-  const c = {
-    preRollStay:    get('rollOverlayPreRollStay')    ?? 0,
-    rollFadeIn:     get('rollOverlayRollFadeIn')     ?? 200,
-    rollFadeOut:    get('rollOverlayRollFadeOut')    ?? 200,
-    rollStay:       get('rollOverlayRollStay')       ?? 5000,
-    rollBackground: get('rollOverlayRollBackground') ?? '',
-    rollForeground: get('rollOverlayRollForeground') ?? '',
-    postRollStay:   get('rollOverlayPostRollStay')   ?? 0,
-  };
-
-  const components = [];
-  if (c.rollBackground) {
-    components.push({
-      id: rid(), type: 'img', data: c.rollBackground, style: '',
-      customCSS: 'img { width: 100%; height: 100%; object-fit: contain; }',
-      x: 760, y: 440, w: 400, h: 200,
-    });
+  const api = game.modules.get('obs-utils')?.api;
+  if (!api?.buildLegacyRollOverlayCanvas) {
+    return ui.notifications.warn('Enable OBS Utils 5.1 or newer first.');
   }
-  if (c.rollForeground) {
-    components.push({
-      id: rid(), type: 'img', data: c.rollForeground, style: '',
-      customCSS: 'img { width: 100%; height: 100%; object-fit: contain; }',
-      x: 760, y: 440, w: 400, h: 200,
-    });
-  }
-  components.push({
-    id: rid(), type: 'pt', data: 'trigger.total', style: '',
-    customCSS: 'font-size: 96px; font-weight: 900; color: white; text-align: center; line-height: 200px; text-shadow: 0 0 24px black;',
-    x: 760, y: 440, w: 400, h: 200,
+
+  const overlay = api.buildLegacyRollOverlayCanvas({
+    preRollEnabled: false,
+    preRollDelay: 0,
+    preRollFadeIn: 0,
+    preRollStay: 0,
+    preRollFadeOut: 0,
+    preRollImage: '',
+    rollFadeIn: 200,
+    rollStay: 5000,
+    rollFadeOut: 200,
+    rollBackground: '',
+    rollForeground: '',
+    postRollEnabled: false,
+    postRollFadeIn: 0,
+    postRollStay: 0,
+    postRollFadeOut: 0,
+    postRollImage: '',
   });
+  overlay.name = 'Migrated Roll Overlay';
 
-  const overlay = {
-    id: rid(),
-    type: 'wysiwyg',
-    name: 'Migrated Roll Overlay',
-    enabled: true,
-    components,
-    style: '',
-    config: { w: 1920, h: 1080 },
-    trigger: {
-      eventKey: 'core.onPlayerRoll',
-      conditions: {},
-      duration: c.preRollStay + c.rollStay + c.postRollStay,
-      showMs: c.rollFadeIn,
-      hideMs: c.rollFadeOut,
-      transition: 'fade',
-    },
-  };
-
-  const overlays = (get('streamOverlays') ?? []).slice();
+  const overlays = [...game.settings.get('obs-utils', 'streamOverlays')];
+  if (overlays.some(item => item.name === overlay.name)) {
+    return ui.notifications.warn('Migrated Roll Overlay already exists.');
+  }
   overlays.push(overlay);
-  await set('streamOverlays', overlays);
-  ui.notifications.info('OBS Utils: V4 roll overlay rebuilt as a WYSIWYG + trigger layer.');
+  await game.settings.set('obs-utils', 'streamOverlays', overlays);
+  ui.notifications.info('Roll overlay added. Refresh to load it.');
 })();
 ```
 
-Refresh the page after running either snippet. The overlay appears in your Layers panel — rename, disable, or delete it like any other.
+The helper creates a canvas overlay with separate pre-roll, roll and post-roll tracks, driven by `core.onPlayerRoll`. It preserves those phases instead of collapsing them into one visibility window. After refreshing, edit the result in the Composer and test it with a public roll.
 
-## What if I want it gone?
-
-You don't have to run anything. The legacy `rollOverlay…` settings sit untouched on a fresh V5 world; the V5 model just doesn't read them by default. If you never customised your V4 roll overlay, there's nothing to recover.
-
-## Why the V5.1 conversion is an approximation
-
-The V4 roll overlay played a three-phase animation (pre-roll → roll → post-roll) with separate timing per phase. The V5.1 trigger system uses a single visibility window with one entrance and one exit transition. The snippet collapses the three phases into one combined window with summed durations — close enough for most users, but not pixel-identical. If you want the original phased behaviour, rebuild the overlay from scratch using three WYSIWYG layers, each triggered on `core.onPlayerRoll` with different show/hide timings.
+The snippet adds one overlay. It does not recover unregistered settings or delete the old V4 configuration. If you don't want the old roll overlay, you can leave it behind without running anything.

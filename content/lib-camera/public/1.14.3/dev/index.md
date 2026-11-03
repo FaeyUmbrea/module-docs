@@ -4,7 +4,7 @@ title: "Integrating with libCamera"
 
 If your module moves the camera, register it with libCamera rather than competing with every other module that pans the canvas. You get a consumer that requests control on this client. The user decides which integrations take priority.
 
-This guide covers **libCamera 1.14.2**, for **Foundry 14** and API major **1**.
+This guide covers **libCamera 1.14.3**, for **Foundry 14** and API major **1**.
 
 ## Start with the job you need
 
@@ -42,7 +42,7 @@ Declare libCamera as a required module dependency if your feature cannot work wi
 Install the API types for this release:
 
 ```sh
-npm install --save-dev --save-exact @faeyumbrea/lib-camera-api-types@1.14.2
+npm install --save-dev --save-exact @faeyumbrea/lib-camera-api-types@1.14.3
 ```
 
 Then use a type-only import:

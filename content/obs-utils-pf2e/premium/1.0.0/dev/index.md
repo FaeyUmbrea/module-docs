@@ -2,7 +2,7 @@
 title: "Integration notes"
 ---
 
-The PF2e companion registers curated actor values, starter overlays and system events with OBS Utils. It does not expose a standalone API. Use the [OBS Utils API](/obs-utils/public/5.3.0/dev/) for integrations.
+The PF2e companion registers curated actor values, starter overlays and system events with OBS Utils. It does not expose a standalone API. Use the [OBS Utils API](/obs-utils/public/5.3.1/dev/) for integrations.
 
 These notes cover the 1.0.0 package distributed through Foundry’s protected platform.
 
@@ -22,4 +22,4 @@ See the [user guide](../user/#use-pf2e-events) for supported filter values. A re
 
 The companion registers five event families; it does not register separate Dying, Wounded or critical-success event keys. Select those cases using the condition slug, change or check outcome fields.
 
-Payload filters, custom test payloads and actor-specific animation targeting require the newer OBS Utils build described in the user guide. When supporting released OBS Utils 5.3.0, account for those limitations.
+Actor-specific animation targeting requires OBS Utils 5.3.1 or newer. Public 5.3.0 ignores the optional filter choices and custom-preview metadata; those controls require a host build that implements them.

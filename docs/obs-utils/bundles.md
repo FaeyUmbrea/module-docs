@@ -62,7 +62,7 @@ After import, the new overlays appear in the Layers panel like any other.
 
 Bundle images live in your Foundry user data folder, under the obs-utils module's persistent storage. This folder survives module updates — bundles you install today still work after a future obs-utils version bump.
 
-There is no UI to uninstall a bundle. Foundry doesn't expose a file-delete primitive to modules, so removing the overlay layers from the Layers panel just leaves the image files in storage (they're harmless — a few KB each per bundle).
+There is no UI to uninstall a bundle. Foundry doesn't expose a file-delete primitive to modules, so removing the overlay layers from the Layers panel just leaves the image files in storage (remove unused files through your hosting provider's file manager if needed).
 
 ## Distribution
 
@@ -71,8 +71,6 @@ Bundles are distributed however you like — DriveThruRPG, itch.io, your own Pat
 ## Authoring a bundle
 
 The supported workflow today is: build the overlays in the Stream Composer in a test world, then Export → Bundle. The `.vmoverlay` file is your shippable artifact.
-
-A standalone CLI tool (`obs-utils-bundle`) is planned for v1+ to make multi-system / multi-theme variants easier to assemble from a single source — see the [bundle concepts repo](https://github.com/FaeyUmbrea) for the spec.
 
 ## Image references inside bundle JSON
 

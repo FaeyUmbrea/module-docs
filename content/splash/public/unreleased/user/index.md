@@ -2,7 +2,7 @@
 title: "Splash public baseline — in development"
 ---
 
-This guide covers the next public editor while it is in development. These changes haven't been released yet. For the published module, use the [Splash 1.1.0 guide](/splash/public/1.1.0/user/).
+This guide covers the next public editor while it is in development. These changes haven't been released yet. For the published module, use the [public Splash guide](/splash/public/user/).
 
 The editor helps you build an interactive handout from artwork, text and objects. Start from scratch or place an existing prefab, arrange the objects, then test the handout's states and values before showing it to players.
 

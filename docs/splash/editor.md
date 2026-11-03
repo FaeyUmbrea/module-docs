@@ -100,8 +100,6 @@ Edits the selected object. It shows the object's **Name** and type-specific fiel
 - **Draggable** — the **value key** that records its drop zone, a **tag**, an image or fill color, and a corner radius.
 - **Drop zone** — what it **accepts** (blank = any, or a tag), an **on drop** action, fill, border, highlight color, and radius.
 
-Every object also has an **effects** subsection (WebGL filters; see [Effects & Animations](./effects.md)) and its own **animation in**/**out**.
-
 Below those, every object type has entrance and exit **animations**, an **effects** list, and, when the object is placed in the active state, its **placement** in that state: **X**, **Y**, **W**, **H**, and **Z** plus optional per-state entrance and exit animations. See [Effects & Animations](./effects.md) for the animation and shader options.
 
 The tab also has buttons to **apply a sprite preset** or, for GMs, save the object as one. Buttons additionally apply or save button presets. With more than one object selected, the tab shows a count instead of fields.
@@ -120,4 +118,4 @@ Splash-wide settings: the **Layer** kind, **Mode** (local or [synced](./synced-m
 
 ## Atomic edits, no save button
 
-The editor writes optimistically. Each change updates the on-screen splash immediately and commits to the journal page as one atomic update. Undo and redo step back and forward through those commits, so you never lose work to a forgotten save.
+The editor writes optimistically. Each change updates the on-screen splash immediately and commits to the journal page as one atomic update. Undo and redo step back and forward through those commits, so there is no separate save step.

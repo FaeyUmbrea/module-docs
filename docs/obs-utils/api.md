@@ -41,13 +41,19 @@ The `obs-utils.init` hook fires once the API is attached but before the world is
 
 ### Single-instance overlays
 
-For overlays that render exactly once globally (not per-actor), register the Svelte class directly:
+For an overlay that renders once rather than per actor, mount it with your own Svelte runtime and return a cleanup callback:
 
 ```javascript
-api.registerUniqueOverlaySvelte5(MyGlobalOverlay);
+import { mount, unmount } from 'svelte';
+import MyGlobalOverlay from './MyGlobalOverlay.svelte';
+
+api.registerUniqueOverlaySvelte5(target => {
+  const app = mount(MyGlobalOverlay, { target });
+  return () => { void unmount(app); };
+});
 ```
 
-The class is mounted once into the `.overlay-renderer` subtree on `/stream`, the Full Preview, and the editor.
+The overlay is mounted once into the `.overlay-renderer` subtree on `/stream`, the Full Preview, and the editor.
 
 ## OBS Remote events
 
@@ -89,7 +95,7 @@ To fire the event, call:
 api.triggerOBSRemoteEvent('mymod.onLowHP', { actor, hp });
 ```
 
-Only the OBS client actually applies the actions — `triggerOBSRemoteEvent` is a no-op on non-OBS pages. Pass any context object you need; the matcher receives it as the second argument.
+Only the OBS client applies the actions. Pass any context object you need; the matcher receives it as the second argument.
 
 ### Condition field types
 
@@ -194,7 +200,7 @@ controller.stop();
 ```javascript
 // Selected actors (the array of actor IDs the overlay tiling works from).
 api.getSelectedActors();                        // string[] | undefined
-await api.setSelectedActors(['actorId1', ...]);
+await api.setSelectedActors(['actorId1', 'actorId2']);
 
 // Flat AV data (last writer wins).
 api.setAVData(actorValueArray);

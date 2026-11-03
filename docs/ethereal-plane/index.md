@@ -17,4 +17,4 @@ Ethereal Plane offers several powerful features to enhance your streaming experi
 The Wiki will serve as user documentation and hopefully provide you with all the information you need.
 Just checkout the sidebar and click on the topic of your choosing.
 
-We recommend starting with the [Quick Start](quick-start) guide and then exploring the [Triggers](triggers) feature to create interactive elements for your stream.
+Start with the [Quick Start](quick-start) guide, then explore the [Triggers](triggers) feature to create interactive elements for your stream.

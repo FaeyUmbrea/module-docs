@@ -28,5 +28,3 @@ Optional choice and custom-preview metadata remains compatible with public OBS U
 Edit the small resource files in `resources/av-data/`. Run `yarn checkParity`, choose to copy the extractor, and paste it into the Foundry browser console. Paste the resulting actor data back into the CLI.
 
 The review separates absent curated paths from uncurated candidates. It supports correcting entries, adding translation keys, retaining the latest extraction and reviewing ignored fields. `ignore.json` excludes candidates from parity reports and isn't imported by the module. It doesn't block raw paths in OBS Utils. An absent path may be optional for the sampled actor types; review it before removing it.
-
-The 6.0.6 review sample contained five characters. It accounted for every extracted leaf, with 477 of 489 curated paths present and 12 conditional fields retained. This sample doesn't establish NPC, vehicle or group runtime coverage.

@@ -30,4 +30,4 @@ A page refresh is needed after triggering this shortcut. The binding is editable
 
 ## With Websocket
 
-When using Manual OBS Mode with the OBS browser source, you'll still need to provide OBS Websocket credentials — either via the [OBS Remote → Connection tab](./obs-remote.md#connection-tab) or via the browser source's Custom CSS.
+For OBS actions that need WebSocket access, configure the connection in [OBS Remote](./obs-remote.md#connection-tab). Manual OBS mode controls how Foundry is displayed; it doesn't establish that connection.

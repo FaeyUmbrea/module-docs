@@ -12,11 +12,11 @@ Combat has its own mode choice. Following the active combat token is useful when
 
 ## Copy a user's view
 
-Tracked mode copies another user's viewport. Choose the user whose view the stream should follow. This is useful when a GM or player is already framing the action the way you want.
+Choose **Clone the Selected Player's Viewport** and pick a user under **Tracked Player** to follow that player's view. **Clone the DM's Viewport** follows the active GM.
 
 ## Show the map
 
-Birds-eye mode fits the map to the stream view. It works well between encounters or when the audience needs the wider scene.
+**Fit Map to Screen** fits the map to the stream view. It works well between encounters or when the audience needs the wider scene.
 
 ## Check the actual source
 

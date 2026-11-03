@@ -6,7 +6,7 @@ This is the public baseline under development. It has no published release or ex
 
 ## Editor field metadata
 
-The development API adds optional `source: 'values'` metadata to text fields. Use it for a field that names a shared runtime value. Splash offers value names already used in the edited handout while continuing to allow new names.
+Add `source: 'values'` metadata to a text field that names a shared runtime value. Splash offers value names already used in the edited handout while continuing to allow new names.
 
 ```ts
 {
@@ -24,8 +24,6 @@ Built-in action validation reports missing inputs and references to removed stat
 ## Playback observations
 
 The editor's test host uses the normal runtime and renderer. Its states and values are observations of runtime snapshots; restarting disposes that playback and creates a fresh one from the authored configuration. A preview has no source-page UUID, so it does not attach a shared-state driver or presence reporter.
-
-Maintainer architecture and ownership notes belong in the project's YouTrack documentation. These notes describe extension-facing behaviour, rather than the editor's internal component structure.
 
 ## Launch permissions
 

@@ -6,7 +6,7 @@ sidebar_label: Stream Overlay CSS
 
 # Stream Overlay CSS
 
-Watch our [Stream Overlay tutorial video](https://www.youtube.com/watch?v=XdpdAU-raUU) for a visual guide.
+Watch the [Stream Overlay tutorial video](https://www.youtube.com/watch?v=XdpdAU-raUU) for a visual guide.
 
 ## Structure
 

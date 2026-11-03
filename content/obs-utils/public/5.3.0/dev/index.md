@@ -15,7 +15,7 @@ This guide covers **public OBS Utils 5.3.0**. Check the installed host before us
 ## Get the runtime API
 
 ```js
-Hooks.once('init', () => {
+Hooks.once('obs-utils.init', () => {
   const host = game.modules.get('obs-utils');
   const obs = host?.api;
   if (!host?.active || !obs) return;

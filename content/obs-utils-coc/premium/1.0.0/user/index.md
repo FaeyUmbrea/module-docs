@@ -2,7 +2,7 @@
 title: "OBS Utils · Call of Cthulhu"
 ---
 
-The Call of Cthulhu 7e companion adds curated actor values, system events and an Investigator Ribbon to OBS Utils. These pages cover **1.0.0**, prepared for Foundry’s protected package platform. Installation becomes available when the package is approved and published there.
+The Call of Cthulhu 7e companion adds curated actor values, system events and an Investigator Ribbon to OBS Utils. These pages cover **1.0.0**, distributed through Foundry’s protected package platform.
 
 ## Requirements
 
@@ -16,10 +16,10 @@ English is included. Actor readouts and overlay animations don't require an OBS 
 
 ## Set up the companion
 
-1. Once available, install the companion through Foundry’s protected package platform using your premium access.
+1. Install the companion through Foundry’s protected package platform using your premium access.
 2. Enable **OBS Utils - Call of Cthulhu 7e** in a CoC7 world alongside either OBS Utils or OBS Utils Premium.
 3. Reload the world. If a GM receives a dependency error, enable or update the module named in the message and reload again.
-4. Follow the [OBS Utils setup guide](/obs-utils/public/5.3.1/user/) to connect your stream browser and select actors.
+4. Follow the [OBS Utils setup guide](/obs-utils/public/5.3.1/user/getting-started/) to connect your stream browser and select actors.
 
 The module ID is `obs-utils-coc`.
 

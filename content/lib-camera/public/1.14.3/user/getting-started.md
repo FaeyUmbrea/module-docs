@@ -5,7 +5,7 @@ title: "Getting started"
 In Foundry Setup, open **Add-on Modules → Install Module** and paste this manifest URL:
 
 ```text
-https://github.com/FaeyUmbrea/foundry-lib-camera/releases/download/v1.14.2/module.json
+https://github.com/FaeyUmbrea/foundry-lib-camera/releases/download/v1.14.3/module.json
 ```
 
 This release is for **Foundry 14**. Foundry will offer to install libWrapper if you do not already have it.
@@ -22,4 +22,4 @@ The camera controls panel shows registered modules and the current camera owner.
 
 ## Plain HTTP servers
 
-libCamera works on plain HTTP addresses, including servers reached over your local network. Version 1.14.2 fixes startup, remote movement and viewport subscriptions on these addresses. HTTPS is not required.
+libCamera works on plain HTTP addresses, including servers reached over your local network. HTTPS is not required for startup, remote movement or viewport subscriptions.

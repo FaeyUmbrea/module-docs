@@ -16,15 +16,15 @@ Moving from Free? [Import your existing settings](../setup/#import-settings-from
 
 ## 2. Create a Foundry user for OBS
 
-In your world, open **Game Settings → User Management** and create a user called **OBS** with the **Player** role. Save your changes. This is a Foundry world user, not another Foundry licence or Patreon account.
+In your world, open **Game Settings → User Management** and create a user with the **Player** role. You can name it anything you like, such as **OBS**, **Stream** or **Janet**. Save your changes.
 
-Keep your GM logged in through your normal browser. The OBS user will log in inside OBS Studio, so your own menus and camera movements can stay separate from the stream.
+Keep your GM logged in through your normal browser. Your stream user will log in inside OBS Studio, so your own menus and camera movements can stay separate from the stream.
 
-The OBS user sees only what that user has permission to see. Don't give it the GM role just to get the picture working.
+Your stream user sees only what that user has permission to see. Don't give it the GM role just to get the picture working.
 
 ## 3. Choose the address to put in OBS
 
-Open your running Foundry world in your normal browser and look at the address bar. Copy the full address ending in **`/game`**. This is the game address, not your hosting provider's dashboard or Foundry's administration page.
+Copy your full Foundry address from your browser's address bar. Depending on which Foundry screen you're on, it may end in `/setup`, `/join` or `/game`. Replace that final part with `/game` for the game board, or `/stream` for overlays only. Keep the rest of the address.
 
 **For your first setup, use `/game`.** It shows the map and tokens. `/stream` is a different view: it shows only overlays, without the game board.
 
@@ -46,7 +46,7 @@ If your address has a port number or extra folder, keep it:
 
 The `localhost:30000` example is for OBS running on the same computer as your Foundry server. Otherwise, use the Foundry address that works from the computer running OBS.
 
-If your invitation link ends in `/join`, replace that final `/join` with `/game` for the game board, or `/stream` for overlays only. Keep the rest of the address.
+For example, `https://my-game.example/setup` and `https://my-game.example/join` both become `https://my-game.example/game` for the game board.
 
 ### Using a hosting provider?
 
@@ -61,9 +61,9 @@ I can't provide hosting-provider-specific setup or support. I can help with OBS 
 3. Paste your full **`/game` address** into **URL**.
 4. Set the width and height to match your OBS canvas, for example **1920 × 1080**, then click **OK**.
 5. Right-click the new source and choose **Interact**. This opens a window where you can click the Foundry login screen.
-6. Log in as the **OBS** user you created, then close the interaction window. Keep the browser source visible.
+6. Log in as the stream user you created, then close the interaction window. Keep the browser source visible.
 
-**You should now see your Foundry game in the OBS preview.** A normal OBS Browser source is detected automatically; leave the manual OBS-mode settings alone for now.
+**You should now see your Foundry game in the OBS preview.** OBS Utils automatically detects that it's running inside an OBS Browser source. The Foundry user's name doesn't affect detection.
 
 ## 5. Frame the game with the Director
 
@@ -94,9 +94,9 @@ You do not need a WebSocket connection just to display Foundry or its overlays. 
 | What you see | What to check |
 | --- | --- |
 | The hosting dashboard or an error page | Copy the actual running world's address. Keep its host, port and any folder before `/game`; for `/stream` access on a hosted service, check with the host. |
-| Foundry's login screen inside OBS | Right-click the browser source → **Interact**, then log in as **OBS**. |
+| Foundry's login screen inside OBS | Right-click the browser source → **Interact**, then log in as your stream user. |
 | A transparent source with no map | Check whether its URL ends in `/stream`. Use `/game` to show the map. |
-| The map appears, but the camera follows the wrong thing | Change the Director mode for the current combat state and check the OBS user's scene. |
+| The map appears, but the camera follows the wrong thing | Change the Director mode for the current combat state and check your stream user's scene. |
 | Your GM browser has hidden menus | You may have enabled **Pin This Browser to OBS Mode** in your normal browser. Use [the recovery steps](../manual-mode/). |
 
 For help with OBS Utils, join [Discord](https://discord.com/invite/WfMaKPPdeM). Include your module version, Foundry version, whether you used `/game` or `/stream`, and what appears in OBS. Don't post passwords or private invitation links.

@@ -4,7 +4,7 @@ title: "Getting started"
 
 OBS Utils gives your stream its own Foundry view. You keep playing in your normal browser and control what the audience sees from there.
 
-> **Video walkthrough:** [Watch OBS Utils — Basic Setup on YouTube](https://www.youtube.com/watch?v=JbWA9kARx0U). The video shows an older interface; the steps below use this version's menu labels.
+> **Video walkthrough:** [Watch OBS Utils — Basic Setup on YouTube](https://www.youtube.com/watch?v=JbWA9kARx0U).
 
 ## 1. Install and enable the module
 

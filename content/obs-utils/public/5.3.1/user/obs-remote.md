@@ -4,7 +4,7 @@ title: "Control OBS from Foundry"
 
 OBS Remote lets Foundry events control OBS. For example, combat starting can switch to your encounter scene, or an event can show or hide a source.
 
-> **Video walkthrough:** [Watch OBS Utils — OBS Remote Control on YouTube](https://www.youtube.com/watch?v=wnCPbJ1eHRs). It shows an older interface; use the menu locations below for this release.
+> **Video walkthrough:** [Watch OBS Utils — OBS Remote Control on YouTube](https://www.youtube.com/watch?v=wnCPbJ1eHRs).
 
 To put your Foundry game into OBS, start with [Getting started](../getting-started/). You don't need WebSocket settings just to display the game or overlays.
 

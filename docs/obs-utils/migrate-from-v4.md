@@ -12,7 +12,7 @@ OBS Utils 5.1 and newer use animation tracks instead of the dedicated Roll overl
 
 ## Upgrading directly from 4.x
 
-The old flat `rollOverlay…` settings are not read by the new overlay editor. Recreate the overlay in the [Stream Composer](./overlay-editor.md) using [animation tracks](./overlay-animations.md), or use the migration helper below with your saved values.
+The old flat `rollOverlay…` settings are not read by the new overlay editor. Recreate the overlay in the [Overlay Editor](./overlay-editor.md) using [animation tracks](./overlay-animations.md), or use the migration helper below with your saved values.
 
 ## Rebuild a roll overlay with the API
 
@@ -55,6 +55,6 @@ Run this in your browser console as a GM with the world open on OBS Utils 5.1 or
 })();
 ```
 
-The helper creates a canvas overlay with separate pre-roll, roll and post-roll tracks, driven by `core.onPlayerRoll`. It preserves those phases instead of collapsing them into one visibility window. After refreshing, edit the result in the Composer and test it with a public roll.
+The helper creates a canvas overlay with separate pre-roll, roll and post-roll tracks, driven by `core.onPlayerRoll`. It preserves those phases instead of collapsing them into one visibility window. After refreshing, edit the result in the Overlay Editor and test it with a public roll.
 
 The snippet adds one overlay. It does not recover unregistered settings or delete the old V4 configuration. If you don't want the old roll overlay, you can leave it behind without running anything.

@@ -28,7 +28,7 @@ System companion modules add their own event keys (`dnd5e.onCrit`, `pf2e.onResou
 
 ## Configuring triggers on an overlay
 
-Open the overlay in the Stream Composer and switch to the **Animation** workspace tab. If the overlay has no animation set up yet, click **Set up animation** to seed a default idle track.
+Open the overlay in the Overlay Editor and switch to the **Animation** workspace tab. If the overlay has no animation set up yet, click **Set up animation** to seed a default idle track.
 
 From there, open the **Transitions drawer** (the badge on the TrackBar that shows the transition count). Add a transition entry, pick the trigger event, and configure the zones — see [the animation walkthrough](../overlay-animations/#3-connect-a-roll-to-show) for the setup steps.
 
@@ -72,6 +72,6 @@ This means you can give a trigger different behavior depending on where the anim
 
 ## `tileBy: 'players'` and per-user routing
 
-Triggered overlays typically use `tileBy: 'players'` (configured on the Settings workspace tab) so the renderer creates one tile per non-GM user. When a trigger payload carries a `user` field, the engine routes the payload to the tile whose `user.id` matches — so each player sees their own overlay react to their own roll, not everyone else's.
+Triggered overlays typically use `tileBy: 'players'` (configured through the overlay's settings cog) so the renderer creates one tile per non-GM user. When a trigger payload carries a `user` field, the engine routes the payload to the tile whose `user.id` matches — so each player sees their own overlay react to their own roll, not everyone else's.
 
 For module integrations, see [Events and actor values](../../dev/events-and-actor-values/).

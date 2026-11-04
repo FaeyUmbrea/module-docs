@@ -4,7 +4,7 @@ title: "OBS Utils"
 
 OBS Utils connects your Foundry game to OBS Studio. It gives the stream its own view, lets you build overlays from actor values, and can switch OBS scenes in response to Foundry events.
 
-Start with [Getting started](./getting-started/) to connect your browser source. Then open the [Stream Composer](./stream-composer/) to build an overlay.
+Start with [Getting started](./getting-started/) to connect your browser source. Then open the [Overlay Editor](./stream-composer/) to build an overlay.
 
 ## What you can do
 
@@ -25,7 +25,7 @@ Writing an integration? Start with the [Developer docs](../dev/).
 
 ## More overlay and camera guides
 
-- [Stream Composer](./stream-composer/) — select actors, add components and arrange the layout.
+- [Overlay Editor](./stream-composer/) — select actors, add components and arrange the layout.
 - [Custom CSS](./custom-css/) — style components, overlays and actor rows.
 - [Overlay triggers](./triggers/) — use roll, chat and system events.
 - [Bundles](./bundles/) — import, export and share overlays with their assets.

@@ -30,7 +30,7 @@ System companion modules add their own event keys (`dnd5e.onCrit`, `pf2e.onResou
 
 ## Configuring triggers on an overlay
 
-Open the overlay in the Stream Composer and switch to the **Animation** workspace tab. If the overlay has no animation set up yet, click **Set up animation** to seed a default idle track.
+Open the overlay in the Overlay Editor and switch to the **Animation** workspace tab. If the overlay has no animation set up yet, click **Set up animation** to seed a default idle track.
 
 From there, open the **Transitions drawer** (the badge on the TrackBar that shows the transition count). Add a transition entry, pick the trigger event, and configure the zones — see [Overlay Animations: Transitions](./overlay-animations.md#transitions) for the full data model.
 

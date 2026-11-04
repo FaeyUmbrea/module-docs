@@ -77,7 +77,7 @@ The image shows the 2D camera controls. Colours and spacing may differ with your
 
 ## 6. Add overlays when the game view works
 
-Open **Settings → Configure Settings → OBS Utils → Overlay Editor → Open Editor** in your GM browser. Follow the [Stream Composer guide](../stream-composer/) to create an overlay and choose its actor data.
+Open **Settings → Configure Settings → OBS Utils → Overlay Editor → Open Editor** in your GM browser. Follow the [Overlay Editor guide](../stream-composer/) to create an overlay and choose its actor data.
 
 You can keep using `/game`. Use `/stream` when you want an overlays-only browser source, for example over a game view captured another way. To switch, open the browser source's properties and replace the final `/game` with `/stream` using the examples above.
 

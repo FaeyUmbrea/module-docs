@@ -22,7 +22,7 @@ All user-facing strings passed to the API (`registerOverlayType`'s `readableName
 
 ## Overlay types
 
-A custom overlay type combines a Svelte renderer with a set of components and, optionally, an editor for the Stream Composer.
+A custom overlay type combines a Svelte renderer with a set of components and, optionally, an editor for the Overlay Editor.
 
 ```javascript
 import MyOverlay from './MyOverlay.svelte';
@@ -245,7 +245,7 @@ myType.perActor = true;  // render once per selected actor (default: true)
 // Register a renderable component type.
 myType.registerComponent('my-key', 'mymod.components.foo.name', FooComponent);
 
-// Register an editor for a component type (shown in the Stream Composer).
+// Register an editor for a component type (shown in the Overlay Editor).
 myType.registerComponentEditor('my-key', FooEditor);
 
 // Register image-slot handlers so the bundle walker can extract and rewrite image refs.

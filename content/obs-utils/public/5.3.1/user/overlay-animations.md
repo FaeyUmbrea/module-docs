@@ -4,7 +4,7 @@ title: "Animate an overlay"
 
 Animations control how an overlay's components move, fade and react to events. A **track** describes one part of that behaviour. A **trigger response** chooses another track when an event occurs.
 
-This example makes a name plate stay hidden until a public roll, appear briefly, then return to its hidden state. Use an overlay with a Text component from the [Stream Composer guide](../stream-composer/).
+This example makes a name plate stay hidden until a public roll, appear briefly, then return to its hidden state. Use an overlay with a Text component from the [Overlay Editor guide](../stream-composer/).
 
 ## Open Animation
 

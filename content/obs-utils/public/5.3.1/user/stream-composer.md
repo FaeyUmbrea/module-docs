@@ -1,14 +1,14 @@
 ---
-title: "Stream Composer"
+title: "Overlay Editor"
 ---
 
-The Stream Composer is where you build the overlays shown on your stream. An overlay contains components such as text, images, icons and health bars. You can arrange them in a row with **Inline**, or position them freely with **Canvas**.
+The Overlay Editor is where you build the overlays shown on your stream. An overlay contains components such as text, images, icons and health bars. You can arrange them in a row with **Inline**, or position them freely with **Canvas**.
 
 ## Open the editor
 
 In your GM browser, open **Settings → Configure Settings → OBS Utils → Overlay Editor → Open Editor**.
 
-[![Stream Composer with overlays on the left, the selected overlay in the middle and its components on the right.](./assets/stream-composer.png)](/media/obs-utils/public/5.3.1/user/assets/stream-composer.png "Open full-size screenshot")
+[![Overlay Editor with overlays on the left, the selected overlay in the middle and its components on the right.](./assets/stream-composer.png)](/media/obs-utils/public/5.3.1/user/assets/stream-composer.png "Open full-size screenshot")
 
 The left panel lists your overlays. Choose one to edit it. The four tabs across the top are **Settings**, **Layout**, **Animation** and **Preview**.
 

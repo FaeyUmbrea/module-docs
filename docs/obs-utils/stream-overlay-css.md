@@ -37,7 +37,7 @@ The IDs in `data-overlay-id` and `data-component-id` are stable UUIDs that survi
 
 | Scope | Selector wrap | Edit where | Survives reorder |
 |---|---|---|---|
-| **Global** | `.overlay-renderer { ... }` (auto-applied) | Composer footer → Global CSS | n/a |
+| **Global** | `.overlay-renderer { ... }` (auto-applied) | Overlay Editor footer → Global CSS | n/a |
 | **Per actor** | `#actor{id} { ... }` | Manage Actors → CSS button on the row | yes (actor ID) |
 | **Per overlay** | `[data-overlay-id="..."] { ... }` | Style drawer → Advanced when an overlay is selected | yes (stable UUID) |
 | **Per component** | `[data-component-id="..."] { ... }` | Style drawer → Advanced when a component is selected | yes (stable UUID) |
@@ -78,7 +78,7 @@ Canvas component wrappers are real positioning elements — top-level layout pro
 The `<style>` tags (`obs-utils-css-global`, `obs-utils-css-actors`, `obs-utils-css-overlays`, `obs-utils-css-components`) are mounted when an overlay renderer activates and removed when the last renderer unmounts. Active renderers are:
 
 - `OverlayRenderer` on `/stream`
-- `Composer` (the overlay editor's canvas, active while the Composer window is open)
-- The Preview workspace mode tab inside the Composer
+- The Overlay Editor's layout preview
+- The Preview workspace mode tab inside the Overlay Editor
 
 You won't find these style tags in the document on `/game` unless one of those is open. The OBS browser source keeps them mounted as long as `/stream` is loaded.

@@ -1,14 +1,14 @@
 ---
 id: overlay-editor
-title: Stream Composer
-sidebar_label: Stream Composer
+title: Overlay Editor
+sidebar_label: Overlay Editor
 ---
 
-# Stream Composer
+# Overlay Editor
 
-The Stream Composer is the overlay editor, opened from Module Settings → **Overlay Editor**. It is a two-column layout: a narrow **Layers panel** on the left lists every overlay in the world, and a **Workspace pane** on the right fills the rest of the window.
+Open the Overlay Editor from Module Settings → **Overlay Editor**. It is a two-column layout: a narrow **Layers panel** on the left lists every overlay in the world, and a **Workspace pane** on the right fills the rest of the window.
 
-![Stream Composer overview](./assets/stream-composer.png)
+![Overlay Editor overview](./assets/stream-composer.png)
 
 ## Concepts
 
@@ -37,7 +37,7 @@ The footer carries two utility buttons:
 
 ## Overlay Templates splash
 
-When the world has no overlays yet, the Composer shows the **Overlay Templates** splash instead of the normal two-column layout. It presents a grid of template cards (HP Bar, Name Plate, Status Icons, Custom Canvas, Custom Inline, and any templates registered by companion modules). Picking one creates the overlay from the template and drops you straight into Layout mode. The splash disappears as soon as at least one overlay exists.
+When the world has no overlays yet, the Overlay Editor shows the **Overlay Templates** splash instead of the normal two-column layout. It presents a grid of template cards (HP Bar, Name Plate, Status Icons, Custom Canvas, Custom Inline, and any templates registered by companion modules). Picking one creates the overlay from the template and drops you straight into Layout mode. The splash disappears as soon as at least one overlay exists.
 
 ## Workspace modes
 
@@ -56,7 +56,7 @@ The Settings workspace is where you configure overlay-level properties:
   - **Once (singleton)** — a single instance regardless of context.
 - **Canvas width / Canvas height** — pixel dimensions of the reference canvas (Canvas overlays only). Components are positioned relative to these dimensions.
 
-![Composer Settings workspace](./assets/composer-settings.png)
+![Overlay Editor Settings workspace](./assets/composer-settings.png)
 
 ### Layout workspace
 
@@ -92,13 +92,13 @@ In brief: a TracksPane on the left lists tracks; the center column contains the 
 
 ### Preview workspace
 
-The Preview workspace lets you fire triggers and watch all overlays react without leaving the Composer.
+The Preview workspace lets you fire triggers and watch all overlays react without leaving the Overlay Editor.
 
 The left side is a **fire panel** listing every registered trigger. Clicking a trigger button fires it immediately with a mock payload (for `core.onPlayerRoll`, a random d20 value; for `core.onChatMessage`, a test message using the first configured actor). The right side renders a full overlay preview identical to what the OBS browser source would show.
 
-This replaces the need for a separate preview window — it lives inside the same Composer window as the other mode tabs.
+This replaces the need for a separate preview window — it lives inside the same Overlay Editor window as the other mode tabs.
 
-![Composer Preview workspace with TEST FIRE panel and canvas render](./assets/composer-preview.png)
+![Overlay Editor Preview workspace with TEST FIRE panel and canvas render](./assets/composer-preview.png)
 
 ## Picker groups
 

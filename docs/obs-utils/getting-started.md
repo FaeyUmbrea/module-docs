@@ -107,9 +107,9 @@ See [Scene Camera Presets](./scene-presets.md).
 
 See [Multi-GM Handover](./multi-gm.md).
 
-## Stream Composer
+## Overlay Editor
 
-The Stream Composer is the overlay editor — where you build, position, and animate the layers that appear on your stream view. Open it from **Module Settings → Overlay Editor** (the dedicated settings menu entry registered by OBS Utils).
+Use the Overlay Editor to build, position and animate the layers that appear on your stream. Open it from **Module Settings → Overlay Editor** (the dedicated settings menu entry registered by OBS Utils).
 
 The editor has four workspace mode tabs:
 
@@ -118,7 +118,7 @@ The editor has four workspace mode tabs:
 - **Animation** — keyframe timeline for animating component properties; trigger-based track transitions.
 - **Preview** — live preview of the overlay with a selectable actor.
 
-Inline layers stack components in a single row. Canvas layers give you a free-placement 2D canvas where components can be positioned anywhere. See [Stream Composer](./overlay-editor.md) for the full editor guide.
+Inline layers stack components in a single row. Canvas layers give you a free-placement 2D canvas where components can be positioned anywhere. See [Overlay Editor](./overlay-editor.md) for the full editor guide.
 
 OBS Utils also supports [overlay animations](./overlay-animations.md) with keyframe tracks, [triggers](./triggers.md) to drive those transitions from Foundry events, and [bundles](./bundles.md) for packaging and sharing complete overlay sets.
 

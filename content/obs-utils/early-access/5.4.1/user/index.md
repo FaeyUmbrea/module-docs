@@ -4,7 +4,7 @@ title: "OBS Utils Premium"
 
 OBS Utils Premium 5.4.1 gives your Foundry stream its own camera, overlays and OBS controls. This early-access edition adds a dedicated Setup window, camera animation editing, scene data for overlays and experimental 3D Canvas camera controls.
 
-Start with [Getting started](./getting-started/), then use the [Stream Composer](./stream-composer/) to build your overlays.
+Start with [Getting started](./getting-started/), then use the [Overlay Editor](./stream-composer/) to build your overlays.
 
 ## Guides
 
@@ -27,7 +27,7 @@ This module features the [3D Canvas](https://theripper93.com/module/levels-3d-pr
 
 ## More overlay and camera guides
 
-- [Stream Composer](./stream-composer/) — select actors, add components and arrange the layout.
+- [Overlay Editor](./stream-composer/) — select actors, add components and arrange the layout.
 - [Custom CSS](./custom-css/) — style components, overlays and actor rows.
 - [Overlay triggers](./triggers/) — use roll, chat and system events.
 - [Bundles](./bundles/) — import, export and share overlays with their assets.

@@ -32,7 +32,7 @@ On import, bundled assets are saved in Foundry's persistent storage and the over
 
 ## Edit an imported overlay
 
-Imported overlays are ordinary editable overlays. Open **Layout** to change their components and styling; use **Animation** to adjust their tracks and trigger responses. [Stream Composer](../stream-composer/) explains those controls.
+Imported overlays are ordinary editable overlays. Open **Layout** to change their components and styling; use **Animation** to adjust their tracks and trigger responses. [Overlay Editor](../stream-composer/) explains those controls.
 
 For a ready-made system ribbon, use the companion's **Import starter overlays** action. Its guide lists the supplied readouts and events.
 

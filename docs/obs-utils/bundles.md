@@ -39,7 +39,7 @@ Images are inlined as data URLs — no separate files, no zip. The format is pla
 
 ## Exporting
 
-In the Stream Composer's window header, click **Export**. The dialog offers three buttons:
+In the Overlay Editor's window header, click **Export**. The dialog offers three buttons:
 
 - **JSON** — plain overlay export, no images. Useful for git-tracking your overlay setup or sharing without the visual assets.
 - **Bundle** — opens a manifest form (id, name, author, license, optional URL). On submit, OBS Utils walks the overlay tree, fetches every referenced image, base64-encodes them, rewrites the paths to the `bundle://` scheme, and saves a `.vmoverlay` file.
@@ -70,7 +70,7 @@ Bundles are distributed however you like — DriveThruRPG, itch.io, your own Pat
 
 ## Authoring a bundle
 
-The supported workflow today is: build the overlays in the Stream Composer in a test world, then Export → Bundle. The `.vmoverlay` file is your shippable artifact.
+The supported workflow today is: build the overlays in the Overlay Editor in a test world, then Export → Bundle. The `.vmoverlay` file is your shippable artifact.
 
 ## Image references inside bundle JSON
 

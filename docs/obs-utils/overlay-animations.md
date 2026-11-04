@@ -121,7 +121,7 @@ A common two-track setup has an idle track (`static`, no keyframes) and an activ
 
 ## Authoring UI
 
-Animation is one of the four **mode tabs** in the Composer workspace header (Settings / Layout / Animation / Preview). Selecting the Animation tab shows:
+Animation is one of the four **mode tabs** in the Overlay Editor workspace header (Settings / Layout / Animation / Preview). Selecting the Animation tab shows:
 
 **TracksPane (left column)** — lists all tracks for the current overlay. Click a track to select it. The initial track is marked; right-click or use the kebab menu to set a different track as initial, rename, or delete.
 
@@ -135,7 +135,7 @@ Animation is one of the four **mode tabs** in the Composer workspace header (Set
 
 **TransitionsDrawer (slide-in)** — opens from the transitions badge on the TrackBar. Lists all `TrackTransition` entries for the selected track and lets you add, remove, and configure them. Each transition entry shows the trigger dropdown, the zone list (each zone has a start time, end time, and destination picker), and the end-of-track behavior when `behavior.type` is `transition-on-end`.
 
-![Composer Animation workspace — TracksPane, timeline, and LivePreview](./assets/composer-animation.png)
+![Overlay Editor Animation workspace — TracksPane, timeline, and LivePreview](./assets/composer-animation.png)
 
 If the overlay has no `animation` yet, the workspace shows an introductory placeholder with a **Set up animation** button that seeds an empty `OverlayAnimationData` with one static idle track.
 
@@ -189,4 +189,4 @@ The `tileBy` field on `OverlayData` controls how many instances the renderer cre
 | `'users'` | One tile per active user including GMs. |
 | `'once'` | A single instance regardless of context. |
 
-Triggered overlays (those with transitions out of the idle track) typically use `tileBy: 'players'` so each player sees their own overlay react to their roll. This is set on the **Settings** workspace tab — see [Stream Composer](./overlay-editor.md).
+Triggered overlays (those with transitions out of the idle track) typically use `tileBy: 'players'` so each player sees their own overlay react to their roll. This is set on the **Settings** workspace tab — see [Overlay Editor](./overlay-editor.md).

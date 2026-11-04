@@ -10,7 +10,7 @@ Start with [Getting Started](./getting-started.md) for installation and a tour o
 
 ## Feature guides
 
-- [Stream Composer](./overlay-editor.md) — designing actor overlays (Inline, Canvas)
+- [Overlay Editor](./overlay-editor.md) — designing actor overlays (Inline, Canvas)
 - [Overlay Animations](./overlay-animations.md) — keyframe-based animation tracks and triggers
 - [Triggers](./triggers.md) — Foundry events that drive overlay animation transitions
 - [Custom CSS](./stream-overlay-css.md) — styling overlays at four scopes

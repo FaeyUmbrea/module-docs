@@ -2,7 +2,7 @@
 title: "Overlay bundle format"
 ---
 
-Use the Composer to export a working bundle before generating one yourself. The [user guide](../../user/bundles/) covers export and import.
+Use the Overlay Editor to export a working bundle before generating one yourself. The [user guide](../../user/bundles/) covers export and import.
 
 ## What's in a bundle
 

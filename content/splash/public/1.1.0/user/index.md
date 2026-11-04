@@ -6,7 +6,7 @@ Splash turns journal pages into interactive handouts: fullscreen screens, clicka
 
 This is the guide for **1.1.0**. The release requires Foundry **13.344** or newer within its supported range.
 
-[Get started](./getting-started/) with installation and setup. Choose the **Legacy** channel for the preserved older guides.
+[Get started](./getting-started/) with installation and setup.
 
 ## Guides
 
@@ -15,3 +15,5 @@ This is the guide for **1.1.0**. The release requires Foundry **13.344** or newe
 - [Layers and modes](./layers-and-modes/)
 - [Triggers](./triggers/)
 - [Effects and presets](./effects-and-presets/)
+
+- [Presets and prefabs](./presets/) — reuse artwork, grouped objects and the configurable tumbler lock.

@@ -56,3 +56,5 @@ The [previous integration guide](/obs-utils/legacy/current/dev/api/) remains ava
 ## API compatibility in 5.3.1
 
 The API is unchanged from 5.3.0; both versions use the same types package.
+
+- [Overlay bundle format](./overlay-bundles/) — package assets and support image fields in custom components.

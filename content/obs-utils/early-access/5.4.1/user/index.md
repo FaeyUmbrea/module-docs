@@ -24,3 +24,11 @@ For help, join [Discord](https://discord.com/invite/WfMaKPPdeM). [Developer docs
 ## 3D Canvas credit
 
 This module features the [3D Canvas](https://theripper93.com/module/levels-3d-preview) module by [theripper93](https://theripper93.com/) through its optional camera integration.
+
+## More overlay and camera guides
+
+- [Stream Composer](./stream-composer/) — select actors, add components and arrange the layout.
+- [Custom CSS](./custom-css/) — style components, overlays and actor rows.
+- [Overlay triggers](./triggers/) — use roll, chat and system events.
+- [Bundles](./bundles/) — import, export and share overlays with their assets.
+- [Multi-GM handover](./multi-gm/) — choose whose GM camera the stream follows.

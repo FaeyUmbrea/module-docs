@@ -71,7 +71,7 @@ Return to your GM browser and activate the scene you want to show. In the token 
 
 In **Controls**, choose **Fit Map to Screen** for **Out of Combat Type**. Hover a mode button to read its name. If combat is active, set **In Combat Type** too.
 
-![Director Controls tab, with separate rows for the in-combat and out-of-combat camera modes.](./assets/director-controls.png)
+[![Director Controls tab, with separate rows for the in-combat and out-of-combat camera modes.](./assets/director-controls.png)](/media/obs-utils/early-access/5.4.1/user/assets/director-controls.png "Open full-size screenshot")
 
 The image shows the 2D camera controls. Colours and spacing may differ with your Foundry theme.
 

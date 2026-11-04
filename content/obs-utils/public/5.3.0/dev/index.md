@@ -52,3 +52,5 @@ const trigger: OverlayTriggerRegistration = {
 These are compile-time declarations. Foundry supplies the runtime module; do not import the package as a JavaScript implementation. The package also declares Foundry and Svelte type dependencies for the contracts it exports.
 
 The [previous integration guide](/obs-utils/legacy/current/dev/api/) remains available for older integrations. Use this release's reference when the signatures differ.
+
+- [Overlay bundle format](./overlay-bundles/) — package assets and support image fields in custom components.

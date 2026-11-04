@@ -35,3 +35,5 @@ import type { ObsUtilsApi, OverlayTriggerRegistration } from '@faeyumbrea/obs-ut
 ```
 
 These declarations are for compile-time checking. Obtain the runtime API from Foundry's enabled `obs-utils-premium` module; the types package isn't a JavaScript implementation.
+
+- [Overlay bundle format](./overlay-bundles/) — package assets and support image fields in custom components.

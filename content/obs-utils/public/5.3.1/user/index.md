@@ -17,8 +17,6 @@ This release temporarily includes English and German only. Other interface langu
 - Use Foundry events to drive overlay triggers and OBS actions.
 - Import and export overlay bundles.
 
-For walkthroughs of the older interface, choose the **Legacy** channel.
-
 Writing an integration? Start with the [Developer docs](../dev/).
 
 ## Guides
@@ -28,3 +26,12 @@ Writing an integration? Start with the [Developer docs](../dev/).
 - [Scene presets](./scene-presets/)
 - [OBS Remote](./obs-remote/)
 - [Overlay animations](./overlay-animations/)
+
+## More overlay and camera guides
+
+- [Stream Composer](./stream-composer/) — select actors, add components and arrange the layout.
+- [Custom CSS](./custom-css/) — style components, overlays and actor rows.
+- [Overlay triggers](./triggers/) — use roll, chat and system events.
+- [Bundles](./bundles/) — import, export and share overlays with their assets.
+- [Multi-GM handover](./multi-gm/) — choose whose GM camera the stream follows.
+- [Migrate from older overlay formats](./migrate-from-v4/) — keep or rebuild a V4/5.0 roll overlay.

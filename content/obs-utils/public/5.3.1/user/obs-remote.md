@@ -24,7 +24,7 @@ Open **Settings → Configure Settings → OBS Utils → OBS Remote Settings →
 | **Port** | `4455`, unless you changed it in OBS's WebSocket server settings. |
 | **Password** | The WebSocket password from OBS. This is not your Foundry login password. |
 
-![OBS Remote Connection tab with URL set to localhost, port set to 4455, a Password field, and Save and Sync controls.](./assets/obs-remote-connection.png)
+[![OBS Remote Connection tab with URL set to localhost, port set to 4455, a Password field, and Save and Sync controls.](./assets/obs-remote-connection.png)](/media/obs-utils/public/5.3.1/user/assets/obs-remote-connection.png "Open full-size screenshot")
 
 This screenshot shows the public 5.3.1 Connection tab.
 
@@ -54,3 +54,29 @@ Remove the test event when you're finished. You can then add the events and acti
 - Check scene and source names match OBS exactly.
 
 Only change `localhost` if OBS actually runs on a different computer from the client making the connection. In that case, enter the address of the **OBS computer**, not the Foundry hosting provider. Firewall or network configuration may also need attention; keep authentication enabled rather than removing the password to try to fix it.
+
+## Configure the events you want
+
+Open **OBS Remote Settings → Events**. Choose an event, then add the actions it should run. Actions execute in their listed order.
+
+[![OBS Remote Settings window showing the Connection and Events tabs.](./assets/obs-remote-menu.png)](/media/obs-utils/public/5.3.1/user/assets/obs-remote-menu.png "Open full-size screenshot")
+
+| Event | When it runs |
+| --- | --- |
+| **Load** | Foundry loads on the stream client. |
+| **Combat Start** | Combat reaches its first turn. |
+| **Combat End** | Combat is deleted. |
+| **Pause / Unpause** | The game is paused or unpaused. |
+| **Scene Load** | A scene is viewed; use the scene-name condition to target a particular scene. |
+| **Stop Streaming** | The OBS WebSocket connection reports that streaming stopped. |
+
+System companions add their events to the same list.
+
+| Action | Fields you need |
+| --- | --- |
+| **Switch Scene** | The exact OBS scene name. |
+| **Toggle Source** | The exact scene and source names. |
+| **Enable Source** | The exact scene and source names. |
+| **Disable Source** | The exact scene and source names. |
+
+Source controls require the WebSocket connection configured above. Scene switching can use OBS's browser-source support. If an event offers conditions, create an instance for each case you want, then give that instance its own actions.

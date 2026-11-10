@@ -325,12 +325,20 @@
   },
   {
     "id": "obs-utils-pf2e",
-    "title": "OBS Utils \u00b7 Pathfinder 2e",
-    "summary": "Pathfinder 2e actor values and system-specific overlay events.",
+    "title": "OBS Utils \u00b7 Pathfinder & Starfinder 2e",
+    "summary": "Pathfinder and Starfinder 2e actor values and system-specific overlay events.",
     "repositories": {
       "premium": "FaeyUmbrea/obs-utils-pf2e"
     },
     "releases": [
+      {
+        "channel": "premium",
+        "version": "1.0.1",
+        "tag": "1.0.1",
+        "repository": "FaeyUmbrea/obs-utils-pf2e",
+        "manifest": "https://r2.foundryvtt.com/packages-public/obs-utils-pf2e/module.json",
+        "source": "content/obs-utils-pf2e/premium/1.0.1"
+      },
       {
         "channel": "premium",
         "version": "1.0.0",

@@ -16,6 +16,55 @@
         "oldBase": "/obs-utils"
       },
       {
+        "channel": "early-access",
+        "version": "5.4.1",
+        "tag": "5.4.1",
+        "repository": "FaeyUmbrea/obs-utils-premium",
+        "manifest": "https://r2.foundryvtt.com/packages-public/obs-utils-premium/module.json",
+        "source": "content/obs-utils/early-access/5.4.1",
+        "api": {
+          "source": "npm",
+          "name": "@faeyumbrea/obs-utils-api-types",
+          "version": "1.1.0-ea.5.4.1",
+          "asset": "https://registry.npmjs.org/@faeyumbrea/obs-utils-api-types/-/obs-utils-api-types-1.1.0-ea.5.4.1.tgz",
+          "integrity": "sha512-3F5quW1wA+hQzz/MSlHnsGTtq+sL6M8cdMmYiiuzJ/lwXpTMR8ROFeCk6/NqWhikUcIFt4fS+pFrl/dHzKZthA==",
+          "sha256": "8dc5c9c205a405d0d1dcb7a06be53cf6b7891784e818da734cff970893dc4636",
+          "filesSha256": "60bcbb3607337d0abe0d2fa13b9d7842affaa030d3a0b90bf5670ee6fc732161"
+        }
+      },
+      {
+        "channel": "public",
+        "version": "5.3.2",
+        "tag": "5.3.2",
+        "repository": "FaeyUmbrea/obs-utils",
+        "manifest": "https://github.com/FaeyUmbrea/obs-utils/releases/download/5.3.2/module.json",
+        "source": "content/obs-utils/public/5.3.2",
+        "api": {
+          "source": "npm",
+          "name": "@faeyumbrea/obs-utils-api-types",
+          "version": "1.1.0",
+          "asset": "https://registry.npmjs.org/@faeyumbrea/obs-utils-api-types/-/obs-utils-api-types-1.1.0.tgz",
+          "integrity": "sha512-bM5N0yWFr6KR+pifTLp9CRqfUCNyNkioDeXzElsKDeCT3gxTVuRABm7F9oBviArQI3m3oxM8SmVwxnQ4qs9DhQ==",
+          "sha256": "abd6a828324213d7e8f154871d2ff7fab0d600527dd853e1dc0e85b261c671ba",
+          "filesSha256": "5d38020274555899f4c1edb34d1554eab3c1bb33d5bca8de72549659547eeff7"
+        }
+      },
+      {
+        "channel": "public",
+        "version": "5.3.1",
+        "tag": "5.3.1",
+        "repository": "FaeyUmbrea/obs-utils",
+        "manifest": "https://github.com/FaeyUmbrea/obs-utils/releases/download/5.3.1/module.json",
+        "source": "content/obs-utils/public/5.3.1",
+        "api": {
+          "name": "@faeyumbrea/obs-utils-api-types",
+          "version": "5.3.0",
+          "asset": "https://github.com/FaeyUmbrea/obs-utils/releases/download/5.3.0/obs-utils-api-types.tgz",
+          "sha256": "478f0b6e08b17fb22ed411acab9ea8aba4dd54829981f4ca8ca6150e642673b7",
+          "source": "release-archive"
+        }
+      },
+      {
         "channel": "public",
         "version": "5.3.0",
         "tag": "5.3.0",
@@ -36,38 +85,6 @@
         "legacy": true,
         "source": "obs-utils_versioned_docs/version-4.0",
         "oldBase": "/obs-utils/4.0"
-      },
-      {
-        "channel": "public",
-        "version": "5.3.1",
-        "tag": "5.3.1",
-        "repository": "FaeyUmbrea/obs-utils",
-        "manifest": "https://github.com/FaeyUmbrea/obs-utils/releases/download/5.3.1/module.json",
-        "source": "content/obs-utils/public/5.3.1",
-        "api": {
-          "name": "@faeyumbrea/obs-utils-api-types",
-          "version": "5.3.0",
-          "asset": "https://github.com/FaeyUmbrea/obs-utils/releases/download/5.3.0/obs-utils-api-types.tgz",
-          "sha256": "478f0b6e08b17fb22ed411acab9ea8aba4dd54829981f4ca8ca6150e642673b7",
-          "source": "release-archive"
-        }
-      },
-      {
-        "channel": "early-access",
-        "version": "5.4.1",
-        "tag": "5.4.1",
-        "repository": "FaeyUmbrea/obs-utils-premium",
-        "manifest": "https://r2.foundryvtt.com/packages-public/obs-utils-premium/module.json",
-        "source": "content/obs-utils/early-access/5.4.1",
-        "api": {
-          "source": "npm",
-          "name": "@faeyumbrea/obs-utils-api-types",
-          "version": "1.1.0-ea.5.4.1",
-          "asset": "https://registry.npmjs.org/@faeyumbrea/obs-utils-api-types/-/obs-utils-api-types-1.1.0-ea.5.4.1.tgz",
-          "integrity": "sha512-3F5quW1wA+hQzz/MSlHnsGTtq+sL6M8cdMmYiiuzJ/lwXpTMR8ROFeCk6/NqWhikUcIFt4fS+pFrl/dHzKZthA==",
-          "sha256": "8dc5c9c205a405d0d1dcb7a06be53cf6b7891784e818da734cff970893dc4636",
-          "filesSha256": "60bcbb3607337d0abe0d2fa13b9d7842affaa030d3a0b90bf5670ee6fc732161"
-        }
       }
     ]
   },
@@ -299,7 +316,7 @@
   },
   {
     "id": "obs-utils-dnd5e",
-    "title": "OBS Utils \u00b7 D&D 5e",
+    "title": "OBS Utils · D&D 5e",
     "summary": "Readable D&D 5e actor values and transformation tracking.",
     "repositories": {
       "premium": "FaeyUmbrea/obs-utils-dnd5e"
@@ -325,7 +342,7 @@
   },
   {
     "id": "obs-utils-pf2e",
-    "title": "OBS Utils \u00b7 Pathfinder & Starfinder 2e",
+    "title": "OBS Utils · Pathfinder & Starfinder 2e",
     "summary": "Pathfinder and Starfinder 2e actor values and system-specific overlay events.",
     "repositories": {
       "premium": "FaeyUmbrea/obs-utils-pf2e"
@@ -357,7 +374,7 @@
   },
   {
     "id": "obs-utils-coc",
-    "title": "OBS Utils \u00b7 Call of Cthulhu",
+    "title": "OBS Utils · Call of Cthulhu",
     "summary": "Investigator values and CoC7 events for your stream overlays.",
     "repositories": {
       "premium": "FaeyUmbrea/obs-utils-coc"
@@ -381,8 +398,8 @@
   },
   {
     "id": "obs-utils-scene-levels",
-    "title": "OBS Utils \u00b7 Scene Levels",
-    "summary": "Soften the edges of Foundry\u2019s level reveals on your stream.",
+    "title": "OBS Utils · Scene Levels",
+    "summary": "Soften the edges of Foundry’s level reveals on your stream.",
     "repositories": {
       "premium": "FaeyUmbrea/obs-utils-scene-levels"
     },
